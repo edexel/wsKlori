@@ -3,13 +3,10 @@
 namespace App\Http\Controllers\Admin\Auth;
 
 use App\Http\Responses\Response as ResponseJson;
-// Facades
-use Tymon\JWTAuth\Facades\JWTAuth;
 
-use App\Http\Requests\Auth\LoginRequest;
 // responses
-// Codes Responses
 use Symfony\Component\HttpFoundation\Response;
+
 use Validator;
 use Illuminate\Http\Request;
 // Facades
@@ -36,6 +33,38 @@ class LoginController
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     */
+
+ /**
+     * @OA\Post(
+     *     path="/admin/auth/login",
+     *     tags={"Auth"},
+     *     summary="Login de usuario",
+     *     operationId="Login",
+     *     @OA\Response(
+     *         response=405,
+     *         description="Invalid input"
+     *     ),
+     *     @OA\RequestBody(
+     *         description="Input data format",
+     *         @OA\MediaType(
+     *             mediaType="application/json",
+     *             @OA\Schema(
+     *                 type="object",
+     *                 @OA\Property(
+     *                     property="email",
+     *                     description="Updated name of the pet",
+     *                     type="string",
+     *                 ),
+     *                 @OA\Property(
+     *                     property="password",
+     *                     description="Updated status of the pet",
+     *                     type="string"
+     *                 )
+     *             )
+     *         )
+     *     )
+     * )
      */
     public function __invoke(Request $oRequest)
     {

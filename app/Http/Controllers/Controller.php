@@ -13,7 +13,27 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-
+/**
+ * @OA\SecurityScheme(
+ *     type="apiKey",
+ *     in="header",
+ *     securityScheme="authorization",
+ *     name="authorization"
+ * )
+ */
+/**
+ * @OA\OpenApi(
+ *     @OA\Info(
+ *         version="1.0.0",
+ *         title="Swagger Klori",
+ *         @OA\License(name="Klori")
+ *     ),
+ *     @OA\Server(
+ *         description="Api Documentations Klori",
+ *         url="/api/v1",
+ *     ),
+ * )
+ */
     public function __construct()
     {
         $this->oResponse = new Response();

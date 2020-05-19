@@ -1,18 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\Admin\Usuario;
-
-use App\Http\Responses\Response as ResponseJson;
-
 // Codes Responses
+use App\Http\Responses\Response as ResponseJson;
 use Symfony\Component\HttpFoundation\Response;
-
+// Request
 use Illuminate\Http\Request;
-// Facades
-use Illuminate\Support\Facades\Hash;
-// Utils
-use App\Utils\JwtToken;
-//Models
+// Models
 use App\DbModels\usuario;
 
 
@@ -33,7 +27,6 @@ class GetAllController
              // Encuentra usuario de la base de datos
              $oUser = usuario::All();
              
-        
             return response()->json($this->oResponse->fnResult(true, $oUser, "Success"), 200);
         } catch (Exception $ex) {
             // Error
@@ -41,3 +34,4 @@ class GetAllController
         }
     }
 }
+// 
