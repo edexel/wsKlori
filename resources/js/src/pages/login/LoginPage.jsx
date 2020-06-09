@@ -33,8 +33,11 @@ function LoginPage({history}) {
     }
 
     return (
-        <div className="col-lg-8 offset-lg-2">
-            <h2>KALORI</h2>
+        <div className="col-lg-6 offset-lg-3 container-login">
+            <h3 >Entra al consultorio de</h3>
+            <h2 >Laura</h2>
+            <p >laura.klori.com.mx</p>
+            <p>Escribe tu nombre de <b>usuario</b> y <b>contraseña</b>.</p>
             {/* Componente de Formulario de Login */}
             <LoginForm onSubmit={onSubmit}/>
         </div>

@@ -18,20 +18,14 @@ class GetAllController
     {
         $this->oResponse = new ResponseJson();
     }
- 
+
 
     public function __invoke(Request $oRequest)
     {
-                
-        try {
-             // Encuentra usuario de la base de datos
-             $oUser = usuario::All();
-             
-            return response()->json($this->oResponse->fnResult(true, $oUser, "Success"), 200);
-        } catch (Exception $ex) {
-            // Error
-            return response()->json($this->oResponse->fnResult(false, null, 'Exception: ' . $ex), Response::HTTP_BAD_REQUEST);
-        }
+        // Encuentra usuario de la base de datos
+        $oUser = usuario::All();
+
+        return response()->json($this->oResponse->fnResult(true, $oUser, "Success"), 200);
     }
 }
 // 

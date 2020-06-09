@@ -5,6 +5,8 @@
  */
 import React from 'react';
 import { useForm } from "react-hook-form";
+import InputText from '../../components/InputText';
+import Btn from '../../components/Btn';
 
 // Componente que contiene el formulario de Login
 function LoginForm({ onSubmit }) {
@@ -15,42 +17,39 @@ function LoginForm({ onSubmit }) {
     return (
         <form name="form" onSubmit={handleSubmit(onSubmit)}>
             {/* BEGIN Input Username */}
-            <div className="form-group">
-                <label>Username</label>
-
-                <input type="text"
-                    name="username"
-                    // registra el campo en Form
-                    ref={register({ required: true })}
-                    // en caso de error agrega la clase is invalid
-                    className={'form-control' + (errors.username ? ' is-invalid' : '')}
-                />
-                {/*  Muestra errores del campo username */}
-                { errors.username && <div className="invalid-feedback">username is required</div> }
-            </div>
+            <InputText
+                register={register}
+                name='username'
+                // label='Usuario'
+                placeholder='usuario'
+                errors={errors}
+                rules={{required: true}}
+                message='Usuario es requerido'
+            />
             {/* END Input Username */}
 
-            {/* BEGIN Input Username */}
-            <div className="form-group">
-                <label>Password</label>
-                <input type="password"
-                    name="password"
-                    // registra el campo en Form
-                    ref={register({ required: true })}
-                    // en caso de error agrega la clase is invalid
-                    className={'form-control' + (errors.password ? ' is-invalid' : '')}
-                />
-                {/* Muestra errores del campo password */}
-                { errors.password && <div className="invalid-feedback">Password is required</div> }
-            </div>
-            {/* END Input Username */}
+            {/* BEGIN Input Password */}
+            <InputText
+                register={register}
+                name='password'
+                type="password"
+                // label='Contraseña'
+                placeholder='contraseña'
+                errors={errors}
+                rules={{required: true}}
+                message='Contraseña es requerida'
+            />
+            {/* END Input Password */}
 
             {/* BEGIN Button Entrar de tipo Submit */}
-            <div className="form-group">
-                <button type="submit" className="btn btn-primary">
-                    Entrar
-                </button>
-            </div>
+            <Btn
+                type="submit" 
+                label={'Entrar'} 
+                className={'btn-primary'}
+                icon={true}
+                iconLeft={true}
+                iconClass={'fa fa-sign-in-alt'}
+            />
             {/* END Button Entrar */}
         </form>
     );
