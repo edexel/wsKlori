@@ -6,7 +6,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { LoginForm } from "./LoginForm";
-import { loginSuccess, loginRequest, logout } from '../../redux/ducks/loginDucks';
+import { logout } from '../../redux/ducks/loginDucks';
+import { AuthService } from '../../services/authServices';
 
 /**
  * Componente que renderiza la Pagina de Login
@@ -25,11 +26,12 @@ function LoginPage({history}) {
     // envía la informacion hacia el servidor para realizar una autenticacion
     const onSubmit = data => {
         // dispara la accion de la peticion Login
-        dispatch(loginRequest(data.username))
-        // dispara la accion de exito de Login
-        dispatch(loginSuccess({username: data.username, token: ''}))
-        // redirige hacia el dshboard de la app
-        history.push('/')
+        AuthService.login(dispatch, history, data)
+
+        // // dispara la accion de exito de Login
+        // dispatch(loginSuccess({username: data.username, token: ''}))
+        // // redirige hacia el dshboard de la app
+        // history.push('/')
     }
 
     return (

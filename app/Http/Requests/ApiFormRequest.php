@@ -6,7 +6,11 @@ use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Foundation\Http\FormRequest as LaravelFormRequest;
-
+/**
+ * Created by Joel Valdivia
+ * Date 09 Jun 2020
+ * Description Validador de laravel para Requests en formato Json
+ */
 abstract class ApiFormRequest extends LaravelFormRequest
 {
     /**
@@ -33,7 +37,7 @@ abstract class ApiFormRequest extends LaravelFormRequest
     {
         $errors = (new ValidationException($validator))->errors();
         throw new HttpResponseException(
-            response()->json(['errores' => $errors], JsonResponse::HTTP_UNPROCESSABLE_ENTITY)
+            response()->json(['errors' => $errors], JsonResponse::HTTP_UNPROCESSABLE_ENTITY)
         );
     }
 }
