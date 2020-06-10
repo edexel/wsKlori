@@ -18,9 +18,9 @@ class RutinaActividad extends Migration
             $table->string('nombre', 100);
             $table->boolean('activo');
             $table->string('descripcion', 500);
-            $table->timestamp('created_at', 0);
-            $table->timestamp('updated_at', 0);
-            $table->timestamp('deleted_at', 0);
+            $table->timestamp('created_at', 0)->nullable();
+            $table->timestamp('updated_at', 0)->nullable();
+            $table->timestamp('deleted_at', 0)->nullable();
         });
     }
 
