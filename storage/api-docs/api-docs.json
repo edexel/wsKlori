@@ -1,9 +1,9 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "Klori Api System v1",
+        "title": "Swagger Klori",
         "license": {
-            "name": "Klori api"
+            "name": "Klori"
         },
         "version": "1.0.0"
     },
@@ -84,14 +84,26 @@
             },
             "LoginResponseData": {
                 "properties": {
-                    "status": {
-                        "type": "boolean"
+                    "id": {
+                        "type": "integer"
                     },
-                    "message": {
+                    "token": {
                         "type": "string"
                     },
-                    "data": {
+                    "nombre": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "admin": {
                         "type": "boolean"
+                    },
+                    "created_at": {
+                        "type": "string"
+                    },
+                    "updated_at": {
+                        "type": "string"
                     }
                 },
                 "type": "object"

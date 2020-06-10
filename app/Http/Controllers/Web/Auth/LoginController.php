@@ -13,10 +13,11 @@ use Illuminate\Support\Facades\Hash;
 // Utils
 use App\Utils\JwtToken;
 //Models
+use App\Models\usuario;
 // requests
 use App\Http\Requests\Web\Auth\LoginRequest;
 // resource
-use App\Http\Resources\Admin\Auth\LoginResource;
+use App\Http\Resources\Web\Auth\LoginResource;
 
 
 /**
@@ -45,32 +46,39 @@ class LoginController extends Controller
     {
 
         // Encuentra usuario de la base de datos
-        // $user = usuario::where('email', $request->input('username'))->first();
-        $user = null;
+         $oUser = usuario::where('email', $request->input('username'))->first();
+        
+        //$user = null;
+        if(!$oUser)
+            // Encuentra usuario de la base de datos
+            $oUser = usuario::where('username', $oRequest->input('username'))->first();
 
         // se define la respuesta de error
-        $result = $this->result->build($this->STATUS_ERROR, $this->NO_RESULT, $this->NO_TOTAL, $this->message);
+        //
         // $result = $this->result->build($this->STATUS_OK, ['token' => 'bienpadre', 'nombre'=> 'Fulanito'], $this->NO_TOTAL, 'Sesion iniciada');
         // return response()->json($result,  Response::HTTP_OK);
-
+       
         // verifica si el usuario existe sino responde con error
-        if (!$user)
-            return response()->json($result,  Response::HTTP_UNAUTHORIZED);
+        if (!$oUser){
+             $result = $this->result->build($this->STATUS_ERROR, $this->NO_RESULT, $this->NO_TOTAL, $this->message);
+             return response()->json($result,  Response::HTTP_UNAUTHORIZED);
+        }
+        
 
         // Verifica la contraseña y genera un token sino responde con error
-        if (!Hash::check($request->input('password'), $user->password))
+        if (!Hash::check($request->input('password'), $oUser->password))
             return response()->json($result, Response::HTTP_UNAUTHORIZED);
-
-        // Se actualiza la última vez que inició sesión el usuario
-        $user->lastSession = date("Y-m-d H:i:s");
-        $user->save();
+         
+        // // Se actualiza la última vez que inició sesión el usuario
+        // $user->lastSession = date("Y-m-d H:i:s");
+        // $user->save();
 
         // El usuario es válido. se asigna a el resultado el token.
-        $usuario['token'] =  JwtToken::create($user);
-
+        $oUser['token'] =  JwtToken::create($oUser);
+      
         // Resultado mappeado
-        $result = new LoginResource($usuario);
-
+        $result = new LoginResource($oUser);
+    
         $this->message = 'Usuario ha iniciado sesión correctamente';
 
         // construye respuesta correcta
@@ -139,16 +147,32 @@ class LoginController extends Controller
      * @OA\Schema(
      *   schema="LoginResponseData",
      *   @OA\Property(
-     *     property="status",
-     *     type="boolean"
+     *     property="id",
+     *     type="integer"
      *   ),
      *   @OA\Property(
-     *     property="message",
+     *     property="token",
      *     type="string"
      *   ),
      *   @OA\Property(
-     *     property="data",
+     *     property="nombre",
+     *     type="string"
+     *   ),
+     *   @OA\Property(
+     *     property="email",
+     *     type="string"
+     *   ),
+     *   @OA\Property(
+     *     property="admin",
      *     type="boolean"
+     *   ),
+     *   @OA\Property(
+     *     property="created_at",
+     *     type="string"
+     *   ),
+     *   @OA\Property(
+     *     property="updated_at",
+     *     type="string"
      *   )
      * )
      */

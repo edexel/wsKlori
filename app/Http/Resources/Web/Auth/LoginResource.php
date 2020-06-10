@@ -17,8 +17,9 @@ class LoginResource extends JsonResource
         return [
             'id' => $this->idUsuario,
             'token' => $this->token,
-            'nombre' => $this->nombre,
+            'nombre' => $this->username,
             'email' => $this->email,
+            "admin" => $this->admin,
             'created_at' => is_object($this->created_at) ? $this->created_at->toDateTimeString() : $this->created_at,
             'updated_at' => is_object($this->updated_at) ? $this->updated_at->toDateTimeString() : $this->updated_at,
         ];
