@@ -14,25 +14,25 @@
         }
     ],
     "paths": {
-        "/admin/auth/login": {
+        "/web/auth/login": {
             "post": {
                 "tags": [
                     "Auth"
                 ],
-                "summary": "Login de usuario",
+                "summary": "Inicio de sesión de usuario",
                 "operationId": "Login",
                 "requestBody": {
-                    "description": "Input data format",
+                    "description": "Formato de envío de datos",
                     "content": {
                         "application/json": {
                             "schema": {
                                 "properties": {
-                                    "email": {
-                                        "description": "Updated name of the pet",
+                                    "username": {
+                                        "description": "Nombre de usuario",
                                         "type": "string"
                                     },
                                     "password": {
-                                        "description": "Updated status of the pet",
+                                        "description": "Contraseña",
                                         "type": "string"
                                     }
                                 },
@@ -42,14 +42,72 @@
                     }
                 },
                 "responses": {
-                    "405": {
-                        "description": "Invalid input"
+                    "200": {
+                        "description": "El usuario a iniciado sesión correctamente",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LoginResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Usuario no fue autorizado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
                     }
                 }
             }
         }
     },
     "components": {
+        "schemas": {
+            "LoginResponse": {
+                "properties": {
+                    "status": {
+                        "type": "boolean"
+                    },
+                    "message": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "$ref": "#/components/schemas/LoginResponseData"
+                    }
+                },
+                "type": "object"
+            },
+            "LoginResponseData": {
+                "properties": {
+                    "status": {
+                        "type": "boolean"
+                    },
+                    "message": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "type": "boolean"
+                    }
+                },
+                "type": "object"
+            },
+            "ErrorResponse": {
+                "properties": {
+                    "status": {
+                        "type": "boolean"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "securitySchemes": {
             "authorization": {
                 "type": "apiKey",
