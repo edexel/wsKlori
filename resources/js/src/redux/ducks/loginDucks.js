@@ -19,7 +19,7 @@ let user = JSON.parse(localStorage.getItem('user'));
 
 // verifica si el usuario ya ha iniciado sesión en caso contrario
 // inicia con un objeto vacío
-const stateInitial = user ? { authenticate: true, user } : {};
+const stateInitial = user ? { isAuth: true, user } : { isAuth: false};
 
 export default function loginReducer(state = stateInitial, action) {
 
@@ -27,17 +27,17 @@ export default function loginReducer(state = stateInitial, action) {
   switch (action.type) {
     case LOGIN_REQUEST:
       // regresa el objeto del estado con el nuevo objeto
-      return { ...state, isAuthenticate: false, user };
+      return { ...state, isAuth: false, user };
     case LOGIN_SUCCESS:
       // regresa el objeto del estado con el nuevo objeto
-      return { ...state, isAuthenticate: true, user: action.payload };
+      return { ...state, isAuth: true, user: action.payload.data };
     case LOGIN_FAILURE:
       // regresa objeto vacío para el objeto error
-      return { ...state };
+      return { ...state, isAuth: false };
     case LOGOUT:
       // regresa objeto vacío para limpiar el localStorage
       localStorage.clear();
-      return {};
+      return { isAuth: false};
     default:
       // regresa el estado actual
       return state;

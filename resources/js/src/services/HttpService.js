@@ -1,6 +1,6 @@
-import { AuthService } from "./authServices";
 // importa configuracion de la API
 import { ConfigApi } from "../config/api.config";
+import { logoutAction } from "../actions/auth";
 
 /**
  * Created by Joel Valdivia
@@ -32,7 +32,7 @@ export const HttpService = async (endpoint, method = 'GET', data = null, headers
                 if (!response.ok) {
                     if (response.status === 401) {
                         // elimina informacion de localstorage
-                        AuthService.logout();
+                        logoutAction();
 
                         const error = (data && data.message) || response.statusText;
                         return Promise.reject(error);

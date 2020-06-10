@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 
 /**
  * Created by Joel Valdivia
@@ -8,15 +9,13 @@ import { Link } from 'react-router-dom';
  */
 function HomePage() {
 
+    // obtiene usuario del store
+    const { user } = useSelector(store => store.authenticate);
+
     return (
         <div className="col-lg-8 offset-lg-2">
-            <h1>Hi !</h1>
-            <p>You're logged in with React Hooks!!</p>
-            <h3>All registered users:</h3>
-
-            <p>
-                <Link to="/login">Logout</Link>
-            </p>
+            <h1>Bienvenido {user.username}!</h1>
+            <p>Haz entrado al consultorio de Laura!!</p>
         </div>
     );
 }

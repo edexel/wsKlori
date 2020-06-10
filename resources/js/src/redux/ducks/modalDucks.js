@@ -21,23 +21,23 @@ export const MODAL_OPEN_FORM = 'MODAL_OPEN_FORM';
  * el cambio dependiendo de la accion
  * 
  * @param {*} state estado actual de la app
- * @param {*} accion accion a tomar el reducer
+ * @param {*} action accion a tomar el reducer
  */
-export default function modalReducer(state = {}, accion) {
+export default function modalReducer(state = {}, action) {
 
     // verifica que cambiará dependiendo el tipo de accion    
-    switch (accion.type) {
+    switch (action.type) {
         case MODAL_OPEN_FORM:
-            return { ...state, show: true, title: accion.payload.title, form: accion.payload.campos, size: accion.payload.size}
+            return { ...state, show: true, title: action.payload.title, form: action.payload.campos, size: action.payload.size}
         case MODAL_SUCCESS:
             // regresa el objeto del estado con el nuevo objeto
-            return { ...state, show: true, title: accion.payload.title, body: accion.payload.body }
+            return { ...state, show: true, title: action.payload.title, body: action.payload.body, className: 'modal-success' }
         case MODAL_ALERT:
             // regresa el objeto del estado con el nuevo objeto
-            return { ...state, show: true, title: accion.payload.title, body: accion.payload.body };
+            return { ...state, show: true, title: action.payload.title, body: action.payload.body };
         case MODAL_ERROR:
             // regresa el objeto del estado con el nuevo objeto
-            return { ...state, show: true, title: accion.payload.title, body: accion.payload.body };
+            return { ...state, show: true, title: action.payload.title, body: action.payload.body, className: 'modal-error' };
         case MODAL_CLEAN:
             // regresa objeto vacío para limpiar la alerta
             return { ...state, show: false, title: null, form: null, size: null, body: null };
