@@ -14,7 +14,7 @@ const LOGOUT = 'LOGOUT';
 
 // END Reducer
 
-/** obtiene el usuario de LocalStorage */ 
+/** obtiene el usuario de LocalStorage */
 let user = JSON.parse(localStorage.getItem('user'));
 
 // verifica si el usuario ya ha iniciado sesión en caso contrario
@@ -23,54 +23,31 @@ const stateInitial = user ? { authenticate: true, user } : {};
 
 export default function loginReducer(state = stateInitial, action) {
 
-    // verifica que cambiará dependiendo el tipo de accion
-    switch (action.type) {
-        case LOGIN_REQUEST:
-            // regresa el objeto del estado con el nuevo objeto
-            return { ...state, isAuthenticate: false, user };
-        case LOGIN_SUCCESS:
-            // regresa el objeto del estado con el nuevo objeto
-
-            // quitar de aqui y agregarlo al servicio
-            localStorage.setItem('user', JSON.stringify(action.payload));
-
-            return { ...state, isAuthenticate: true, usuario: action.payload };
-        case LOGIN_FAILURE:
-            // regresa objeto vacío para el objeto error
-            return {...state};
-        case LOGOUT:
-            // regresa objeto vacío para limpiar el localStorage
-            localStorage.clear();
-            return {};
-        default:
-            // regresa el estado actual
-            return state;
-    }
+  // verifica que cambiará dependiendo el tipo de accion
+  switch (action.type) {
+    case LOGIN_REQUEST:
+      // regresa el objeto del estado con el nuevo objeto
+      return { ...state, isAuthenticate: false, user };
+    case LOGIN_SUCCESS:
+      // regresa el objeto del estado con el nuevo objeto
+      return { ...state, isAuthenticate: true, user: action.payload };
+    case LOGIN_FAILURE:
+      // regresa objeto vacío para el objeto error
+      return { ...state };
+    case LOGOUT:
+      // regresa objeto vacío para limpiar el localStorage
+      localStorage.clear();
+      return {};
+    default:
+      // regresa el estado actual
+      return state;
+  }
 }
 // END Reducer
 
 // BEGIN Acciones
-export const loginRequest = (data) => {
-    return {
-      type: LOGIN_REQUEST,
-      payload: data
-    }
-  }
-export const loginSuccess = (data) => {
-    return {
-      type: LOGIN_SUCCESS,
-      payload: data
-    }
-  }
-export const loginFailure = (error) => {
-    return {
-      type: LOGIN_FAILURE,
-      payload: error
-    }
-  }
-export const logout = () => {
-    return {
-      type: LOGOUT,
-    }
-  }
+export const loginRequest = (data) => { return { type: LOGIN_REQUEST, payload: data } }
+export const loginSuccess = (data) => { return { type: LOGIN_SUCCESS, payload: data } }
+export const loginFailure = (error) => { return { type: LOGIN_FAILURE, payload: error } }
+export const logout = () => { return { type: LOGOUT } }
 // END Acciones

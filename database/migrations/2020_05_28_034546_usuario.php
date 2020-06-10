@@ -15,6 +15,7 @@ class Usuario extends Migration
     {
         Schema::create('usuario', function (Blueprint $table) {
             $table->id();
+            $table->string('username', 30)->unique();
             $table->string('email', 30)->unique();
             $table->string('password', 100);
             $table->string('descripcion', 500);
