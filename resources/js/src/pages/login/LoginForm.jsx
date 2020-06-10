@@ -7,6 +7,11 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import InputText from '../../components/InputText';
 import Btn from '../../components/Btn';
+import { userRequired, passwordRequired } from '../../helpers/validationsInputs';
+
+
+
+
 
 // Componente que contiene el formulario de Login
 function LoginForm({ onSubmit }) {
@@ -14,8 +19,9 @@ function LoginForm({ onSubmit }) {
     // define caracteristicas de ReacHookForm
     const { register, handleSubmit, errors } = useForm();
 
+
     return (
-        <form name="form" onSubmit={handleSubmit(onSubmit)}>
+        <form name="form-login" onSubmit={handleSubmit(onSubmit)}>
             {/* BEGIN Input Username */}
             <InputText
                 register={register}
@@ -23,8 +29,9 @@ function LoginForm({ onSubmit }) {
                 // label='Usuario'
                 placeholder='usuario'
                 errors={errors}
-                rules={{required: true}}
-                message='Usuario es requerido'
+                rules={{
+                    required: userRequired
+                }}
             />
             {/* END Input Username */}
 
@@ -36,16 +43,17 @@ function LoginForm({ onSubmit }) {
                 // label='Contraseña'
                 placeholder='contraseña'
                 errors={errors}
-                rules={{required: true}}
-                message='Contraseña es requerida'
+                rules={{
+                    required: passwordRequired
+                }}
             />
             {/* END Input Password */}
 
             {/* BEGIN Button Entrar de tipo Submit */}
             <Btn
-                type="submit" 
-                label={'Entrar'} 
-                className={'btn-primary'}
+                type="submit"
+                label={'Entrar'}
+                className={'btn-primary label-bold'}
                 icon={true}
                 iconLeft={true}
                 iconClass={'fa fa-sign-in-alt'}

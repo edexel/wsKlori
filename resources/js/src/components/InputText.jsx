@@ -7,7 +7,7 @@ import { FormGroup, FormControl } from "react-bootstrap";
  * Componente para Input de tipo texto
  * @param {Object} param0 Opciones del input
  */
-function InputText({ register, label, name, errors, rules, message, ...rest }) {
+function InputText({ register, label, name, errors, rules, ...rest }) {
 
     return (
         <FormGroup>
@@ -32,7 +32,7 @@ function InputText({ register, label, name, errors, rules, message, ...rest }) {
 
             {/*  Muestra errores del input texto */}
             {
-                errors[name] && <div className="invalid-feedback">{label} {message}</div>
+                errors[name] && <div className="invalid-feedback">{label} {errors[name].message}</div>
             }
         </FormGroup>
     )

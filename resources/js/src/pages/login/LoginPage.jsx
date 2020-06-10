@@ -4,34 +4,36 @@
  * Description: Archivo para componetes sobre la pagina de Login
  */
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { LoginForm } from "./LoginForm";
 import { logout } from '../../redux/ducks/loginDucks';
-import { AuthService } from '../../services/authServices';
+import { loadingShow } from '../../redux/ducks/loadingDucks';
+import { Link } from 'react-router-dom';
+import { loginAction } from "../../actions/auth";
+import { Alert } from "react-bootstrap";
 
 /**
  * Componente que renderiza la Pagina de Login
  * @param {Object} history Propiedad encargada del historial del navegador 
  */
-function LoginPage({history}) {
+function LoginPage({ history }) {
     // disparador de acciones de redux
     const dispatch = useDispatch();
-
+    const { recover } = useSelector(store => store)
     // Funciona como constructor
     useEffect(() => {
-        // dispara la accion de cerrar sesion
+        // dispara la accion de cerrar sesion al entrar al componente
         dispatch(logout());
     }, []);
-    
+
     // envía la informacion hacia el servidor para realizar una autenticacion
     const onSubmit = data => {
+        // muestra loading
+        dispatch(loadingShow('Entrando al consultorio...'))
         // dispara la accion de la peticion Login
-        AuthService.login(dispatch, history, data)
+        loginAction(dispatch, history, data)
 
-        // // dispara la accion de exito de Login
-        // dispatch(loginSuccess({username: data.username, token: ''}))
-        // // redirige hacia el dshboard de la app
-        // history.push('/')
+
     }
 
     return (
@@ -40,8 +42,15 @@ function LoginPage({history}) {
             <h2 >Laura</h2>
             <p >laura.klori.com.mx</p>
             <p>Escribe tu nombre de <b>usuario</b> y <b>contraseña</b>.</p>
+
+            {
+                recover ?
+                    recover.message && <Alert variant='success'>{recover.message}</Alert>
+                    : null
+            }
             {/* Componente de Formulario de Login */}
-            <LoginForm onSubmit={onSubmit}/>
+            <LoginForm onSubmit={onSubmit} />
+            <Link to='/forgot'>¿Olvidaste la contraseña?</Link>
         </div>
     );
 }
