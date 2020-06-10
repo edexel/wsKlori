@@ -11,7 +11,7 @@ export const authHeader =  function () {
     // verifica si existe el usuario y contiene un token
     if (user && user.token)
         // retorna la cabecera con el token
-        return { 'Authorization': user.token };
+        return { 'Content-Type': 'application/json', 'Authorization': user.token };
     
     // regresa objeto vacío
     return {};

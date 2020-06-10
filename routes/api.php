@@ -19,17 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-
-
-$router->group(['prefix' => 'v1/admin','middleware' => ['auth']], function() use ($router) {
+$router->group(['prefix' => 'v1/web'], function () use ($router) {
     // rutas de recursos de acceso
-    require (__DIR__ . '/admin/usuario.php');
-}
-);
-
-
- $router->group(['prefix' => 'v1/admin'], function() use ($router) {
-    // rutas de recursos de acceso
-    require (__DIR__ . '/admin/auth.php');
-}
-);
+    require(__DIR__ . '/web/auth.php');
+});

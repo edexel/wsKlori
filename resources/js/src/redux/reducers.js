@@ -10,9 +10,11 @@ import { combineReducers } from 'redux';
 
 // BEGIN Reductores Creados
 import loginReducer from './ducks/loginDucks';
+import modalReducer from './ducks/modalDucks';
 // END Reductores Creados
 
 // Exporta los reductores combinados en un sólo objeto
 export default combineReducers({
-    authenticate: loginReducer
+    authenticate: loginReducer,
+    modal: modalReducer
 });

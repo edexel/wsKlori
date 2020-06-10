@@ -30,9 +30,9 @@ class PlanSesion extends Migration
             $table->string('indicaciones', 1000);
             $table->string('liquidos', 500);
             $table->string('objetivos', 200);
-            $table->timestamp('created_at', 0);
-            $table->timestamp('updated_at', 0);
-            $table->timestamp('deleted_at', 0);
+            $table->timestamp('created_at', 0)->nullable();
+            $table->timestamp('updated_at', 0)->nullable();
+            $table->timestamp('deleted_at', 0)->nullable();
         });
     }
 
