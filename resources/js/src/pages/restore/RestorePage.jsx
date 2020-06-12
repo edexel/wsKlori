@@ -23,14 +23,14 @@ function RestorePage({history, ...props}) {
      useEffect(() => {
          // dispara la accion de cerrar sesion al entrar al componente
          dispatch(logout());
-         const t = props.location.search.slice(3);
+         const t = props.route.location.search.slice(3);
         //  if(!t)
         //     history.push('/login');
     }, []);
     
     // envía la informacion hacia el servidor para realizar una autenticacion
     const onSubmit = data => {
-        data.t = props.location.search.slice(3)
+        data.t = props.route.location.search.slice(3);
         // muestra loading
         dispatch(loadingShow('Procesando solicitud para restablecer la contraseña...'))
         // dispara la accion que se encarga de la peticion Http
