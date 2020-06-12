@@ -20,8 +20,10 @@ function LoginPage({ history }) {
     // disparador de acciones de redux
     const dispatch = useDispatch();
     const { recover } = useSelector(store => store)
+    
     // Funciona como constructor
     useEffect(() => {
+        console.log('entra a login')
         // dispara la accion de cerrar sesion al entrar al componente
         dispatch(logout());
     }, []);

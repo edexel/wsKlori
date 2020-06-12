@@ -11,7 +11,7 @@ function HomePage() {
 
     // obtiene usuario del store
     const { user } = useSelector(store => store.authenticate);
-
+    console.log('sientra a home')
     return (
         <div className="col-lg-8 offset-lg-2">
             <h1>Bienvenido {user.username}!</h1>

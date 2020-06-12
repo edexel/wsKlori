@@ -3431,6 +3431,1226 @@ function useWillUnmount(fn) {
 
 /***/ }),
 
+/***/ "./node_modules/@trendmicro/react-sidenav/dist/react-sidenav.css":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@trendmicro/react-sidenav/dist/react-sidenav.css ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../css-loader??ref--6-1!../../../postcss-loader/src??ref--6-2!./react-sidenav.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/@trendmicro/react-sidenav/dist/react-sidenav.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/@trendmicro/react-sidenav/lib/index.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/@trendmicro/react-sidenav/lib/index.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*! react-sidenav v0.5.0 | (c) 2020 Trend Micro Inc. | MIT | https://github.com/trendmicro-frontend/react-sidenav */
+module.exports =
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 11);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports) {
+
+module.exports = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+module.exports = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+module.exports = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"sidenav":"sidenav---sidenav---_2tBP","collapsed":"sidenav---collapsed---LQDEv","sidenav-nav":"sidenav---sidenav-nav---3tvij","sidenavNav":"sidenav---sidenav-nav---3tvij","sidenav-navitem":"sidenav---sidenav-navitem---uwIJ-","sidenavNavitem":"sidenav---sidenav-navitem---uwIJ-","sidenav-subnav":"sidenav---sidenav-subnav---1EN61","sidenavSubnav":"sidenav---sidenav-subnav---1EN61","expanded":"sidenav---expanded---1KdUL","navicon":"sidenav---navicon---3gCRo","navtext":"sidenav---navtext---1AE_f","expandable":"sidenav---expandable---3_dr7","navitem":"sidenav---navitem---9uL5T","sidenav-subnavitem":"sidenav---sidenav-subnavitem---1cD47","sidenavSubnavitem":"sidenav---sidenav-subnavitem---1cD47","selected":"sidenav---selected---1EK3y","sidenav-toggle":"sidenav---sidenav-toggle---1KRjR","sidenavToggle":"sidenav---sidenav-toggle---1KRjR","icon-bar":"sidenav---icon-bar---u1f02","iconBar":"sidenav---icon-bar---u1f02","highlighted":"sidenav---highlighted---oUx9u"};
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var matchComponent = function matchComponent(Component) {
+    return function (c) {
+        // React Component
+        if (c.type === Component) {
+            return true;
+        }
+
+        // Matching componentType for SideNav, Nav, NavItem, NavIcon, NavText
+        if (c.props && c.props.componentType === Component) {
+            return true;
+        }
+
+        return false;
+    };
+};
+
+exports.default = matchComponent;
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+module.exports = __webpack_require__(/*! chained-function */ "./node_modules/chained-function/lib/index.js");
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _class, _temp2; /* eslint jsx-a11y/click-events-have-key-events: 0 */
+
+
+var _chainedFunction = __webpack_require__(5);
+
+var _chainedFunction2 = _interopRequireDefault(_chainedFunction);
+
+var _classnames = __webpack_require__(1);
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _NavIcon = __webpack_require__(7);
+
+var _NavIcon2 = _interopRequireDefault(_NavIcon);
+
+var _NavText = __webpack_require__(8);
+
+var _NavText2 = _interopRequireDefault(_NavText);
+
+var _findComponent = __webpack_require__(12);
+
+var _findComponent2 = _interopRequireDefault(_findComponent);
+
+var _matchComponent = __webpack_require__(4);
+
+var _matchComponent2 = _interopRequireDefault(_matchComponent);
+
+var _index = __webpack_require__(3);
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var noop = function noop() {};
+
+var NavItem = (_temp2 = _class = function (_PureComponent) {
+    _inherits(NavItem, _PureComponent);
+
+    function NavItem() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
+        _classCallCheck(this, NavItem);
+
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = NavItem.__proto__ || Object.getPrototypeOf(NavItem)).call.apply(_ref, [this].concat(args))), _this), _this.findNavIcon = (0, _findComponent2.default)(_NavIcon2.default), _this.findNavText = (0, _findComponent2.default)(_NavText2.default), _this.isNavItem = (0, _matchComponent2.default)(NavItem), _this.isNavIcon = (0, _matchComponent2.default)(_NavIcon2.default), _this.isNavText = (0, _matchComponent2.default)(_NavText2.default), _this.handleSelect = function (event) {
+            var _this$props = _this.props,
+                disabled = _this$props.disabled,
+                onSelect = _this$props.onSelect,
+                eventKey = _this$props.eventKey;
+
+
+            if (disabled) {
+                event.preventDefault();
+                return;
+            }
+
+            if (onSelect) {
+                onSelect(eventKey, event);
+            }
+        }, _temp), _possibleConstructorReturn(_this, _ret);
+    }
+
+    _createClass(NavItem, [{
+        key: 'render',
+        value: function render() {
+            var _this2 = this,
+                _cx2,
+                _cx3;
+
+            var _props = this.props,
+                componentType = _props.componentType,
+                Component = _props.componentClass,
+                active = _props.active,
+                disabled = _props.disabled,
+                expanded = _props.expanded,
+                eventKey = _props.eventKey,
+                onClick = _props.onClick,
+                onSelect = _props.onSelect,
+                selected = _props.selected,
+                subnav = _props.subnav,
+                navitemClassName = _props.navitemClassName,
+                navitemStyle = _props.navitemStyle,
+                subnavClassName = _props.subnavClassName,
+                subnavStyle = _props.subnavStyle,
+                className = _props.className,
+                style = _props.style,
+                children = _props.children,
+                props = _objectWithoutProperties(_props, ['componentType', 'componentClass', 'active', 'disabled', 'expanded', 'eventKey', 'onClick', 'onSelect', 'selected', 'subnav', 'navitemClassName', 'navitemStyle', 'subnavClassName', 'subnavStyle', 'className', 'style', 'children']);
+
+            var navIcon = this.findNavIcon(children);
+            var navText = this.findNavText(children);
+
+            var _ref2 = navIcon ? _extends({}, navIcon.props) : {},
+                navIconComponentType = _ref2.componentType,
+                navIconClassName = _ref2.navIconClassName,
+                navIconProps = _objectWithoutProperties(_ref2, ['componentType', 'navIconClassName']);
+
+            var _ref3 = navText ? _extends({}, navText.props) : {},
+                navTextComponentType = _ref3.componentType,
+                navTextClassName = _ref3.navTextClassName,
+                navTextProps = _objectWithoutProperties(_ref3, ['componentType', 'navTextClassName']);
+
+            if (subnav) {
+                var _cx;
+
+                var _isNavItemSelected = active || !!selected && selected === this.props.eventKey;
+
+                return _react2.default.createElement(
+                    Component,
+                    {
+                        role: 'presentation',
+                        className: (0, _classnames2.default)(className, _index2.default.sidenavSubnavitem, (_cx = {}, _defineProperty(_cx, _index2.default.selected, _isNavItemSelected), _defineProperty(_cx, _index2.default.disabled, disabled), _cx)),
+                        style: style
+                    },
+                    _react2.default.createElement(
+                        'div',
+                        _extends({}, props, {
+                            className: (0, _classnames2.default)(navitemClassName, _index2.default.navitem),
+                            style: navitemStyle,
+                            disabled: disabled,
+                            role: 'menuitem',
+                            tabIndex: '-1',
+                            onClick: (0, _chainedFunction2.default)(onClick, this.handleSelect)
+                        }),
+                        navIcon && _react2.default.createElement('div', _extends({}, navIconProps, { className: (0, _classnames2.default)(navIconClassName, _index2.default.navicon) })),
+                        navText && _react2.default.createElement('div', _extends({}, navTextProps, { className: (0, _classnames2.default)(navTextClassName, _index2.default.navtext) }))
+                    )
+                );
+            }
+
+            var activeNavItems = [];
+            var navItems = _react2.default.Children.toArray(children).filter(function (child) {
+                return _react2.default.isValidElement(child) && _this2.isNavItem(child);
+            }).map(function (child) {
+                if (child.props.active || !!selected && selected === child.props.eventKey) {
+                    activeNavItems.push(child);
+                }
+
+                return (0, _react.cloneElement)(child, {
+                    subnav: true,
+                    selected: selected,
+                    onSelect: (0, _chainedFunction2.default)(child.props.onSelect, onSelect)
+                });
+            });
+            var others = _react2.default.Children.toArray(children).filter(function (child) {
+                if (_react2.default.isValidElement(child) && (_this2.isNavIcon(child) || _this2.isNavText(child) || _this2.isNavItem(child))) {
+                    return false;
+                }
+                return true;
+            });
+
+            var isNavItemSelected = active || !!selected && selected === this.props.eventKey || activeNavItems.length > 0;
+            var isNavItemExpandable = navItems.length > 0;
+            var isNavItemExpanded = isNavItemExpandable && expanded;
+            var isNavItemHighlighted = isNavItemExpanded || isNavItemSelected;
+
+            return _react2.default.createElement(
+                Component,
+                {
+                    role: 'presentation',
+                    className: (0, _classnames2.default)(className, _index2.default.sidenavNavitem, (_cx2 = {}, _defineProperty(_cx2, _index2.default.selected, isNavItemSelected), _defineProperty(_cx2, _index2.default.highlighted, isNavItemHighlighted), _defineProperty(_cx2, _index2.default.expandable, isNavItemExpandable), _defineProperty(_cx2, _index2.default.expanded, isNavItemExpanded), _defineProperty(_cx2, _index2.default.disabled, disabled), _cx2)),
+                    style: style
+                },
+                _react2.default.createElement(
+                    'div',
+                    _extends({}, props, {
+                        className: (0, _classnames2.default)(navitemClassName, _index2.default.navitem),
+                        style: navitemStyle,
+                        disabled: disabled,
+                        role: 'menuitem',
+                        tabIndex: '-1',
+                        onClick: (0, _chainedFunction2.default)(onClick, navItems.length === 0 ? this.handleSelect : noop)
+                    }),
+                    navIcon && _react2.default.createElement('div', _extends({}, navIconProps, { className: (0, _classnames2.default)(navIconClassName, _index2.default.navicon) })),
+                    navText && _react2.default.createElement('div', _extends({}, navTextProps, { className: (0, _classnames2.default)(navTextClassName, _index2.default.navtext) })),
+                    others
+                ),
+                navItems.length > 0 && _react2.default.createElement(
+                    'div',
+                    {
+                        role: 'menu',
+                        className: (0, _classnames2.default)(subnavClassName, _index2.default.sidenavSubnav),
+                        style: subnavStyle
+                    },
+                    _react2.default.createElement(
+                        Component,
+                        {
+                            role: 'heading',
+                            className: (0, _classnames2.default)(_index2.default.sidenavSubnavitem, (_cx3 = {}, _defineProperty(_cx3, _index2.default.highlighted, active), _defineProperty(_cx3, _index2.default.disabled, disabled), _cx3)),
+                            style: style
+                        },
+                        navText && navText.props ? navText.props.children : null
+                    ),
+                    navItems
+                )
+            );
+        }
+    }]);
+
+    return NavItem;
+}(_react.PureComponent), _class.propTypes = {
+    componentType: _propTypes2.default.any,
+
+    // A custom element for this component.
+    componentClass: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.func]),
+
+    // Highlight the navigation item as active.
+    active: _propTypes2.default.bool,
+
+    // Disable the navigation item, making it unselectable.
+    disabled: _propTypes2.default.bool,
+
+    // Whether the navigation item is expanded or collapsed.
+    expanded: _propTypes2.default.bool,
+
+    // Value passed to the `onSelect` handler, useful for identifying the selected navigation item.
+    eventKey: _propTypes2.default.any,
+
+    // Callback fired when the navigation item is clicked.
+    onClick: _propTypes2.default.func,
+
+    // Callback fired when a navigation item is selected.
+    onSelect: _propTypes2.default.func,
+
+    //
+    // Nav props
+    //
+
+    // The selected navigation item.
+    selected: _propTypes2.default.any,
+
+    //
+    // Sub navigation item (internal use only)
+    //
+
+    // Whether it is a sub navigation item.
+    subnav: _propTypes2.default.bool,
+
+    navitemClassName: _propTypes2.default.string,
+    navitemStyle: _propTypes2.default.object,
+    subnavClassName: _propTypes2.default.string,
+    subnavStyle: _propTypes2.default.object
+}, _class.defaultProps = {
+    componentClass: 'div',
+    active: false,
+    disabled: false,
+    expanded: false
+}, _temp2);
+
+// For component matching
+
+NavItem.defaultProps.componentType = NavItem;
+
+exports.default = NavItem;
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var NavIcon = function NavIcon() {
+    throw new Error('should not render NavIcon component');
+};
+
+// For component matching
+NavIcon.defaultProps = _extends({}, NavIcon.defaultProps, {
+    componentType: NavIcon
+});
+
+exports.default = NavIcon;
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var NavText = function NavText() {
+    throw new Error('should not render NavText component');
+};
+
+// For component matching
+NavText.defaultProps = _extends({}, NavText.defaultProps, {
+    componentType: NavText
+});
+
+exports.default = NavText;
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _class, _temp;
+
+var _classnames = __webpack_require__(1);
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _index = __webpack_require__(3);
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Toggle = (_temp = _class = function (_PureComponent) {
+    _inherits(Toggle, _PureComponent);
+
+    function Toggle() {
+        _classCallCheck(this, Toggle);
+
+        return _possibleConstructorReturn(this, (Toggle.__proto__ || Object.getPrototypeOf(Toggle)).apply(this, arguments));
+    }
+
+    _createClass(Toggle, [{
+        key: 'render',
+        value: function render() {
+            var _props = this.props,
+                componentType = _props.componentType,
+                Component = _props.componentClass,
+                expanded = _props.expanded,
+                className = _props.className,
+                children = _props.children,
+                props = _objectWithoutProperties(_props, ['componentType', 'componentClass', 'expanded', 'className', 'children']);
+
+            return _react2.default.createElement(
+                Component,
+                _extends({}, props, {
+                    role: 'button',
+                    className: (0, _classnames2.default)(className, _index2.default.sidenavToggle),
+                    'aria-expanded': expanded
+                }),
+                _react2.default.createElement('span', { className: _index2.default.iconBar }),
+                _react2.default.createElement('span', { className: _index2.default.iconBar }),
+                _react2.default.createElement('span', { className: _index2.default.iconBar }),
+                children
+            );
+        }
+    }]);
+
+    return Toggle;
+}(_react.PureComponent), _class.propTypes = {
+    componentType: _propTypes2.default.any,
+
+    // A custom element for this component.
+    componentClass: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.func]),
+
+    // Whether the navigation toggle is disabled.
+    disabled: _propTypes2.default.bool,
+
+    // Whether the side navigation is expanded or collapsed.
+    expanded: _propTypes2.default.bool
+}, _class.defaultProps = {
+    componentClass: 'button',
+    disabled: false,
+    expanded: false
+}, _temp);
+
+// For component matching
+
+Toggle.defaultProps.componentType = Toggle;
+
+exports.default = Toggle;
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _class, _temp2;
+
+var _chainedFunction = __webpack_require__(5);
+
+var _chainedFunction2 = _interopRequireDefault(_chainedFunction);
+
+var _classnames = __webpack_require__(1);
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _NavItem = __webpack_require__(6);
+
+var _NavItem2 = _interopRequireDefault(_NavItem);
+
+var _matchComponent = __webpack_require__(4);
+
+var _matchComponent2 = _interopRequireDefault(_matchComponent);
+
+var _index = __webpack_require__(3);
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var noop = function noop() {};
+
+var Nav = (_temp2 = _class = function (_PureComponent) {
+    _inherits(Nav, _PureComponent);
+
+    function Nav() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
+        _classCallCheck(this, Nav);
+
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Nav.__proto__ || Object.getPrototypeOf(Nav)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+            expandedNavItem: null,
+            selected: _this.props.defaultSelected,
+            defaultSelected: _this.props.defaultSelected
+        }, _this.isNavItem = (0, _matchComponent2.default)(_NavItem2.default), _temp), _possibleConstructorReturn(_this, _ret);
+    }
+
+    _createClass(Nav, [{
+        key: 'handleClickOnExpanded',
+        value: function handleClickOnExpanded(eventKey, event) {
+            if (this.props.expanded) {
+                this.setState(function (state) {
+                    return {
+                        expandedNavItem: state.expandedNavItem !== eventKey ? eventKey : ''
+                    };
+                });
+            }
+        }
+    }, {
+        key: 'renderNavItem',
+        value: function renderNavItem(child, _ref2) {
+            var _this2 = this;
+
+            var onSelect = _ref2.onSelect,
+                props = _objectWithoutProperties(_ref2, ['onSelect']);
+
+            var _child$props = _extends({}, child.props),
+                eventKey = _child$props.eventKey;
+
+            return (0, _react.cloneElement)(child, _extends({}, props, {
+                onClick: (0, _chainedFunction2.default)(child.props.onClick, function (event) {
+                    _this2.handleClickOnExpanded(eventKey, event);
+                }),
+                onSelect: (0, _chainedFunction2.default)(this.state.defaultSelected ? function (selected) {
+                    _this2.setState({ selected: selected });
+                } : noop, child.props.onSelect, onSelect)
+            }));
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this3 = this;
+
+            var _props = this.props,
+                componentType = _props.componentType,
+                Component = _props.componentClass,
+                onSelect = _props.onSelect,
+                selected = _props.selected,
+                defaultSelected = _props.defaultSelected,
+                expanded = _props.expanded,
+                className = _props.className,
+                children = _props.children,
+                props = _objectWithoutProperties(_props, ['componentType', 'componentClass', 'onSelect', 'selected', 'defaultSelected', 'expanded', 'className', 'children']);
+
+            var currentSelected = this.state.defaultSelected ? this.state.selected : selected;
+
+            return _react2.default.createElement(
+                Component,
+                _extends({}, props, {
+                    role: 'menu',
+                    className: (0, _classnames2.default)(className, _index2.default.sidenavNav, _defineProperty({}, _index2.default.expanded, expanded))
+                }),
+                _react2.default.Children.map(children, function (child) {
+                    if (_react2.default.isValidElement(child) && _this3.isNavItem(child)) {
+                        return _this3.renderNavItem(child, {
+                            onSelect: onSelect,
+                            selected: currentSelected,
+                            expanded: !!child.props.expanded || expanded && !!_this3.state.expandedNavItem && _this3.state.expandedNavItem === child.props.eventKey
+                        });
+                    }
+
+                    return child;
+                })
+            );
+        }
+    }]);
+
+    return Nav;
+}(_react.PureComponent), _class.propTypes = {
+    componentType: _propTypes2.default.any,
+
+    // A custom element for this component.
+    componentClass: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.func]),
+
+    // Callback fired when a navigation item is selected.
+    onSelect: _propTypes2.default.func,
+
+    // The selected navigation item.
+    selected: _propTypes2.default.any,
+
+    // The initially selected navigation item.
+    defaultSelected: _propTypes2.default.any,
+
+    //
+    // SideNav props
+    //
+
+    // Whether the side navigation is expanded or collapsed.
+    expanded: _propTypes2.default.bool
+}, _class.defaultProps = {
+    componentClass: 'div'
+}, _temp2);
+
+// For component matching
+
+Nav.defaultProps.componentType = Nav;
+
+exports.default = Nav;
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.NavText = exports.NavIcon = exports.NavItem = exports.Nav = exports.Toggle = undefined;
+
+var _Toggle = __webpack_require__(9);
+
+Object.defineProperty(exports, 'Toggle', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_Toggle).default;
+  }
+});
+
+var _Nav = __webpack_require__(10);
+
+Object.defineProperty(exports, 'Nav', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_Nav).default;
+  }
+});
+
+var _NavItem = __webpack_require__(6);
+
+Object.defineProperty(exports, 'NavItem', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_NavItem).default;
+  }
+});
+
+var _NavIcon = __webpack_require__(7);
+
+Object.defineProperty(exports, 'NavIcon', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_NavIcon).default;
+  }
+});
+
+var _NavText = __webpack_require__(8);
+
+Object.defineProperty(exports, 'NavText', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_NavText).default;
+  }
+});
+
+var _SideNav = __webpack_require__(13);
+
+var _SideNav2 = _interopRequireDefault(_SideNav);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = _SideNav2.default;
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _matchComponent = __webpack_require__(4);
+
+var _matchComponent2 = _interopRequireDefault(_matchComponent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var findComponent = function findComponent(component) {
+    return function (children) {
+        var matchComponent = (0, _matchComponent2.default)(component);
+
+        return _react2.default.Children.toArray(children).reduce(function (found, next) {
+            if (found === null && next !== null && matchComponent(next)) {
+                return next;
+            }
+            return found;
+        }, null);
+    };
+};
+
+exports.default = findComponent;
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _class, _temp2;
+
+var _chainedFunction = __webpack_require__(5);
+
+var _chainedFunction2 = _interopRequireDefault(_chainedFunction);
+
+var _classnames = __webpack_require__(1);
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _uncontrollable = __webpack_require__(14);
+
+var _warning = __webpack_require__(15);
+
+var _warning2 = _interopRequireDefault(_warning);
+
+var _Toggle = __webpack_require__(9);
+
+var _Toggle2 = _interopRequireDefault(_Toggle);
+
+var _Nav = __webpack_require__(10);
+
+var _Nav2 = _interopRequireDefault(_Nav);
+
+var _NavItem = __webpack_require__(6);
+
+var _NavItem2 = _interopRequireDefault(_NavItem);
+
+var _NavIcon = __webpack_require__(7);
+
+var _NavIcon2 = _interopRequireDefault(_NavIcon);
+
+var _NavText = __webpack_require__(8);
+
+var _NavText2 = _interopRequireDefault(_NavText);
+
+var _index = __webpack_require__(3);
+
+var _index2 = _interopRequireDefault(_index);
+
+var _matchComponent = __webpack_require__(4);
+
+var _matchComponent2 = _interopRequireDefault(_matchComponent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var SideNav = (_temp2 = _class = function (_PureComponent) {
+    _inherits(SideNav, _PureComponent);
+
+    function SideNav() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
+        _classCallCheck(this, SideNav);
+
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = SideNav.__proto__ || Object.getPrototypeOf(SideNav)).call.apply(_ref, [this].concat(args))), _this), _this.isToggle = (0, _matchComponent2.default)(_Toggle2.default), _this.isNav = (0, _matchComponent2.default)(_Nav2.default), _this.child = {
+            toggle: null,
+            nav: null
+        }, _this.handleClick = function (event) {
+            if (_this.props.disabled) {
+                return;
+            }
+
+            _this.toggleExpanded('click');
+        }, _temp), _possibleConstructorReturn(_this, _ret);
+    }
+
+    _createClass(SideNav, [{
+        key: 'toggleExpanded',
+        value: function toggleExpanded(eventType) {
+            var expanded = !this.props.expanded;
+
+            if (this.props.onToggle) {
+                this.props.onToggle(expanded);
+            }
+        }
+    }, {
+        key: 'renderToggle',
+        value: function renderToggle(child, props) {
+            var _this2 = this;
+
+            var ref = function ref(c) {
+                _this2.child.toggle = c;
+            };
+
+            if (typeof child.ref === 'string') {
+                (0, _warning2.default)(false, 'String refs are not supported on `<SideNav.Toggle>` component. ' + 'To apply a ref to the component use the callback signature:\n\n ' + 'https://facebook.github.io/react/docs/more-about-refs.html#the-ref-callback-attribute');
+            } else {
+                ref = (0, _chainedFunction2.default)(child.ref, ref);
+            }
+
+            return (0, _react.cloneElement)(child, _extends({}, props, {
+                ref: ref,
+                onClick: (0, _chainedFunction2.default)(child.props.onClick, this.handleClick)
+            }));
+        }
+    }, {
+        key: 'renderNav',
+        value: function renderNav(child, _ref2) {
+            var _this3 = this;
+
+            var onSelect = _ref2.onSelect,
+                props = _objectWithoutProperties(_ref2, ['onSelect']);
+
+            var ref = function ref(c) {
+                _this3.child.nav = c;
+            };
+
+            if (typeof child.ref === 'string') {
+                (0, _warning2.default)(false, 'String refs are not supported on `<SideNav.Nav>` component. ' + 'To apply a ref to the component use the callback signature:\n\n ' + 'https://facebook.github.io/react/docs/more-about-refs.html#the-ref-callback-attribute');
+            } else {
+                ref = (0, _chainedFunction2.default)(child.ref, ref);
+            }
+
+            return (0, _react.cloneElement)(child, _extends({}, props, {
+                ref: ref,
+                onSelect: (0, _chainedFunction2.default)(child.props.onSelect, onSelect)
+            }));
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _cx,
+                _this4 = this;
+
+            var _props = this.props,
+                componentType = _props.componentType,
+                Component = _props.componentClass,
+                disabled = _props.disabled,
+                expanded = _props.expanded,
+                onToggle = _props.onToggle,
+                onSelect = _props.onSelect,
+                className = _props.className,
+                children = _props.children,
+                props = _objectWithoutProperties(_props, ['componentType', 'componentClass', 'disabled', 'expanded', 'onToggle', 'onSelect', 'className', 'children']);
+
+            return _react2.default.createElement(
+                Component,
+                _extends({}, props, {
+                    className: (0, _classnames2.default)(className, _index2.default.sidenav, (_cx = {}, _defineProperty(_cx, _index2.default.disabled, disabled), _defineProperty(_cx, _index2.default.expanded, expanded), _defineProperty(_cx, _index2.default.collapsed, !expanded), _cx))
+                }),
+                _react2.default.Children.map(children, function (child) {
+                    if (!_react2.default.isValidElement(child)) {
+                        return child;
+                    }
+
+                    if (_this4.isToggle(child)) {
+                        return _this4.renderToggle(child, {
+                            disabled: disabled, expanded: expanded
+                        });
+                    }
+
+                    if (_this4.isNav(child)) {
+                        return _this4.renderNav(child, {
+                            onSelect: onSelect, expanded: expanded
+                        });
+                    }
+
+                    return child;
+                })
+            );
+        }
+    }]);
+
+    return SideNav;
+}(_react.PureComponent), _class.propTypes = {
+    componentType: _propTypes2.default.any,
+
+    // A custom element for this component.
+    componentClass: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.func]),
+
+    // Whether the navigation toggle is disabled.
+    disabled: _propTypes2.default.bool,
+
+    // Whether the side navigation is expanded or collapsed.
+    expanded: _propTypes2.default.bool,
+
+    // Callback fired when toggling the side navigation between expanded and collapsed state.
+    onToggle: _propTypes2.default.func,
+
+    // Callback fired when a navigation item is selected.
+    onSelect: _propTypes2.default.func
+}, _class.defaultProps = {
+    componentClass: 'nav'
+}, _temp2);
+
+// For component matching
+
+SideNav.defaultProps.componentType = SideNav;
+
+var UncontrollableSideNav = (0, _uncontrollable.uncontrollable)(SideNav, {
+    // Define the pairs of prop/handlers you want to be uncontrollable
+    expanded: 'onToggle'
+});
+
+UncontrollableSideNav.Toggle = _Toggle2.default;
+UncontrollableSideNav.Nav = _Nav2.default;
+UncontrollableSideNav.NavItem = _NavItem2.default;
+UncontrollableSideNav.NavIcon = _NavIcon2.default;
+UncontrollableSideNav.NavText = _NavText2.default;
+
+exports.default = UncontrollableSideNav;
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports) {
+
+module.exports = __webpack_require__(/*! uncontrollable */ "./node_modules/uncontrollable/esm/index.js");
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports) {
+
+module.exports = __webpack_require__(/*! warning */ "./node_modules/@trendmicro/react-sidenav/node_modules/warning/browser.js");
+
+/***/ })
+/******/ ]);
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@trendmicro/react-sidenav/node_modules/warning/browser.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/@trendmicro/react-sidenav/node_modules/warning/browser.js ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright 2014-2015, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+
+
+/**
+ * Similar to invariant but only logs a warning if the condition is not met.
+ * This can be used to log issues in development environments in critical
+ * paths. Removing the logging code for production environments will keep the
+ * same logic and follow the same code paths.
+ */
+
+var warning = function() {};
+
+if (true) {
+  warning = function(condition, format, args) {
+    var len = arguments.length;
+    args = new Array(len > 2 ? len - 2 : 0);
+    for (var key = 2; key < len; key++) {
+      args[key - 2] = arguments[key];
+    }
+    if (format === undefined) {
+      throw new Error(
+        '`warning(condition, format, ...args)` requires a warning ' +
+        'message argument'
+      );
+    }
+
+    if (format.length < 10 || (/^[s\W]*$/).test(format)) {
+      throw new Error(
+        'The warning format should be able to uniquely identify this ' +
+        'warning. Please, use a more descriptive format than: ' + format
+      );
+    }
+
+    if (!condition) {
+      var argIndex = 0;
+      var message = 'Warning: ' +
+        format.replace(/%s/g, function() {
+          return args[argIndex++];
+        });
+      if (typeof console !== 'undefined') {
+        console.error(message);
+      }
+      try {
+        // This error was thrown as a convenience so that you can use this stack
+        // to find the callsite that caused this warning to fire.
+        throw new Error(message);
+      } catch(x) {}
+    }
+  };
+}
+
+module.exports = warning;
+
+
+/***/ }),
+
 /***/ "./node_modules/axios/index.js":
 /*!*************************************!*\
   !*** ./node_modules/axios/index.js ***!
@@ -9674,6 +10894,65 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/chained-function/lib/chained-function.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/chained-function/lib/chained-function.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+exports.default = function () {
+    for (var _len = arguments.length, funcs = Array(_len), _key = 0; _key < _len; _key++) {
+        funcs[_key] = arguments[_key];
+    }
+
+    return funcs.filter(function (func) {
+        return typeof func === 'function';
+    }).reduce(function (accumulator, func) {
+        if (accumulator === null) {
+            return func;
+        }
+
+        return function chainedFunction() {
+            for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+                args[_key2] = arguments[_key2];
+            }
+
+            accumulator.apply(this, args);
+            func.apply(this, args);
+        };
+    }, null);
+};
+
+/***/ }),
+
+/***/ "./node_modules/chained-function/lib/index.js":
+/*!****************************************************!*\
+  !*** ./node_modules/chained-function/lib/index.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _chainedFunction = __webpack_require__(/*! ./chained-function */ "./node_modules/chained-function/lib/chained-function.js");
+
+var _chainedFunction2 = _interopRequireDefault(_chainedFunction);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = _chainedFunction2.default;
+
+/***/ }),
+
 /***/ "./node_modules/classnames/index.js":
 /*!******************************************!*\
   !*** ./node_modules/classnames/index.js ***!
@@ -10668,6 +11947,25 @@ function factory(ReactComponent, isValidElement, ReactNoopUpdateQueue) {
 }
 
 module.exports = factory;
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/@trendmicro/react-sidenav/dist/react-sidenav.css":
+/*!*******************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/@trendmicro/react-sidenav/dist/react-sidenav.css ***!
+  \*******************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "/*! react-sidenav v0.5.0 | (c) 2020 Trend Micro Inc. | MIT | https://github.com/trendmicro-frontend/react-sidenav */\n.sidenav---sidenav---_2tBP {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 1006;\n  min-width: 64px;\n  background: #db3d44;\n  transition: min-width 0.2s;\n}\n.sidenav---sidenav---_2tBP.sidenav---collapsed---LQDEv .sidenav---sidenav-nav---3tvij .sidenav---sidenav-navitem---uwIJ- .sidenav---sidenav-subnav---1EN61 {\n  display: none;\n}\n.sidenav---sidenav---_2tBP.sidenav---collapsed---LQDEv .sidenav---sidenav-nav---3tvij .sidenav---sidenav-navitem---uwIJ-:hover > .sidenav---sidenav-subnav---1EN61 {\n  display: block;\n}\n.sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL {\n  min-width: 240px;\n}\n.sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- .sidenav---navicon---3gCRo + .sidenav---navtext---1AE_f {\n  visibility: visible;\n  opacity: 1;\n  -ms-filter: none;\n  -webkit-filter: none;\n          filter: none;\n  transition: opacity 0.2s linear;\n}\n.sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-.sidenav---expandable---3_dr7 > .sidenav---navitem---9uL5T {\n  cursor: pointer;\n}\n.sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL .sidenav---sidenav-subnav---1EN61 {\n  position: static;\n  border: none;\n  float: left;\n  clear: both;\n  width: 100%;\n  background: transparent;\n  overflow: hidden;\n  box-shadow: none;\n}\n.sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL .sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-.sidenav---expanded---1KdUL .sidenav---sidenav-subnav---1EN61 {\n  display: block;\n}\n.sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL .sidenav---sidenav-subnav---1EN61 {\n  display: none;\n}\n.sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL .sidenav---sidenav-subnav---1EN61 > .sidenav---sidenav-subnavitem---1cD47 {\n  position: relative;\n}\n.sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL .sidenav---sidenav-subnav---1EN61 > .sidenav---sidenav-subnavitem---1cD47::before {\n  content: \" \";\n  width: 100%;\n  height: 28px;\n  position: absolute;\n  top: 0;\n  z-index: -1;\n}\n.sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL .sidenav---sidenav-subnav---1EN61 > .sidenav---sidenav-subnavitem---1cD47:first-child {\n  display: none;\n}\n.sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL .sidenav---sidenav-subnav---1EN61 > .sidenav---sidenav-subnavitem---1cD47:hover::before {\n  background: #fff;\n  opacity: 0.15;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=15)\";\n  filter: alpha(opacity=15);\n}\n.sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL .sidenav---sidenav-subnav---1EN61 > .sidenav---sidenav-subnavitem---1cD47::before {\n  content: \" \";\n  width: 100%;\n  height: 28px;\n  position: absolute;\n  top: 0;\n  z-index: -1;\n}\n.sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL .sidenav---sidenav-subnav---1EN61 > .sidenav---sidenav-subnavitem---1cD47.sidenav---selected---1EK3y > .sidenav---navitem---9uL5T {\n  color: #fff;\n}\n.sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL .sidenav---sidenav-subnav---1EN61 > .sidenav---sidenav-subnavitem---1cD47.sidenav---selected---1EK3y > .sidenav---navitem---9uL5T::before {\n  content: \" \";\n  width: 2px;\n  height: 20px;\n  left: 10px;\n  top: 4px;\n  position: absolute;\n  border-left: 2px #fff solid;\n}\n.sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL .sidenav---sidenav-subnav---1EN61 > .sidenav---sidenav-subnavitem---1cD47:hover > .sidenav---navitem---9uL5T {\n  background: transparent;\n  color: #fff;\n}\n.sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL .sidenav---sidenav-subnav---1EN61 > .sidenav---sidenav-subnavitem---1cD47 > .sidenav---navitem---9uL5T {\n  color: #f9dcdd;\n  padding: 0 14px 0 20px;\n  line-height: 28px;\n}\n.sidenav---sidenav-toggle---1KRjR {\n  position: relative;\n  float: left;\n  width: 64px;\n  height: 64px;\n  padding: 0;\n  margin: 0;\n  background-color: transparent;\n  background-image: none;\n  border: 0;\n  border-radius: 0;\n  cursor: pointer;\n}\n.sidenav---sidenav-toggle---1KRjR:focus {\n  outline: none;\n}\n.sidenav---sidenav-toggle---1KRjR .sidenav---icon-bar---u1f02 {\n  display: block;\n  width: 20px;\n  height: 2px;\n  margin: 0 auto;\n  background-color: #fff;\n  border-radius: 1px;\n  transition: all 0.15s;\n  opacity: 0.7;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)\";\n  filter: alpha(opacity=70);\n}\n.sidenav---sidenav-toggle---1KRjR .sidenav---icon-bar---u1f02 + .sidenav---icon-bar---u1f02 {\n  margin-top: 4px;\n}\n.sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL .sidenav---sidenav-toggle---1KRjR .sidenav---icon-bar---u1f02 {\n  width: 25px;\n}\n.sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL .sidenav---sidenav-toggle---1KRjR .sidenav---icon-bar---u1f02:nth-child(1) {\n  transform: rotate(45deg);\n}\n.sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL .sidenav---sidenav-toggle---1KRjR .sidenav---icon-bar---u1f02:nth-child(2) {\n  opacity: 0;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)\";\n  filter: alpha(opacity=0);\n}\n.sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL .sidenav---sidenav-toggle---1KRjR .sidenav---icon-bar---u1f02:nth-child(3) {\n  margin-top: -8px;\n  transform: rotate(-45deg);\n}\n.sidenav---sidenav-nav---3tvij {\n  float: left;\n  padding: 0;\n  margin: 0;\n  clear: both;\n  list-style: none;\n  width: 100%;\n}\n.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- {\n  clear: both;\n  position: relative;\n}\n.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-.sidenav---highlighted---oUx9u > .sidenav---navitem---9uL5T {\n  cursor: default;\n}\n.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-:hover > .sidenav---navitem---9uL5T::after {\n  background: #fff;\n  opacity: 0.15;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=15)\";\n  filter: alpha(opacity=15);\n}\n.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-.sidenav---highlighted---oUx9u > .sidenav---navitem---9uL5T::after,\n.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-:hover.sidenav---highlighted---oUx9u > .sidenav---navitem---9uL5T::after {\n  background: #000;\n  opacity: 0.2;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)\";\n  filter: alpha(opacity=20);\n}\n.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-.sidenav---highlighted---oUx9u.sidenav---expanded---1KdUL > .sidenav---navitem---9uL5T::after,\n.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-:hover.sidenav---highlighted---oUx9u.sidenav---expanded---1KdUL > .sidenav---navitem---9uL5T::after {\n  background: #000;\n  opacity: 0.25;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=25)\";\n  filter: alpha(opacity=25);\n}\n.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-.sidenav---highlighted---oUx9u.sidenav---selected---1EK3y.sidenav---expanded---1KdUL > .sidenav---navitem---9uL5T::after,\n.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-:hover.sidenav---highlighted---oUx9u.sidenav---selected---1EK3y.sidenav---expanded---1KdUL > .sidenav---navitem---9uL5T::after {\n  background: #000;\n  opacity: 0.2;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)\";\n  filter: alpha(opacity=20);\n}\n.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-:hover > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo,\n.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-.sidenav---highlighted---oUx9u > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo {\n  opacity: 1;\n  -ms-filter: none;\n  -webkit-filter: none;\n          filter: none;\n}\n.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-:hover > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo,\n.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-:hover > .sidenav---navitem---9uL5T .sidenav---navtext---1AE_f,\n.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-.sidenav---highlighted---oUx9u > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo,\n.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-.sidenav---highlighted---oUx9u > .sidenav---navitem---9uL5T .sidenav---navtext---1AE_f {\n  color: #fff;\n}\n.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-:hover > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo > *,\n.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-:hover > .sidenav---navitem---9uL5T .sidenav---navtext---1AE_f > *,\n.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-.sidenav---highlighted---oUx9u > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo > *,\n.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ-.sidenav---highlighted---oUx9u > .sidenav---navitem---9uL5T .sidenav---navtext---1AE_f > * {\n  color: #fff;\n}\n.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T {\n  position: relative;\n  display: block;\n  line-height: 50px;\n  height: 50px;\n  white-space: nowrap;\n  text-decoration: none;\n  color: #fff;\n  font-size: 14px;\n  cursor: pointer;\n}\n.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T:focus {\n  outline: 0;\n}\n.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T::after {\n  content: '';\n  position: absolute;\n  width: 100%;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  background: #fff;\n  opacity: 0;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)\";\n  filter: alpha(opacity=0);\n  z-index: -1;\n}\n.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo,\n.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navtext---1AE_f {\n  color: #f9dcdd;\n}\n.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo > *,\n.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navtext---1AE_f > * {\n  color: #f9dcdd;\n}\n.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo {\n  display: block;\n  float: left;\n  width: 64px;\n  height: 50px;\n  margin-right: -6px;\n  vertical-align: top;\n  background-repeat: no-repeat;\n  background-position: center center;\n  background-color: transparent;\n  opacity: 0.7;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)\";\n  filter: alpha(opacity=70);\n  line-height: 50px;\n  text-align: center;\n}\n.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo + .sidenav---navtext---1AE_f {\n  width: 0;\n  visibility: hidden;\n  opacity: 0;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)\";\n  filter: alpha(opacity=0);\n  transition: visibility 0s 0.2s, opacity 0.2s linear;\n}\n.sidenav---sidenav-subnav---1EN61 {\n  min-width: 200px;\n  position: absolute;\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  top: 0;\n  left: 64px;\n  background: #fff;\n  border: 1px #bbb solid;\n  box-shadow: 2px 2px 10px rgba(0,0,0,0.15);\n}\n.sidenav---sidenav-subnav---1EN61 > .sidenav---sidenav-subnavitem---1cD47:first-child {\n  margin: 0 24px;\n  line-height: 48px;\n  border-bottom: 1px #ccc solid;\n  font-size: 14px;\n  font-weight: normal;\n}\n.sidenav---sidenav-subnav---1EN61 > .sidenav---sidenav-subnavitem---1cD47:nth-child(2) {\n  margin-top: 8px;\n}\n.sidenav---sidenav-subnav---1EN61 > .sidenav---sidenav-subnavitem---1cD47:last-child {\n  margin-bottom: 8px;\n}\n.sidenav---sidenav-subnav---1EN61 > .sidenav---sidenav-subnavitem---1cD47.sidenav---selected---1EK3y > .sidenav---navitem---9uL5T {\n  color: #db3d44;\n  font-weight: bold;\n  background: none;\n  cursor: default;\n}\n.sidenav---sidenav-subnav---1EN61 > .sidenav---sidenav-subnavitem---1cD47.sidenav---selected---1EK3y > .sidenav---navitem---9uL5T:hover {\n  background: #fff;\n}\n.sidenav---sidenav-subnav---1EN61 > .sidenav---sidenav-subnavitem---1cD47 > .sidenav---navitem---9uL5T {\n  display: block;\n  text-decoration: none;\n  color: #222;\n  font-size: 13px;\n  line-height: 30px;\n  padding: 0 24px;\n  cursor: pointer;\n}\n.sidenav---sidenav-subnav---1EN61 > .sidenav---sidenav-subnavitem---1cD47 > .sidenav---navitem---9uL5T:hover {\n  background: #eee;\n}\n.sidenav---sidenav-subnav---1EN61 > .sidenav---sidenav-subnavitem---1cD47 > .sidenav---navitem---9uL5T:focus {\n  outline: 0;\n}\n.sidenav---sidenav---_2tBP {\n  box-sizing: border-box;\n  line-height: 20px;\n}\n.sidenav---sidenav---_2tBP *,\n.sidenav---sidenav---_2tBP *:before,\n.sidenav---sidenav---_2tBP *:after {\n  box-sizing: inherit;\n}", ""]);
+
+// exports
 
 
 /***/ }),
@@ -99942,31 +101240,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "App", function() { return App; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
-/* harmony import */ var _helpers_history__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../helpers/history */ "./resources/js/src/helpers/history.js");
-/* harmony import */ var _routes_PrivateRoute__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../routes/PrivateRoute */ "./resources/js/src/routes/PrivateRoute.jsx");
-/* harmony import */ var _pages_home_HomePage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../pages/home/HomePage */ "./resources/js/src/pages/home/HomePage.jsx");
-/* harmony import */ var _pages_login_LoginPage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../pages/login/LoginPage */ "./resources/js/src/pages/login/LoginPage.jsx");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _redux_ducks_modalDucks__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../redux/ducks/modalDucks */ "./resources/js/src/redux/ducks/modalDucks.js");
-/* harmony import */ var react_loading_screen__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-loading-screen */ "./node_modules/react-loading-screen/dist/index.js");
-/* harmony import */ var react_loading_screen__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_loading_screen__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _pages_forgot_ForgotPage__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../pages/forgot/ForgotPage */ "./resources/js/src/pages/forgot/ForgotPage.jsx");
-/* harmony import */ var _pages_restore_RestorePage__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../pages/restore/RestorePage */ "./resources/js/src/pages/restore/RestorePage.jsx");
+/* harmony import */ var _helpers_history__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helpers/history */ "./resources/js/src/helpers/history.js");
+/* harmony import */ var _components_layouts_LayoutPublic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/layouts/LayoutPublic */ "./resources/js/src/components/layouts/LayoutPublic.jsx");
+/* harmony import */ var _components_layouts_LayoutPrivate__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/layouts/LayoutPrivate */ "./resources/js/src/components/layouts/LayoutPrivate.jsx");
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var _routes_routesPublic__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../routes/routesPublic */ "./resources/js/src/routes/routesPublic.js");
+/* harmony import */ var _routes_routesPrivate__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../routes/routesPrivate */ "./resources/js/src/routes/routesPrivate.js");
 /**
  * Created by Joel Valdivia
  * Date 05 Jun 2020
  * Description: Componente principal de la WebApp 
  */
-
-
-
  // importa el historial de la App
-
- // componente que verifica que el usuario esté autenticado
-
-
 
 
 
@@ -99977,91 +101262,57 @@ __webpack_require__.r(__webpack_exports__);
 // Encargara de renderizar los componentes hijos
 
 function App() {
-  // obtiene del store las opciones del modal
-  var _useSelector = Object(react_redux__WEBPACK_IMPORTED_MODULE_7__["useSelector"])(function (store) {
-    return store;
-  }),
-      modal = _useSelector.modal,
-      loading = _useSelector.loading;
-
-  var _useSelector2 = Object(react_redux__WEBPACK_IMPORTED_MODULE_7__["useSelector"])(function (store) {
-    return store.authenticate;
-  }),
-      isAuth = _useSelector2.isAuth,
-      user = _useSelector2.user;
-
-  var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_7__["useDispatch"])(); // oculta el modal
-
-  var hideModal = function hideModal() {
-    // dispara la accion que limpia el modal
-    dispatch(Object(_redux_ducks_modalDucks__WEBPACK_IMPORTED_MODULE_8__["modalClean"])());
-  };
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_loading_screen__WEBPACK_IMPORTED_MODULE_9___default.a, {
-    loading: loading.show,
-    bgColor: "#f1f1f1",
-    spinnerColor: "#9ee5f8",
-    textColor: "#676767",
-    text: loading.text
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Navbar"], {
-    className: "nav-bottom-border",
-    bg: "light",
-    variant: "light",
-    expand: "lg"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Navbar"].Brand, {
-    href: "https://klori.com.mx",
-    target: "_blank"
-  }, "Klori"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Navbar"].Toggle, null), isAuth && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Navbar"].Collapse, {
-    className: "justify-content-end"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Navbar"].Text, null, "Bienvenido: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, user.username)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Nav"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Nav"].Link, {
-    href: "/login"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "Salir"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "jumbotron"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-md-8 offset-md-2"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Router"], {
-    history: _helpers_history__WEBPACK_IMPORTED_MODULE_3__["history"]
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_routes_PrivateRoute__WEBPACK_IMPORTED_MODULE_4__["PrivateRoute"], {
-    exact: true,
-    path: "/",
-    component: _pages_home_HomePage__WEBPACK_IMPORTED_MODULE_5__["HomePage"]
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-    path: "/login",
-    component: _pages_login_LoginPage__WEBPACK_IMPORTED_MODULE_6__["LoginPage"]
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-    path: "/forgot",
-    component: _pages_forgot_ForgotPage__WEBPACK_IMPORTED_MODULE_10__["ForgotPage"]
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-    path: "/res",
-    component: _pages_restore_RestorePage__WEBPACK_IMPORTED_MODULE_11__["RestorePage"]
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router__WEBPACK_IMPORTED_MODULE_4__["Router"], {
+    history: _helpers_history__WEBPACK_IMPORTED_MODULE_1__["history"]
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router__WEBPACK_IMPORTED_MODULE_4__["Switch"], null, // recorre las rutas publicas para agregarlar al router
+  _.map(_routes_routesPublic__WEBPACK_IMPORTED_MODULE_5__["default"], function (route, key) {
+    var component = route.component,
+        path = route.path;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router__WEBPACK_IMPORTED_MODULE_4__["Route"], {
+      exact: true,
+      path: path,
+      key: key,
+      render: function render(route) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_layouts_LayoutPublic__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          Component: component,
+          route: route,
+          history: _helpers_history__WEBPACK_IMPORTED_MODULE_1__["history"]
+        });
+      }
+    });
+  }), // recorre las rutas privadas para agregarlar al router
+  _.map(_routes_routesPrivate__WEBPACK_IMPORTED_MODULE_6__["default"], function (route, key) {
+    var component = route.component,
+        path = route.path;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router__WEBPACK_IMPORTED_MODULE_4__["Route"], {
+      exact: true,
+      path: path,
+      key: key,
+      render: function render(route) {
+        return localStorage.getItem('user') ?
+        /*#__PURE__*/
+        // verifica ruta permitida y la agrga al router
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_layouts_LayoutPrivate__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          Component: component,
+          route: route,
+          history: _helpers_history__WEBPACK_IMPORTED_MODULE_1__["history"]
+        }) :
+        /*#__PURE__*/
+        // sino muestra el inicio de sesion
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router__WEBPACK_IMPORTED_MODULE_4__["Redirect"], {
+          to: {
+            pathname: '/login',
+            state: {
+              from: route.location
+            }
+          }
+        });
+      }
+    });
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router__WEBPACK_IMPORTED_MODULE_4__["Redirect"], {
     from: "*",
     to: "/"
-  })))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Modal"], {
-    className: modal.className,
-    show: modal.show,
-    backdrop: "static",
-    keyboard: false,
-    onHide: hideModal,
-    dialogClassName: "modal-90w",
-    size: modal.size,
-    "aria-labelledby": "example-custom-modal-styling-title"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Modal"].Header, {
-    closeButton: true
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Modal"].Title, {
-    id: "example-custom-modal-styling-title"
-  }, modal.title)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Modal"].Body, null, // verifica si tiene body y lo muestra
-  modal.body ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "text-center"
-  }, modal.body) : modal.form ? modal.form : null), // verifica si no tiene form y renderiza el boton de ocultar modal
-  !modal.form ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Modal"].Footer, {
-    className: "modal-footer-close"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
-    className: "btn bg-red gral-boton",
-    onClick: hideModal
-  }, "Cerrar")) : null)));
+  }))));
 } // Exporta App
 
 
@@ -100653,6 +101904,314 @@ function InputText(_ref) {
 
 /***/ }),
 
+/***/ "./resources/js/src/components/ModalCustom.jsx":
+/*!*****************************************************!*\
+  !*** ./resources/js/src/components/ModalCustom.jsx ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _redux_ducks_modalDucks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../redux/ducks/modalDucks */ "./resources/js/src/redux/ducks/modalDucks.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
+/**
+ * Created by Joel Valdivia
+ * Date 11 Jun 2020
+ * Description: NavBar
+ */
+
+
+
+
+
+function ModalCustom() {
+  var _useSelector = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(function (store) {
+    return store;
+  }),
+      modal = _useSelector.modal;
+
+  var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useDispatch"])(); // oculta el modal
+
+  var hideModal = function hideModal() {
+    // dispara la accion que limpia el modal
+    dispatch(Object(_redux_ducks_modalDucks__WEBPACK_IMPORTED_MODULE_2__["modalClean"])());
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Modal"], {
+    className: modal.className,
+    show: modal.show,
+    backdrop: "static",
+    keyboard: false,
+    onHide: hideModal,
+    dialogClassName: "modal-90w",
+    size: modal.size,
+    "aria-labelledby": "example-custom-modal-styling-title"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Modal"].Header, {
+    closeButton: true
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Modal"].Title, {
+    id: "example-custom-modal-styling-title"
+  }, modal.title)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Modal"].Body, null, // verifica si tiene body y lo muestra
+  modal.body ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "text-center"
+  }, modal.body) : modal.form ? modal.form : null), // verifica si no tiene form y renderiza el boton de ocultar modal
+  !modal.form ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Modal"].Footer, {
+    className: "modal-footer-close"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Button"], {
+    className: "btn bg-red gral-boton",
+    onClick: hideModal
+  }, "Cerrar")) : null);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (ModalCustom);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/NavBarCustom.jsx":
+/*!******************************************************!*\
+  !*** ./resources/js/src/components/NavBarCustom.jsx ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
+/**
+ * Created by Joel Valdivia
+ * Date 11 Jun 2020
+ * Description: NavBar
+ */
+
+
+
+
+function NavBarCustom() {
+  var _useSelector = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(function (store) {
+    return store.authenticate;
+  }),
+      isAuth = _useSelector.isAuth;
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Navbar"], {
+    className: "nav-bottom-border",
+    bg: "light",
+    variant: "light",
+    expand: "lg"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Navbar"].Brand, {
+    href: "https://klori.com.mx",
+    target: "_blank"
+  }, "Klori"), isAuth && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Nav"], {
+    className: "container-fluid-nav text-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Nav"].Link, null, "Consultorio Laura")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Navbar"].Toggle, {
+    "aria-controls": "responsive-navbar-nav"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Navbar"].Collapse, {
+    className: "justify-content-end"
+  }, isAuth && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Nav"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Nav"].Link, {
+    href: "/login"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "Salir")))));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (NavBarCustom);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/Sidebar.jsx":
+/*!*************************************************!*\
+  !*** ./resources/js/src/components/Sidebar.jsx ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _trendmicro_react_sidenav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @trendmicro/react-sidenav */ "./node_modules/@trendmicro/react-sidenav/lib/index.js");
+/* harmony import */ var _trendmicro_react_sidenav__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_trendmicro_react_sidenav__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _trendmicro_react_sidenav_dist_react_sidenav_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @trendmicro/react-sidenav/dist/react-sidenav.css */ "./node_modules/@trendmicro/react-sidenav/dist/react-sidenav.css");
+/* harmony import */ var _trendmicro_react_sidenav_dist_react_sidenav_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_trendmicro_react_sidenav_dist_react_sidenav_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/**
+ * Created by Joel Valdivia
+ * Date 11 Jun 2020
+ * Description: NavBar
+ */
+
+
+ // Be sure to include styles at some point, probably during your bootstraping
+
+ // import 'flag-icon-css/css/flag-icon.css';
+
+
+
+function Sidebar() {
+  var _useSelector = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(function (store) {
+    return store.authenticate;
+  }),
+      isAuth = _useSelector.isAuth;
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_trendmicro_react_sidenav__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    onSelect: function onSelect(selected) {// Add your code here
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_trendmicro_react_sidenav__WEBPACK_IMPORTED_MODULE_2___default.a.Toggle, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_trendmicro_react_sidenav__WEBPACK_IMPORTED_MODULE_2___default.a.Nav, {
+    defaultSelected: "home"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_trendmicro_react_sidenav__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+    eventKey: "home"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_trendmicro_react_sidenav__WEBPACK_IMPORTED_MODULE_2__["NavIcon"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-fw fa-home",
+    style: {
+      fontSize: '1.75em'
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_trendmicro_react_sidenav__WEBPACK_IMPORTED_MODULE_2__["NavText"], null, "Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_trendmicro_react_sidenav__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+    eventKey: "charts"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_trendmicro_react_sidenav__WEBPACK_IMPORTED_MODULE_2__["NavIcon"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-fw fa-users",
+    style: {
+      fontSize: '1.75em'
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_trendmicro_react_sidenav__WEBPACK_IMPORTED_MODULE_2__["NavText"], null, "Charts"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_trendmicro_react_sidenav__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+    eventKey: "charts/linechart"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_trendmicro_react_sidenav__WEBPACK_IMPORTED_MODULE_2__["NavText"], null, "Line Chart")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_trendmicro_react_sidenav__WEBPACK_IMPORTED_MODULE_2__["NavItem"], {
+    eventKey: "charts/barchart"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_trendmicro_react_sidenav__WEBPACK_IMPORTED_MODULE_2__["NavText"], null, "Bar Chart")))));
+} //   export default Sidebar
+
+
+/* harmony default export */ __webpack_exports__["default"] = (Sidebar);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/layouts/LayoutPrivate.jsx":
+/*!***************************************************************!*\
+  !*** ./resources/js/src/components/layouts/LayoutPrivate.jsx ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _NavBarCustom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../NavBarCustom */ "./resources/js/src/components/NavBarCustom.jsx");
+/* harmony import */ var _ModalCustom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../ModalCustom */ "./resources/js/src/components/ModalCustom.jsx");
+/* harmony import */ var react_loading_screen__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-loading-screen */ "./node_modules/react-loading-screen/dist/index.js");
+/* harmony import */ var react_loading_screen__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_loading_screen__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
+/* harmony import */ var _components_Sidebar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/Sidebar */ "./resources/js/src/components/Sidebar.jsx");
+/**
+ * Created by Joel Valdivia
+ * Date 11 Jun 2020
+ * Description: Layout privado aqui empieza a maquetar la interfaz
+ */
+
+
+
+
+
+
+
+
+function LayoutPrivate(_ref) {
+  var Component = _ref.Component,
+      route = _ref.route,
+      history = _ref.history;
+
+  // obtiene del store las opciones del modal
+  var _useSelector = Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["useSelector"])(function (store) {
+    return store;
+  }),
+      loading = _useSelector.loading;
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_loading_screen__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    loading: loading.show,
+    bgColor: "#f1f1f1",
+    spinnerColor: "#9ee5f8",
+    textColor: "#676767",
+    text: loading.text
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NavBarCustom__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Container"], {
+    fluid: true
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Row"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Col"], {
+    xs: 2,
+    id: "sidebar-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Sidebar__WEBPACK_IMPORTED_MODULE_6__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Col"], {
+    xs: 10,
+    id: "page-content-wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, {
+    route: route,
+    history: history
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ModalCustom__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (LayoutPrivate);
+
+/***/ }),
+
+/***/ "./resources/js/src/components/layouts/LayoutPublic.jsx":
+/*!**************************************************************!*\
+  !*** ./resources/js/src/components/layouts/LayoutPublic.jsx ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _NavBarCustom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../NavBarCustom */ "./resources/js/src/components/NavBarCustom.jsx");
+/* harmony import */ var _ModalCustom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../ModalCustom */ "./resources/js/src/components/ModalCustom.jsx");
+/* harmony import */ var react_loading_screen__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-loading-screen */ "./node_modules/react-loading-screen/dist/index.js");
+/* harmony import */ var react_loading_screen__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_loading_screen__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
+/**
+ * Created by Joel Valdivia
+ * Date 11 Jun 2020
+ * Description: Layout Para rutas publicas aqui va el diseño
+ */
+
+
+
+
+
+
+
+function LayoutPublic(_ref) {
+  var Component = _ref.Component,
+      route = _ref.route,
+      history = _ref.history;
+
+  // obtiene del store las opciones del modal
+  var _useSelector = Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["useSelector"])(function (store) {
+    return store;
+  }),
+      loading = _useSelector.loading;
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_loading_screen__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    loading: loading.show,
+    bgColor: "#f1f1f1",
+    spinnerColor: "#9ee5f8",
+    textColor: "#676767",
+    text: loading.text
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_NavBarCustom__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["Jumbotron"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-md-8 offset-md-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, {
+    route: route,
+    history: history
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ModalCustom__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (LayoutPublic);
+
+/***/ }),
+
 /***/ "./resources/js/src/config/api.config.js":
 /*!***********************************************!*\
   !*** ./resources/js/src/config/api.config.js ***!
@@ -100887,6 +102446,7 @@ function HomePage() {
   }),
       user = _useSelector.user;
 
+  console.log('sientra a home');
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-lg-8 offset-lg-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Bienvenido ", user.username, "!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Haz entrado al consultorio de Laura!!"));
@@ -101018,7 +102578,8 @@ function LoginPage(_ref) {
 
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    // dispara la accion de cerrar sesion al entrar al componente
+    console.log('entra a login'); // dispara la accion de cerrar sesion al entrar al componente
+
     dispatch(Object(_redux_ducks_loginDucks__WEBPACK_IMPORTED_MODULE_3__["logout"])());
   }, []); // envía la informacion hacia el servidor para realizar una autenticacion
 
@@ -101169,11 +102730,12 @@ function RestorePage(_ref) {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     // dispara la accion de cerrar sesion al entrar al componente
     dispatch(Object(_redux_ducks_loginDucks__WEBPACK_IMPORTED_MODULE_6__["logout"])());
+    var t = props.location.search.slice(3); //  if(!t)
+    //     history.push('/login');
   }, []); // envía la informacion hacia el servidor para realizar una autenticacion
 
   var onSubmit = function onSubmit(data) {
-    data.t = props.location.search.slice(3);
-    console.log(data); // muestra loading
+    data.t = props.location.search.slice(3); // muestra loading
 
     dispatch(Object(_redux_ducks_loadingDucks__WEBPACK_IMPORTED_MODULE_3__["loadingShow"])('Procesando solicitud para restablecer la contraseña...')); // dispara la accion que se encarga de la peticion Http
 
@@ -101754,59 +103316,57 @@ var loggerMiddleware = Object(redux_logger__WEBPACK_IMPORTED_MODULE_2__["createL
 
 /***/ }),
 
-/***/ "./resources/js/src/routes/PrivateRoute.jsx":
+/***/ "./resources/js/src/routes/routesPrivate.js":
 /*!**************************************************!*\
-  !*** ./resources/js/src/routes/PrivateRoute.jsx ***!
+  !*** ./resources/js/src/routes/routesPrivate.js ***!
   \**************************************************/
-/*! exports provided: PrivateRoute */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrivateRoute", function() { return PrivateRoute; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+/* harmony import */ var _pages_home_HomePage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pages/home/HomePage */ "./resources/js/src/pages/home/HomePage.jsx");
 
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+/* harmony default export */ __webpack_exports__["default"] = ({
+  Home: {
+    component: _pages_home_HomePage__WEBPACK_IMPORTED_MODULE_0__["HomePage"],
+    path: '/'
+  }
+});
 
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+/***/ }),
 
-/**
- * Created by Joel Valdivia
- * Date 05 Jun 2020
- * Description: Contenido de las funciones de Rutas privadas
- */
+/***/ "./resources/js/src/routes/routesPublic.js":
+/*!*************************************************!*\
+  !*** ./resources/js/src/routes/routesPublic.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _pages_home_HomePage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pages/home/HomePage */ "./resources/js/src/pages/home/HomePage.jsx");
+/* harmony import */ var _pages_login_LoginPage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/login/LoginPage */ "./resources/js/src/pages/login/LoginPage.jsx");
+/* harmony import */ var _pages_forgot_ForgotPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/forgot/ForgotPage */ "./resources/js/src/pages/forgot/ForgotPage.jsx");
+/* harmony import */ var _pages_restore_RestorePage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/restore/RestorePage */ "./resources/js/src/pages/restore/RestorePage.jsx");
 
 
-/**
- * Componente que se encarga de verificar si el usuario exite
- * para renderizar cualquier componente
- * @param {Object} component componente a renderizar
- */
 
-var PrivateRoute = function PrivateRoute(_ref) {
-  var Component = _ref.component,
-      rest = _objectWithoutProperties(_ref, ["component"]);
 
-  return (
-    /*#__PURE__*/
-    // Verifica si existe el usuario si no redirecciona a login
-    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], _extends({}, rest, {
-      render: function render(props) {
-        return localStorage.getItem('user') ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Component, props) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
-          to: {
-            pathname: '/login',
-            state: {
-              from: props.location
-            }
-          }
-        });
-      }
-    }))
-  );
-};
+/* harmony default export */ __webpack_exports__["default"] = ({
+  Login: {
+    component: _pages_login_LoginPage__WEBPACK_IMPORTED_MODULE_1__["LoginPage"],
+    path: '/login'
+  },
+  Forgot: {
+    component: _pages_forgot_ForgotPage__WEBPACK_IMPORTED_MODULE_2__["ForgotPage"],
+    path: '/forgot'
+  },
+  Restore: {
+    component: _pages_restore_RestorePage__WEBPACK_IMPORTED_MODULE_3__["RestorePage"],
+    path: '/res'
+  }
+});
 
 /***/ }),
 
