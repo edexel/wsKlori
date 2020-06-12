@@ -166,6 +166,58 @@
                     }
                 }
             }
+        },
+        "/auth/GetNewCodePlatform": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Genera codigo nuevo",
+                "operationId": "GetNewCodePlatform",
+                "requestBody": {
+                    "description": "Input data format",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "codigo": {
+                                        "description": "codigo de validación",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Codigo generado correctamente",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetNewCodePlatformResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Codigo incorrecto",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "authorization": []
+                    }
+                ]
+            }
         }
     },
     "components": {
@@ -235,6 +287,28 @@
                         "type": "boolean"
                     },
                     "message": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "GetNewCodePlatformResponse": {
+                "properties": {
+                    "status": {
+                        "type": "boolean"
+                    },
+                    "message": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "$ref": "#/components/schemas/GetNewCodePlatformResponseData"
+                    }
+                },
+                "type": "object"
+            },
+            "GetNewCodePlatformResponseData": {
+                "properties": {
+                    "code": {
                         "type": "string"
                     }
                 },
