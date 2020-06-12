@@ -36,6 +36,20 @@ Y también las dependencias de Javascript.
     $ sudo npm install
 
 
+¡¡¡ANTES NECESITAS TENER INSTALADO MYSQL Y CREAR UNA BASE DE DATOS!!!!
+Crea un archivo llamado ".env" similar al ".env-example" ahí asigna el nombre de base de datos, usuario y contraseña.
+
+Luego es necesario ejecutar las migraciones y los seeders para que tengas la base de datos
+
+    $ composer dump-autoload
+    $ php artisan migrate
+    $ php artisan db:seed
+
+Para Reiniciar la base de datos con un comando 
+
+    $ php artisan migrate:refresh --seed
+
+
 ## Ejecución
 
 Para ver el proyecto es necesario ejecutar el servidor PHP que tiene Laravel con el siguiente comando.
@@ -50,6 +64,10 @@ Para ver el proyecto y que detecte cambios en React es con el siguiente comando.
 
     $ npm run watch-poll
 
+Ahora podrás iniciar sesión con el usuario 
+    
+    usuario: AdminUserName
+    contraseña: test123
 
 ## License
 
