@@ -17,7 +17,7 @@ class InfoUsuario extends Migration
             $table->id();
             $table->foreignId('idUsuario')->constrained('usuario');
             $table->string('nombre', 100);
-            $table->string('apellidos', 100);
+            $table->string('apellido', 100);
             $table->string('genero', 10);
             $table->decimal('talla', 6, 2);
             $table->smallInteger('edad');
