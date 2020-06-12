@@ -27,7 +27,7 @@ function Sidebar() {
             <SideNav.Nav defaultSelected="home">
                 <NavItem eventKey="home">
                     <NavIcon>
-                        <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
+                        <i className="fa fa-fw fa-home"  />
                     </NavIcon>
                     <NavText>
                         Home
@@ -35,7 +35,7 @@ function Sidebar() {
                 </NavItem>
                 <NavItem eventKey="charts">
                     <NavIcon>
-                        <i className="fa fa-fw fa-users" style={{ fontSize: '1.75em' }} />
+                        <i className="fa fa-fw fa-users"  />
                     </NavIcon>
                     <NavText>
                         Charts

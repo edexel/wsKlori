@@ -10,7 +10,7 @@ import ModalCustom from "../ModalCustom";
 import LoadingScreen from 'react-loading-screen';
 import { useSelector } from "react-redux";
 import { Container, Row, Col } from "react-bootstrap";
-import Sidebar  from "../../components/Sidebar";
+import Sidebar from "../../components/Sidebar";
 
 function LayoutPrivate({ Component, route, history }) {
 
@@ -25,18 +25,12 @@ function LayoutPrivate({ Component, route, history }) {
             textColor='#676767'
             text={loading.text}
         >
-            <NavBarCustom />
-            <Container fluid>
-                <Row>
-                    <Col xs={2} id="sidebar-wrapper">
-                    <Sidebar/>
-                    </Col>
-                    <Col xs={10} id="page-content-wrapper">
-                        <Component route={route} history={history} />
-                    </Col>
-                </Row>
+            {/* <Container fluid> */}
+            <Sidebar />
+            <NavBarCustom classCss={'private-nav'} />
+            <Component route={route} history={history} />
 
-            </Container>
+            {/* </Container> */}
             {/* BEGIN Modal global de la APP */}
             <ModalCustom />
             {/* END Modal global de la APP */}
