@@ -23,4 +23,16 @@ class JwtToken
         // se puede usar para decodificar el token en un futuro.
         return JWT::encode($payload, env('JWT_SECRET'));
     }
+
+    /**
+     * Decodifica el token y regresa los datos del usuario
+     *
+     * @param  string $token Token generado por JwtToken::generar();
+     * @return [type]        [description]
+     */
+    public static function getDataToken($token)
+    {
+        $tokenDecode = JWT::decode($token, env('JWT_SECRET'), array('HS256'));
+        return $tokenDecode->sub;
+    }
 }

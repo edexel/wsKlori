@@ -23,7 +23,7 @@ function LayoutPublic({ Component, route, history }) {
             textColor='#676767'
             text={loading.text}
         >
-            <NavBarCustom />
+            <NavBarCustom classCss={'public-nav'} />
             <Jumbotron>
                 <div className="col-md-8 offset-md-2">
                     <Component route={route} history={history}/>
