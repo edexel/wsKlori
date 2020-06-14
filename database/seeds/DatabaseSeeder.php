@@ -13,7 +13,18 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             UsuarioSeeder::class,
-            InfoUsuarioSeeder::class
+            InfoUsuarioSeeder::class,
+            UsuarioSesionSeeder::class,
+            PlanSesionSeeder::class,
+            RutinaActividadSeeder::class,
+            RutinaSesionSeeder::class,
+            RecetarioSeeder::class,
+            PlanRecetarioSeeder::class,
+            AlimentoSeeder::class,
+            GrupoAlimenticioSeeder::class,
+            EquivalenciaSeeder::class,
+            RacionesDiariasPlanSeeder::class,
+            DispositivoUsuarioSeeder::class,
         ]);
     }
 }

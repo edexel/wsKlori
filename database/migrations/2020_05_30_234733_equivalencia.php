@@ -21,9 +21,9 @@ class Equivalencia extends Migration
             $table->decimal('kcal', 8, 2);
             $table->string('descripcion', 100);
             $table->boolean('activo');
-            $table->timestamp('created_at', 0)->nullable();
-            $table->timestamp('updated_at', 0)->nullable();
-            $table->timestamp('deleted_at', 0)->nullable();
+            $table->dateTime('created_at', 0)->nullable();
+            $table->dateTime('updated_at', 0)->nullable();
+            $table->dateTime('deleted_at', 0)->nullable();
         });
     }
 
