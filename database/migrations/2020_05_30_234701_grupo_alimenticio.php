@@ -16,6 +16,9 @@ class GrupoAlimenticio extends Migration
         Schema::create('grupo_alimenticio', function (Blueprint $table) {
             $table->id();
             $table->string('nombre', 50);
+            $table->dateTime('created_at', 0)->nullable();
+            $table->dateTime('updated_at', 0)->nullable();
+            $table->dateTime('deleted_at', 0)->nullable();
         });
     }
 

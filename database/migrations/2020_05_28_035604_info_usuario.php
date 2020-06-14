@@ -29,9 +29,9 @@ class InfoUsuario extends Migration
             $table->string('medicamentos', 500);
             $table->string('objetivos', 500);
             $table->string('observaciones', 500);
-            $table->timestamp('created_at', 0)->nullable();
-            $table->timestamp('updated_at', 0)->nullable();
-            $table->timestamp('deleted_at', 0)->nullable();
+            $table->dateTime('created_at', 0)->nullable();
+            $table->dateTime('updated_at', 0)->nullable();
+            $table->dateTime('deleted_at', 0)->nullable();
         });
     }
 

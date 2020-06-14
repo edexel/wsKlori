@@ -20,7 +20,10 @@ class DispositivoUsuario extends Migration
             $table->string('plataforma', 15);
             $table->string('uuid', 100);
             $table->string('codigo', 15);
-            $table->timestamp('fechaAlta', 0);
+            $table->dateTime('fechaAlta', 0);
+            $table->dateTime('created_at', 0)->nullable();
+            $table->dateTime('updated_at', 0)->nullable();
+            $table->dateTime('deleted_at', 0)->nullable();
         });
     }
 

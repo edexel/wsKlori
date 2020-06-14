@@ -20,6 +20,9 @@ class RacionesDiariasPlan extends Migration
             $table->smallInteger('caloriasTotales');
             $table->smallInteger('racionDiaria');
             $table->decimal('racionDiariaKcal', 6, 2);
+            $table->dateTime('created_at', 0)->nullable();
+            $table->dateTime('updated_at', 0)->nullable();
+            $table->dateTime('deleted_at', 0)->nullable();
         });
     }
 

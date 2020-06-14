@@ -30,9 +30,9 @@ class UsuarioSesion extends Migration
             $table->decimal('medidaPcse', 6, 2);
             $table->decimal('medidaPcsi', 6, 2);
             $table->string('observaciones', 255);
-            $table->timestamp('created_at', 0)->nullable();
-            $table->timestamp('updated_at', 0)->nullable();
-            $table->timestamp('deleted_at', 0)->nullable();
+            $table->dateTime('created_at', 0)->nullable();
+            $table->dateTime('updated_at', 0)->nullable();
+            $table->dateTime('deleted_at', 0)->nullable();
         });
     }
 
