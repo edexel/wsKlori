@@ -29,7 +29,7 @@
 }
 /* cuando una sección está activa en la página */
 .sidenav---selected---1EK3y.sidenav---highlighted---oUx9u {
-    border-left: 3px solid #e17055;
+    border-left: 3px solid $green;
     font-weight: bold;
     color: $white;
     background-color: '#0f0f0f';
@@ -52,7 +52,7 @@
     align-items: center;
 }
 .sidenav---navitem---9uL5T:hover, .sidenav---sidenav-subnav---1EN61 > .sidenav---sidenav-subnavitem---1cD47 > .sidenav---navitem---9uL5T:hover {
-    background-color: #e17055!important;
+    background-color: $green!important;
 }
 .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo > * {
     color: $white !important;
