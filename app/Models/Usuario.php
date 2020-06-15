@@ -3,25 +3,26 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * @property int $id
+ * @property int $idUsuario
  * @property string $username
- * @property string $email
- * @property string $password
  * @property string $descripcion
- * @property string $admin
+ * @property string $password
+ * @property string $email
+ * @property boolean $admin
  * @property string $tokenRecover
  * @property integer $activo
+ * @property string $ultima_conexion
  * @property string $created_at
  * @property string $updated_at
  * @property string $deleted_at
+ * @property DipositivoUsuario[] $dipositivoUsuarios
+ * @property InfoUsuario $infoUsuario
+ * @property UsuarioSesion[] $usuarioSesions
  */
 class Usuario extends Model
 {
-    use SoftDeletes;
-
     /**
      * The table associated with the model.
      * 
@@ -34,11 +35,34 @@ class Usuario extends Model
      * 
      * @var string
      */
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'idUsuario';
 
     /**
      * @var array
      */
-    protected $fillable = ['username', 'email', 'password', 'descripcion', 'admin', 'tokenRecover', 'activo', 'created_at', 'updated_at', 'deleted_at'];
+    protected $fillable = ['username', 'descripcion', 'password', 'email', 'admin', 'tokenRecover', 'activo', 'ultima_conexion', 'created_at', 'updated_at', 'deleted_at'];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function dipositivoUsuarios()
+    {
+        return $this->hasMany('App\DipositivoUsuario', 'idUsuario', 'idUsuario');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function infoUsuario()
+    {
+        return $this->hasOne('App\InfoUsuario', 'idUsuario', 'idUsuario');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function usuarioSesions()
+    {
+        return $this->hasMany('App\UsuarioSesion', 'idUsuario', 'idUsuario');
+    }
 }
