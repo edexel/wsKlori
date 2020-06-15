@@ -6,6 +6,7 @@ namespace App\Business;
 use App\Models\Usuario;
 // Utils
 use App\Utils\JwtToken;
+use Illuminate\Support\Facades\Hash;
 
 //Models
 
@@ -17,30 +18,29 @@ use App\Utils\JwtToken;
  */
 class UsuarioBusiness
 {
-    public static function fnLoginUser($request)
+    public static function fnLoginUser($username,$password)
     {
-
+        
         // Encuentra usuario de la base de datos
-        $user = Usuario::where('email', $request->input('username'))->first();
-
+        $user = Usuario::where('email', $username)->first();
+  
         //verifica si el usuario existe con email
         if (!$user)
-            $user = Usuario::where('username', $request->input('username'))->first();
+            $user = Usuario::where('username', $username)->first();
         
-
+       
         // verifica si el usuario existe sino responde con error
         if (!$user) 
             return false;
         
 
         // Verifica la contraseña y genera un token sino responde con error
-        if (!Hash::check($request->input('password'), $user->password)) 
+        if (!Hash::check($password, $user->password)) 
             return false;
         
-
         // Se actualiza la última vez que inició sesión el usuario
-        $user->lastSession = date("Y-m-d H:i:s");
-        $user->save();
+        $user->ultima_conexion = date("Y-m-d H:i:s");
+        $user->push();
 
         // El usuario es válido. se asigna a el resultado el token.
         $user['token'] = JwtToken::create($user);
