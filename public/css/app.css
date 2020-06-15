@@ -17026,6 +17026,27 @@ h2 {
   font-weight: bold;
 }
 
+.main {
+  padding: 2em 3em;
+  color: #474747;
+  margin-left: 64px;
+}
+
+.main .titulo-vista {
+  font-weight: normal;
+  font-size: 32px;
+}
+
+@media screen and (max-width: 600px) {
+  .main {
+    padding: 2em 1em;
+  }
+
+  .main h1 {
+    font-size: 24px;
+  }
+}
+
 #sidebar-wrapper .sidebar-heading {
   padding: 0.875rem 1.25rem;
   font-size: 1.2rem;
@@ -17065,7 +17086,7 @@ h2 {
 /* cuando una sección está activa en la página */
 
 .sidenav---selected---1EK3y.sidenav---highlighted---oUx9u {
-  border-left: 3px solid #e17055;
+  border-left: 3px solid #38c172;
   font-weight: bold;
   color: #f8fafc;
   background-color: "#0f0f0f";
@@ -17094,7 +17115,7 @@ h2 {
 
 .sidenav---navitem---9uL5T:hover,
 .sidenav---sidenav-subnav---1EN61 > .sidenav---sidenav-subnavitem---1cD47 > .sidenav---navitem---9uL5T:hover {
-  background-color: #e17055 !important;
+  background-color: #38c172 !important;
 }
 
 .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo > * {
@@ -17156,5 +17177,19 @@ img.logo-white {
   .private-nav {
     padding: 0.2em 0em 0 5em;
   }
+}
+
+.title-weeks {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: row;
+  border-bottom: 1px solid #e2e2e2;
+  margin: 30px 0 15px 0;
+}
+
+.title-weeks p {
+  width: 40px;
+  margin-bottom: 15px;
 }
 

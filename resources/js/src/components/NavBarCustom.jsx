@@ -19,7 +19,7 @@ function NavBarCustom({ classCss}) {
             <Link to="/">
                 {/* <img className="logo-white" src='/images/logo/logo_simbolo.png' alt="Logo" /> */}
                 {/* <i className="fa fa-fw fa-home"  /> */}
-                <i class="fas fa-fire"></i>
+                <i className="fas fa-fire" style={{color: '#38c172'}}></i>
 
             </Link>
             {

@@ -28,7 +28,10 @@ function LayoutPrivate({ Component, route, history }) {
             {/* <Container fluid> */}
             <Sidebar />
             <NavBarCustom classCss={'private-nav'} />
-            <Component route={route} history={history} />
+            
+            <div className="main">
+                <Component route={route} history={history} />
+            </div>
 
             {/* </Container> */}
             {/* BEGIN Modal global de la APP */}
