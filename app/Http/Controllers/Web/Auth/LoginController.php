@@ -8,16 +8,11 @@ use App\Http\Controllers\Controller;
 // responses
 use App\Http\Responses\Response as ResponseJson;
 use Symfony\Component\HttpFoundation\Response;
-// Facades
-use Illuminate\Support\Facades\Hash;
-// Utils
-use App\Utils\JwtToken;
-//Models
-use App\Models\Usuario;
-// requests
 use App\Http\Requests\Web\Auth\LoginRequest;
 // resource
 use App\Http\Resources\Web\Auth\LoginResource;
+   //Business
+   use App\Business\UsuarioBusiness;
 
 
 /**
@@ -45,14 +40,15 @@ class LoginController extends Controller
     public function __invoke(LoginRequest $request)
     {
 
-        // Encuentra usuario de la base de datos
-         $user = Usuario::where('email', $request->input('username'))->first();
+        // // Encuentra usuario de la base de datos
+        //  $user = Usuario::where('email', $request->input('username'))->first();
         
-        //verifica si el usuario existe con email
-        if(!$user)
-            // Si no encuentra su email busca por username
-            $user = Usuario::where('username', $request->input('username'))->first();
+        // //verifica si el usuario existe con email
+        // if(!$user)
+        //     // Si no encuentra su email busca por username
+        //     $user = Usuario::where('username', $request->input('username'))->first();
 
+        $user = UsuarioBusiness::fnLoginUser($request);
         // se define la respuesta de error
         $result = $this->result->build($this->STATUS_ERROR, $this->NO_RESULT, $this->NO_TOTAL, $this->message);
        
@@ -60,16 +56,16 @@ class LoginController extends Controller
         if (!$user)
              return response()->json($result,  Response::HTTP_UNAUTHORIZED);        
 
-        // Verifica la contraseña y genera un token sino responde con error
-        if (!Hash::check($request->input('password'), $user->password))
-            return response()->json($result, Response::HTTP_UNAUTHORIZED);
+        // // Verifica la contraseña y genera un token sino responde con error
+        // if (!Hash::check($request->input('password'), $user->password))
+        //     return response()->json($result, Response::HTTP_UNAUTHORIZED);
          
         // // Se actualiza la última vez que inició sesión el usuario
         // $user->lastSession = date("Y-m-d H:i:s");
         // $user->save();
 
         // El usuario es válido. se asigna a el resultado el token.
-        $user['token'] =  JwtToken::create($user);
+        // $user['token'] =  JwtToken::create($user);
       
         // Resultado mappeado
         $result = new LoginResource($user);
