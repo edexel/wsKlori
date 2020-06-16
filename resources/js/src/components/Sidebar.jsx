@@ -27,29 +27,23 @@ function Sidebar() {
             <SideNav.Nav defaultSelected="home">
                 <NavItem eventKey="home">
                     <NavIcon>
-                        <i className="fa fa-fw fa-home"  />
+                        <Link to={'/home'}>
+                            <i className="fa fa-fw fa-home" />
+                        </Link>
                     </NavIcon>
                     <NavText>
-                        Home
+                        Inicio
             </NavText>
                 </NavItem>
-                <NavItem eventKey="charts">
+                <NavItem eventKey="users">
                     <NavIcon>
-                        <i className="fa fa-fw fa-users"  />
+                        <Link to={'/users'}>
+                            <i className="fa fa-fw fa-users" />
+                        </Link>
                     </NavIcon>
                     <NavText>
-                        Charts
+                            Usuarios
                     </NavText>
-                    <NavItem eventKey="charts/linechart">
-                        <NavText>
-                            Line Chart
-                        </NavText>
-                    </NavItem>
-                    <NavItem eventKey="charts/barchart">
-                        <NavText>
-                            Bar Chart
-                        </NavText>
-                    </NavItem>
                 </NavItem>
             </SideNav.Nav>
         </SideNav>
