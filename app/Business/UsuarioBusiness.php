@@ -39,7 +39,7 @@ class UsuarioBusiness
             return false;
         
         // Se actualiza la última vez que inició sesión el usuario
-        $user->ultima_conexion = date("Y-m-d H:i:s");
+        $user->ultimaConexion = date("Y-m-d H:i:s");
         $user->push();
 
         // El usuario es válido. se asigna a el resultado el token.

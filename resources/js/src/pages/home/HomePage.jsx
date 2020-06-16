@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import Calendar from 'react-calendar';
-import { useState } from 'react';
+
+import { Calendar } from '../../components/Calendar';
+
+
 
 /**
  * Created by Joel Valdivia
@@ -14,15 +16,19 @@ function HomePage() {
     // obtiene usuario del store
     const { user } = useSelector(store => store.authenticate);
 
-    const [dateNow, onChange] = useState(new Date());
+    const onChange = (startDate, endDate) => {
+        console.log(startDate, endDate)
+    }
 
     return (
         <div className="common-container dashboard-container">
-            <Calendar
+            <Calendar onChange={onChange}/>
+           
+            {/* <Calendar
                 onChange={onChange}
                 // value={dateNow}
                 // allowPartialRange={true}
-            />
+            /> */}
             <h1>Bienvenido {user.username}!</h1>
             <p>Haz entrado al consultorio de Laura!!</p>
         </div>

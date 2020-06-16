@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Web\Auth;
+namespace App\Http\Controllers\Web\User;
 
 // extends
 use App\Http\Controllers\Controller;

@@ -29,4 +29,5 @@ Route::get('/clear', function() {
 $router->group(['prefix' => 'v1/web'], function () use ($router) {
     // rutas de recursos de acceso
     require(__DIR__ . '/web/auth.php');
+    require(__DIR__ . '/web/users.php');
 });
