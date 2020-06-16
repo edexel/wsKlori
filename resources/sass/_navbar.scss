@@ -48,6 +48,14 @@ img.logo-white {
         padding: 0.2em;
     }
     .private-nav {
-        padding: 0.2em 0em 0 5em;
+        padding: 0.2em 3em 0em 5em;
+    }
+}
+@media only screen and (max-width: 640px) {
+    .public-nav {
+        padding: 0.2em;
+    }
+    .private-nav {
+        padding: 0.2em 0.3em 0em 5em;
     }
 }

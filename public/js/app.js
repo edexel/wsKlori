@@ -173,36 +173,6 @@ module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/
 
 /***/ }),
 
-/***/ "./node_modules/@lls/react-light-calendar/dist/index.css":
-/*!***************************************************************!*\
-  !*** ./node_modules/@lls/react-light-calendar/dist/index.css ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../css-loader??ref--6-1!../../../postcss-loader/src??ref--6-2!./index.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/@lls/react-light-calendar/dist/index.css");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
 /***/ "./node_modules/@lls/react-light-calendar/dist/index.js":
 /*!**************************************************************!*\
   !*** ./node_modules/@lls/react-light-calendar/dist/index.js ***!
@@ -11990,25 +11960,6 @@ function factory(ReactComponent, isValidElement, ReactNoopUpdateQueue) {
 }
 
 module.exports = factory;
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/@lls/react-light-calendar/dist/index.css":
-/*!***********************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/@lls/react-light-calendar/dist/index.css ***!
-  \***********************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto);", ""]);
-
-// module
-exports.push([module.i, ".rlc-calendar{font-family:Roboto,sans-serif;width:280px;border:1px solid #e5e5e5;box-shadow:0 0 6px -4px rgba(0,0,0,.75);color:#565656}.rlc-days,.rlc-days-label{width:100%}.rlc-days-label{text-transform:uppercase;font-size:10px}.rlc-days{font-size:12px}.rlc-day,.rlc-day-label{display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-justify-content:space-around;-ms-flex-pack:distribute;justify-content:space-around;-webkit-align-items:center;-ms-flex-align:center;align-items:center;width:40px;height:40px;text-align:center;box-sizing:border-box}.rlc-day{cursor:pointer;-webkit-user-select:none;-ms-user-select:none;user-select:none}.rlc-day-today{color:#fff;background-color:red;border-radius:50%}.rlc-day-default:hover{background-color:#f3f3f3;color:#868686;border-radius:50%}.rlc-day-out-of-month{color:#d2d2d2}.rlc-day-end-selection,.rlc-day-inside-selection,.rlc-day-selected,.rlc-day-start-selection{color:#fff;background-color:#40aec7}.rlc-day-end-selection:hover,.rlc-day-inside-selection:hover,.rlc-day-selected:hover,.rlc-day-start-selection:hover{background-color:#2391ab}.rlc-day-selected{border-radius:50%}.rlc-day-start-selection{border-radius:50% 0 0 50%}.rlc-day-end-selection{border-radius:0 50% 50% 0}.rlc-day-inside-selection{border-radius:0}.rlc-day-disabled{border-radius:0;cursor:default;color:#cecece}.rlc-day-disabled,.rlc-day-disabled:hover{background-color:#f5f5f5}.rlc-month-and-year-wrapper{display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;border-bottom:1px solid #e5e5e5;border-top:1px solid #e5e5e5;padding:10px 0}.rlc-month-and-year{-webkit-flex-grow:2;-ms-flex-positive:2;flex-grow:2;text-align:center;text-transform:uppercase;font-size:14px}.rlc-navigation-button-wrapper{display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-justify-content:space-around;-ms-flex-pack:distribute;justify-content:space-around;-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1;-webkit-user-select:none;-ms-user-select:none;user-select:none}.rlc-navigation-button{cursor:pointer}.rlc-details{display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between}.rlc-date-details-wrapper{margin:5px 0}.rlc-date-details,.rlc-date-details-wrapper{-webkit-flex-grow:1;-ms-flex-positive:1;flex-grow:1}.rlc-date-details{display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-ms-flex-align:center;align-items:center}.rlc-date-number{font-size:35px;padding:0 5px}.rlc-date-day-month-year{font-size:12px}.rlc-detail-day{margin-bottom:2px}.rlc-detail-month-year{text-transform:uppercase}.rlc-date-time-selects{padding:0 10px}.rlc-separator{margin:0 5px}.rlc-day-marked:after{content:\"\";width:5px;height:5px;border-radius:50%;background-color:red;margin-top:11.5px;z-index:1;position:absolute}.rlc-day-today.rlc-day-marked:after{background-color:#fff}", ""]);
-
-// exports
 
 
 /***/ }),
@@ -102269,9 +102220,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _lls_react_light_calendar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @lls/react-light-calendar */ "./node_modules/@lls/react-light-calendar/dist/index.js");
 /* harmony import */ var _lls_react_light_calendar__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_lls_react_light_calendar__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _lls_react_light_calendar_dist_index_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @lls/react-light-calendar/dist/index.css */ "./node_modules/@lls/react-light-calendar/dist/index.css");
-/* harmony import */ var _lls_react_light_calendar_dist_index_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_lls_react_light_calendar_dist_index_css__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _helpers_dateCustom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../helpers/dateCustom */ "./resources/js/src/helpers/dateCustom.js");
+/* harmony import */ var _helpers_dateCustom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../helpers/dateCustom */ "./resources/js/src/helpers/dateCustom.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -102289,8 +102238,6 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 
-
- // Default Style
 
 
 var DAY_LABELS = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
@@ -102314,13 +102261,12 @@ function Calendar(_ref) {
       _useState4 = _slicedToArray(_useState3, 2),
       endDate = _useState4[0],
       setEndDate = _useState4[1];
-
-  console.log(new Date(startDate));
   /**
    * Detecta el cambio en las fechas y trata el resultado
    * @param {Date} start fecha inicial del calendario
    * @param {Date} end fecha final del calendario
    */
+
 
   var onChangeDate = function onChangeDate(start, end) {
     // convierte el dato en fecha
@@ -102329,9 +102275,9 @@ function Calendar(_ref) {
     var endDateTime = new Date(end);
     console.log(startDateTime); // regresa fecha con formato yyyy-mm-dd
 
-    var startString = Object(_helpers_dateCustom__WEBPACK_IMPORTED_MODULE_3__["getFormattedDate"])(startDateTime); // regresa fecha con formato yyyy-mm-dd
+    var startString = Object(_helpers_dateCustom__WEBPACK_IMPORTED_MODULE_2__["getFormattedDate"])(startDateTime); // regresa fecha con formato yyyy-mm-dd
 
-    var endString = end !== null ? Object(_helpers_dateCustom__WEBPACK_IMPORTED_MODULE_3__["getFormattedDate"])(endDateTime) : null; // callback del componente padre
+    var endString = end !== null ? Object(_helpers_dateCustom__WEBPACK_IMPORTED_MODULE_2__["getFormattedDate"])(endDateTime) : null; // callback del componente padre
 
     onChange(startString, endString); // setter de datos de fecha inicial y final
 

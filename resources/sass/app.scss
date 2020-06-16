@@ -13,6 +13,9 @@
 @import '~@fortawesome/fontawesome-free/scss/solid';
 @import '~@fortawesome/fontawesome-free/scss/brands';
 
+// Calendar
+@import '~@lls/react-light-calendar/dist/index.css'; // Default Style
+
 @import 'login';
 @import 'global';
 @import 'modal';

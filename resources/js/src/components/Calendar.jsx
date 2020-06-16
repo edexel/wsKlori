@@ -1,7 +1,6 @@
 
 import React, { useState } from 'react';
 import ReactLightCalendar from '@lls/react-light-calendar'
-import '@lls/react-light-calendar/dist/index.css' // Default Style
 import { getFormattedDate } from '../helpers/dateCustom';
 
 
@@ -18,7 +17,6 @@ function Calendar({ onChange, ...props }) {
     const [startDate, setStartDate] = useState(new Date().getTime());
     const [endDate, setEndDate] = useState(null);
 
-    console.log(new Date(startDate))
     /**
      * Detecta el cambio en las fechas y trata el resultado
      * @param {Date} start fecha inicial del calendario
