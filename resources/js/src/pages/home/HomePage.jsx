@@ -23,14 +23,6 @@ function HomePage() {
     return (
         <div className="common-container dashboard-container">
             <Calendar onChange={onChange}/>
-           
-            {/* <Calendar
-                onChange={onChange}
-                // value={dateNow}
-                // allowPartialRange={true}
-            /> */}
-            <h1>Bienvenido {user.username}!</h1>
-            <p>Haz entrado al consultorio de Laura!!</p>
         </div>
     );
 }

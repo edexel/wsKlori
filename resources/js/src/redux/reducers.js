@@ -14,6 +14,7 @@ import modalReducer from './ducks/modalDucks';
 import loadingReducer from './ducks/loadingDucks';
 import forgotReducer from './ducks/forgotDucks';
 import recoverReducer from './ducks/recoverDucks';
+import tableReducer from './ducks/tableDucks';
 // END Reductores Creados
 
 // Exporta los reductores combinados en un sólo objeto
@@ -22,5 +23,6 @@ export default combineReducers({
     modal: modalReducer,
     loading: loadingReducer,
     forgot: forgotReducer,
-    recover: recoverReducer
+    recover: recoverReducer,
+    table: tableReducer
 });
