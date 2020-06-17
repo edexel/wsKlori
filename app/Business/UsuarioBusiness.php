@@ -18,6 +18,13 @@ use Illuminate\Support\Facades\Hash;
  */
 class UsuarioBusiness
 {
+
+
+     /**
+     *  valida que el usuario exista en el sistema
+     *
+     * @return \App\Model\Usuario
+     */
     public static function fnLoginUser($username,$password)
     {
         
