@@ -29,4 +29,11 @@ Route::get('/clear', function() {
 $router->group(['prefix' => 'v1/web'], function () use ($router) {
     // rutas de recursos de acceso
     require(__DIR__ . '/web/auth.php');
+    // require(__DIR__ . '/web/users.php');
+});
+
+// Route::group(['prefix' => 'v1/web', 'middleware' => ['jwt.auth']], function () {
+Route::group(['prefix' => 'v1/web'], function () {
+
+    include 'web/users.php';
 });

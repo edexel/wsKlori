@@ -8,7 +8,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RestoreForm } from "./RestoreForm";
 import { loadingShow } from '../../redux/ducks/loadingDucks';
 import { Link } from 'react-router-dom';
-import { AuthActions } from '../../actions/authActions';
 import { logout } from '../../redux/ducks/loginDucks';
 import { recoverAction } from '../../actions/auth';
 
@@ -24,8 +23,8 @@ function RestorePage({history, ...props}) {
          // dispara la accion de cerrar sesion al entrar al componente
          dispatch(logout());
          const t = props.route.location.search.slice(3);
-        //  if(!t)
-        //     history.push('/login');
+         if(!t)
+            history.push('/login');
     }, []);
     
     // envía la informacion hacia el servidor para realizar una autenticacion

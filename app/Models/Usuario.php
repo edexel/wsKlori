@@ -35,7 +35,7 @@ class Usuario extends Model
      * 
      * @var string
      */
-    protected $primaryKey = 'idUsuario';
+    protected $primaryKey = 'id';
 
     /**
      * @var array
