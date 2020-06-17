@@ -11,8 +11,6 @@ use Symfony\Component\HttpFoundation\Response;
 use App\Http\Requests\Web\Auth\LoginRequest;
 // resource
 use App\Http\Resources\Web\Auth\LoginResource;
-//Business
-use App\Business\UsuarioBusiness;
 
 
 /**
@@ -40,9 +38,11 @@ class LoginController extends Controller
     public function __invoke(LoginRequest $request)
     {
         // realiza toda la logica de validacion 
-        $user = UsuarioBusiness::fnLoginUser($request->input('username'),$request->input('password'));
-       
-        // verifica si el usuario existe sino responde con error
+        
+        // verifica si el usuario existe si no responde con error
+        
+        $ObjeClass = new \App\Business\Usuario\Login;
+        $user = $ObjeClass($request->input('username'),$request->input('password'));
         if (!$user){
              // se define la respuesta de error
             $result = $this->result->build($this->STATUS_ERROR, $this->NO_RESULT, $this->NO_TOTAL, $this->message);
