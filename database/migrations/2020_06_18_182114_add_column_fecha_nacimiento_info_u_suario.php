@@ -28,7 +28,7 @@ class AddColumnFechaNacimientoInfoUSuario extends Migration
     {
         Schema::table('info_usuario', function (Blueprint $table) {
             $table->dropColumn('fecha_nacimiento');
-            $table->number('edad')->nullable();
+            $table->smallInteger('edad')->nullable();
         });
     }
 }

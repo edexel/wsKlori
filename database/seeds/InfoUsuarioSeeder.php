@@ -59,7 +59,7 @@ class InfoUsuarioSeeder extends Seeder
                 'apellido' => $uI['apellido'],
                 'genero' => $uI['genero'],
                 'talla' => $uI['talla'],
-                'edad' => $uI['edad'],
+                'fecha_nacimiento' => $uI['fecha_nacimiento'],
                 'ocupacion' => $uI['ocupacion'],
                 'estatura' => $uI['estatura'],
                 'estatusCivil' => $uI['estatusCivil'],
