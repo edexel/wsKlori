@@ -33,8 +33,8 @@ class CreateVWUsers extends Migration
                         iu.medicamentos as "Medicamentos",
                         iu.objetivos as "Objetivos", 
                         iu.observaciones as "Observaciones"
-                From klori.usuario as u INNER JOIN 
-                    klori.info_usuario as iu on u.idUsuario = iu.idUsuario
+                From usuario as u INNER JOIN 
+                    info_usuario as iu on u.idUsuario = iu.idUsuario
                 WHERE u.admin = 0 and u.activo = 1 and u.deleted_at is null and iu.deleted_at is null 
         ');
     }
@@ -46,6 +46,6 @@ class CreateVWUsers extends Migration
      */
     public function down()
     {
-        DB::statement('DROP VIEW IF EXISTS "vw_table_usuario"');
+        DB::statement('DROP VIEW IF EXISTS vw_table_usuario');
     }
 }
