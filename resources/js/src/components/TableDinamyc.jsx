@@ -83,10 +83,10 @@ function TableDinamyc({ fnModify, fnDelete, title = '', theme = '', noDataLabel 
         const ignoreRowClick = true;
 
         return {
-            name    : 'Acciones',
-            center  : center,
-            button  : button,
-            ignoreRowClick : ignoreRowClick,
+            name: 'Acciones',
+            center: center,
+            button: button,
+            ignoreRowClick: ignoreRowClick,
             cell: (row) =>
                 <Form className='form-btn'>
                     <Form.Row>
@@ -95,11 +95,11 @@ function TableDinamyc({ fnModify, fnDelete, title = '', theme = '', noDataLabel 
                             <>
                                 <Col className='cuadroboton'>
                                     <Button
-                                        title       = 'Modificar'
-                                        className   = 'ml-auto bg-yellow'
-                                        onClick     = { (e) => mod(e, row) }
-                                        data-toggle = 'tooltip'
-                                        data-placement ='top'>
+                                        title='Modificar'
+                                        className='ml-auto bg-yellow'
+                                        onClick={(e) => mod(e, row)}
+                                        data-toggle='tooltip'
+                                        data-placement='top'>
                                         <i className="fa fa-edit"> </i>
                                     </Button>
                                 </Col>
@@ -110,11 +110,11 @@ function TableDinamyc({ fnModify, fnDelete, title = '', theme = '', noDataLabel 
                             <>
                                 <Col className='cuadroboton'>
                                     <Button
-                                        title       = 'Eliminar'
-                                        onClick     = { (e) => del(e, row) }
-                                        className   = 'ml-auto btn-danger'
-                                        data-toggle = 'tooltip'
-                                        data-placement = 'top'>
+                                        title='Eliminar'
+                                        onClick={(e) => del(e, row)}
+                                        className='ml-auto btn-danger'
+                                        data-toggle='tooltip'
+                                        data-placement='top'>
                                         <i className="fa fa-trash"> </i>
                                     </Button>
                                 </Col>
@@ -159,8 +159,15 @@ function TableDinamyc({ fnModify, fnDelete, title = '', theme = '', noDataLabel 
         return columnsGenerated;
     }
 
-    const changePage = () => {
-
+    /**
+    * Funcion que obtiene el numero de página al cambiar en la paginacion
+    * @param {Number} page Número de página
+    */
+    const changePage = (page) => {
+        // url de pagina
+        const url = `${paginate.path}?page=${page}`;
+        // dispara la accion para obtener la informacion de la paginacion
+        tableGetAction(dispatch, url)
     }
 
     return (

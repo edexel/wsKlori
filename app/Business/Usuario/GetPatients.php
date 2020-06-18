@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Hash;
  */
 class GetPatients
 {
-    public static function all()
+    public function __invoke()
     {
         
         // Encuentra usuario de la base de datos
