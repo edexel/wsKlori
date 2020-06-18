@@ -26,6 +26,21 @@ class BaseTable extends Model
        return DB::getSchemaBuilder()->getColumnListing($table);
     }
 
+    public static function getColumns($tableColumns, $table) {
+        
+        $withoutColumns = $table->tables_columns->where('visible', false)->pluck('column');
+        $columnActions = $table->tables_columns->where('visible', true)->where('column', 'Acciones')->first();
+
+        if($columnActions)
+            array_push($tableColumns, $columnActions->column);
+
+        /**
+         * obtener solo los valores de las columnas
+         */
+        return self::cleanColumns($tableColumns, $withoutColumns);
+
+    }
+
     public static function cleanColumns($columns, $otherColumns = []) {
     
         $columnsDefault = collect(['created_at', 'updated_at', 'deleted_at']);
@@ -33,13 +48,12 @@ class BaseTable extends Model
         foreach($otherColumns as $column) {
             $columnsDefault->push($column);
         }
-        // dd($columnsDefault);
-        // array_push($dcu,'idUsuario','idInfoUsuario','Id_Area','Id_Departamento','numeroempleado');
         $columnas = array_diff($columns, $columnsDefault->toArray());
-        // /**
-        //  * obtener solo los valores de las columnas
-        //  */
+        /**
+         * obtener solo los valores de las columnas
+         */
         return array_values($columnas);
 
     }
+
 }

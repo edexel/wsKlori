@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Web\User;
 
 use App\Business\Usuario\GetPatients;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Web\Actions\ActionResource;
 use App\Http\Responses\Response as ResponseJson;
+use App\Models\Table;
 use App\Models\VwUsuario;
 use App\Utils\BaseTable;
 use Symfony\Component\HttpFoundation\Response;
@@ -29,25 +31,22 @@ class PaginateController extends Controller
         // Encuentra usuarios de una vista en la base de datos
         $users = VwUsuario::paginate(10);
         $total = $users->total();
+        $viewName = 'vw_table_usuario';
+
         // Obtiene todas las columnas de la base de datos
-        $tableColumns = BaseTable::getTableColumns('vw_table_usuario');
+        $tableColumns = BaseTable::getTableColumns($viewName);
+        // obtenemos las columnas que no se mostrarán de la BD
+        $table = Table::where('name', $viewName)->first();
 
-        // Quita las columnas que no se necesitan mostrar en la tabla
-        $withoutColumns = ['idInfoUsuario', 'Género', 'Talla', 'Ocupación', 'Estatus Civil', 'Antecedente familiar', 'Antecedente personal',
-                        'Medicamentos', 'Objetivos', 'Observaciones'];
-                        
-        $columns = BaseTable::cleanColumns($tableColumns, $withoutColumns);
-
-        // Agrega botones a la tabla en la sección Acciones
-        $buttons = array(
-            'Asignación de perfil'=>array('bg-orange','fa-handshake'),
-        );
+        // obtiene las columnas que se mostraran en la tabla
+        $columns = BaseTable::getColumns($tableColumns, $table);
 
         $result = [
             'columns' =>$columns,
-            'buttons' => $buttons,
+            'buttons' => ActionResource::collection($table->actions),
             'paginate' => $users
         ];
+
         // construye respuesta correcta
         $result = $this->result->build($this->STATUS_OK, $result, $total, 'Se han obtenido los usuarios registrados como pacientes correctamente');
 

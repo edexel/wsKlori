@@ -105010,6 +105010,68 @@ function Calendar(_ref) {
 
 /***/ }),
 
+/***/ "./resources/js/src/components/DeleteForm.jsx":
+/*!****************************************************!*\
+  !*** ./resources/js/src/components/DeleteForm.jsx ***!
+  \****************************************************/
+/*! exports provided: DeleteForm */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DeleteForm", function() { return DeleteForm; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
+/* harmony import */ var react_hook_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-hook-form */ "./node_modules/react-hook-form/dist/react-hook-form.es.js");
+
+
+
+
+
+function DeleteForm(_ref) {
+  var onSubmit = _ref.onSubmit,
+      message = _ref.message,
+      id = _ref.id,
+      close = _ref.close,
+      _ref$labelButton = _ref.labelButton,
+      labelButton = _ref$labelButton === void 0 ? 'Aceptar' : _ref$labelButton;
+
+  var _useForm = Object(react_hook_form__WEBPACK_IMPORTED_MODULE_2__["useForm"])(),
+      handleSubmit = _useForm.handleSubmit,
+      register = _useForm.register,
+      setValue = _useForm.setValue;
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    register({
+      name: 'id'
+    });
+    setValue("id", id);
+  }, [register]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+    onSubmit: handleSubmit(onSubmit),
+    className: "form-horizontal modal-bottom"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "text-center"
+  }, message), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"].Footer, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    variant: "secondary",
+    className: "gral-boton",
+    onClick: close
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "far fa-times-circle icon-btn"
+  }), "Cancelar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    type: "submit",
+    className: "gral-boton",
+    variant: "danger"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "far fa-check-circle icon-btn"
+  }), labelButton)));
+}
+
+
+
+/***/ }),
+
 /***/ "./resources/js/src/components/InputText.jsx":
 /*!***************************************************!*\
   !*** ./resources/js/src/components/InputText.jsx ***!
@@ -105046,7 +105108,7 @@ function InputText(_ref) {
       rest = _objectWithoutProperties(_ref, ["register", "label", "name", "errors", "rules"]);
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["FormGroup"], null, // verifica si contiene label y lo muestra
-  label && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["FormControl"], _extends({
+  label && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Label, null, label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["FormControl"], _extends({
     type: "text" // agrega opciones del input
 
   }, rest, {
@@ -105239,6 +105301,73 @@ function NavBarCustom(_ref) {
 
 /***/ }),
 
+/***/ "./resources/js/src/components/RadioGenre.jsx":
+/*!****************************************************!*\
+  !*** ./resources/js/src/components/RadioGenre.jsx ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+/**
+ * Created by: Joel Valdivia
+ * Date 09 Jun 2020
+ * Componente de boton
+ * @param {Object} param0 Opciones de configuracion para el Radio de Género
+ */
+
+function RadioGenre(_ref) {
+  var register = _ref.register,
+      label = _ref.label,
+      errors = _ref.errors,
+      rules = _ref.rules,
+      rest = _objectWithoutProperties(_ref, ["register", "label", "errors", "rules"]);
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Group, {
+    as: react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"]
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Label, {
+    as: "legend",
+    column: true,
+    sm: 2
+  }, label), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+    sm: 10
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Check, {
+    id: "genre-man"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Check.Input, {
+    ref: register(rules),
+    type: "radio",
+    value: 'H',
+    name: "genre",
+    isInvalid: errors['genre'] ? true : false
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Check.Label, null, "Hombre"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Control.Feedback, {
+    type: "valid"
+  }, "You did it!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Check, {
+    id: "genre-woman"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Check.Input, {
+    ref: register(rules),
+    type: "radio",
+    value: 'M',
+    name: "genre",
+    isInvalid: errors['genre'] ? true : false
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Check.Label, null, "Mujer"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Form"].Control.Feedback, {
+    type: "invalid"
+  }, errors['genre'] && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, label, " ", errors['genre'].message)))));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (RadioGenre);
+
+/***/ }),
+
 /***/ "./resources/js/src/components/Sidebar.jsx":
 /*!*************************************************!*\
   !*** ./resources/js/src/components/Sidebar.jsx ***!
@@ -105413,13 +105542,11 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
  * Created by Joel Valdivia
  * Date 16 Jun 2020
  * Funcion para tabla dinámica en todos los cruds
- * @param {Function} fnModify Funcion para abrir el modal de modificar
- * @param {Function} fnDelete Funcion para abrir el modal de eliminar
+ * @param {Function} openModal Funcion para abrir el modal dependiendo la accion
  */
 
 function TableDinamyc(_ref) {
-  var fnModify = _ref.fnModify,
-      fnDelete = _ref.fnDelete,
+  var openModal = _ref.openModal,
       _ref$title = _ref.title,
       title = _ref$title === void 0 ? '' : _ref$title,
       _ref$theme = _ref.theme,
@@ -105432,10 +105559,12 @@ function TableDinamyc(_ref) {
       table = _useSelector.table;
 
   var paginate = table.paginate,
-      columns = table.columns;
+      columns = table.columns,
+      buttons = table.buttons;
   var data = paginate.data,
       total = paginate.total,
       per_page = paginate.per_page;
+  var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useDispatch"])();
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -105493,7 +105622,7 @@ function TableDinamyc(_ref) {
    */
 
 
-  var createColumnActions = function createColumnActions(mod, del) {
+  var createColumnActions = function createColumnActions(openModal) {
     var center = true;
     var button = true;
     var ignoreRowClick = true;
@@ -105505,31 +105634,23 @@ function TableDinamyc(_ref) {
       cell: function cell(row) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Form"], {
           className: "form-btn"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Form"].Row, null, mod && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
-          className: "cuadroboton"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Button"], {
-          title: "Modificar",
-          className: "ml-auto bg-yellow",
-          onClick: function onClick(e) {
-            return mod(e, row);
-          },
-          "data-toggle": "tooltip",
-          "data-placement": "top"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fa fa-edit"
-        }, " ")))), del && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
-          className: "cuadroboton"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Button"], {
-          title: "Eliminar",
-          onClick: function onClick(e) {
-            return del(e, row);
-          },
-          className: "ml-auto btn-danger",
-          "data-toggle": "tooltip",
-          "data-placement": "top"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fa fa-trash"
-        }, " "))))));
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Form"].Row, null, // Si vienen botones para agregar desde el bak  los recorremos y los pintamos en la vista
+        buttons.map(function (button, index) {
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
+            className: "cuadroboton",
+            key: index
+          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Button"], {
+            title: button.name,
+            className: button["class"],
+            onClick: function onClick(e) {
+              return openModal(e, row, button.action);
+            },
+            "data-toggle": "tooltip",
+            "data-placement": "top"
+          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+            className: button.icon
+          }, " ")));
+        })));
       }
     };
   };
@@ -105541,12 +105662,12 @@ function TableDinamyc(_ref) {
    */
 
 
-  var generateColumns = function generateColumns(modified, deleted) {
+  var generateColumns = function generateColumns(openModal) {
     var columnsGenerated = []; // recorre las columnas
 
     columns.map(function (column, index) {
       // verifica que no sea la columna id 
-      if (index !== 0) {
+      if (index !== 0 && column != 'Acciones') {
         var columnCreate = null; // verifica si es un objeto la columna
 
         if ((typeof columna === "undefined" ? "undefined" : _typeof(columna)) === 'object') {
@@ -105560,21 +105681,34 @@ function TableDinamyc(_ref) {
 
         columnsGenerated.push(columnCreate);
       }
-    }); // crea columna con acciones
 
-    var columnActions = createColumnActions(modified, deleted); // agrega la columna de acciones a las columnas
+      if (column == 'Acciones') {
+        // crea columna con acciones
+        var columnActions = createColumnActions(openModal); // agrega la columna de acciones a las columnas
 
-    columnsGenerated.push(columnActions);
+        columnsGenerated.push(columnActions);
+      }
+    });
     return columnsGenerated;
   };
+  /**
+   * Funcion que obtiene el numero de página al cambiar en la paginacion
+   * @param {Number} page Número de página
+   */
 
-  var changePage = function changePage() {};
+
+  var changePage = function changePage(page) {
+    // url de pagina
+    var url = "".concat(paginate.path, "?page=").concat(page); // dispara la accion para obtener la informacion de la paginacion
+
+    tableGetAction(dispatch, url);
+  };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Table__WEBPACK_IMPORTED_MODULE_1__["Table"], {
     className: 'table',
     title: title,
     theme: theme,
-    columns: isColumns ? generateColumns(fnModify, fnDelete) : [],
+    columns: isColumns ? generateColumns(openModal) : [],
     data: data,
     noDataLabel: noDataLabel,
     onChangePage: changePage,
@@ -105782,12 +105916,14 @@ var history = Object(history__WEBPACK_IMPORTED_MODULE_0__["createBrowserHistory"
 /*!*******************************************************!*\
   !*** ./resources/js/src/helpers/validationsInputs.js ***!
   \*******************************************************/
-/*! exports provided: userRequired, passwordRequired, emailRequired, emailPattern, passwordPattern */
+/*! exports provided: userRequired, required, minLength, passwordRequired, emailRequired, emailPattern, passwordPattern */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "userRequired", function() { return userRequired; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "required", function() { return required; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "minLength", function() { return minLength; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "passwordRequired", function() { return passwordRequired; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "emailRequired", function() { return emailRequired; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "emailPattern", function() { return emailPattern; });
@@ -105802,19 +105938,31 @@ __webpack_require__.r(__webpack_exports__);
  */
 var userRequired = {
   value: true,
-  message: 'El usuario es requerido'
+  message: 'es requerido'
+};
+var required = function required(field) {
+  return {
+    value: true,
+    message: "".concat(field, " es requerido")
+  };
+};
+var minLength = function minLength(min) {
+  return {
+    value: min,
+    message: "debe tener al menos ".concat(min, " caracteres")
+  };
 };
 var passwordRequired = {
   value: true,
-  message: 'La contraseña es requerido'
+  message: 'es requerido'
 };
 var emailRequired = {
   value: true,
-  message: 'Correo electrónico es requerido'
+  message: 'es requerido'
 };
 var emailPattern = {
   value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-  message: "El correo no es válido"
+  message: "no es válido"
 };
 var passwordPattern = {
   value: /^(?=.*[\d])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&.*])[\w!@#$%^&.*]{8,}$/i,
@@ -106284,6 +106432,144 @@ function RestorePage(_ref) {
 
 /***/ }),
 
+/***/ "./resources/js/src/pages/user/UserForm.jsx":
+/*!**************************************************!*\
+  !*** ./resources/js/src/pages/user/UserForm.jsx ***!
+  \**************************************************/
+/*! exports provided: UserForm */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserForm", function() { return UserForm; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_hook_form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-hook-form */ "./node_modules/react-hook-form/dist/react-hook-form.es.js");
+/* harmony import */ var _components_InputText__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/InputText */ "./resources/js/src/components/InputText.jsx");
+/* harmony import */ var _components_Btn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/Btn */ "./resources/js/src/components/Btn.jsx");
+/* harmony import */ var _components_RadioGenre__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/RadioGenre */ "./resources/js/src/components/RadioGenre.jsx");
+/* harmony import */ var _helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../helpers/validationsInputs */ "./resources/js/src/helpers/validationsInputs.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
+/**
+ * Created by: Joel Valdivia
+ * Date: 05 Jun 2020
+ * Description: Componente que contiene el formulario de Login usando react-hooks-form
+ */
+
+
+
+
+
+
+ // Componente que contiene el formulario de Login
+
+function UserForm(_ref) {
+  var onSubmit = _ref.onSubmit,
+      data = _ref.data,
+      close = _ref.close,
+      _ref$labelButton = _ref.labelButton,
+      labelButton = _ref$labelButton === void 0 ? 'Aceptar' : _ref$labelButton;
+
+  // define caracteristicas de ReacHookForm
+  var _useForm = Object(react_hook_form__WEBPACK_IMPORTED_MODULE_1__["useForm"])({
+    defaultValues: data && {
+      username: data['Usuario'],
+      email: data['Correo']
+    }
+  }),
+      register = _useForm.register,
+      handleSubmit = _useForm.handleSubmit,
+      errors = _useForm.errors;
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["Form"], {
+    name: "form-calls",
+    onSubmit: handleSubmit(onSubmit)
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["Row"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["Col"], {
+    sm: "6",
+    md: "6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_InputText__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    register: register,
+    name: "name",
+    label: "Nombre",
+    placeholder: "ej. Pedro",
+    errors: errors,
+    rules: {
+      required: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["required"])(''),
+      minLength: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["minLength"])(2)
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_InputText__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    register: register,
+    name: "lastname",
+    label: "Apellido",
+    placeholder: "ej. Padilla",
+    errors: errors,
+    rules: {
+      required: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["required"])('')
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_RadioGenre__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    label: 'Género',
+    register: register,
+    errors: errors,
+    rules: {
+      required: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["required"])('')
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_InputText__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    register: register,
+    name: "size",
+    label: "Talla",
+    type: "number",
+    step: "any",
+    placeholder: "ej. 7.2",
+    errors: errors,
+    rules: {
+      required: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["required"])('')
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["Col"], {
+    sm: "6",
+    md: "6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_InputText__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    register: register,
+    name: "username",
+    label: "Usuario con el que entrar\xE1 el paciente a la App",
+    placeholder: "ej. JoseFrank",
+    errors: errors,
+    rules: {
+      required: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["required"])(''),
+      minLength: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["minLength"])(6)
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_InputText__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    register: register,
+    name: "email",
+    label: "Correo",
+    placeholder: "ej. juan@gmail.com",
+    errors: errors,
+    rules: {
+      required: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["required"])(''),
+      pattern: _helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["emailPattern"],
+      minLength: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["minLength"])(5)
+    }
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["Modal"].Footer, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Btn__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    label: 'Cancelar',
+    className: 'btn-danger',
+    onClick: close,
+    icon: true,
+    iconLeft: true,
+    iconClass: 'far fa-times-circle'
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Btn__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    type: "submit",
+    label: labelButton,
+    className: 'btn-primary',
+    icon: true,
+    iconLeft: true,
+    iconClass: 'far fa-check-circle'
+  })));
+} // exporta el componente Formulario de Login
+
+
+
+
+/***/ }),
+
 /***/ "./resources/js/src/pages/user/UserPage.jsx":
 /*!**************************************************!*\
   !*** ./resources/js/src/pages/user/UserPage.jsx ***!
@@ -106302,6 +106588,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_LoaderCustom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/LoaderCustom */ "./resources/js/src/components/LoaderCustom.jsx");
 /* harmony import */ var _actions_table__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/table */ "./resources/js/src/actions/table/index.js");
 /* harmony import */ var _components_TableDinamyc__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/TableDinamyc */ "./resources/js/src/components/TableDinamyc.jsx");
+/* harmony import */ var _components_DeleteForm__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../components/DeleteForm */ "./resources/js/src/components/DeleteForm.jsx");
+/* harmony import */ var _redux_ducks_modalDucks__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../redux/ducks/modalDucks */ "./resources/js/src/redux/ducks/modalDucks.js");
+/* harmony import */ var _UserForm__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./UserForm */ "./resources/js/src/pages/user/UserForm.jsx");
+/* harmony import */ var _components_Btn__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/Btn */ "./resources/js/src/components/Btn.jsx");
+
+
+
+
 
 
 
@@ -106318,46 +106612,131 @@ __webpack_require__.r(__webpack_exports__);
 function UserPage() {
   // obtiene usuario del store
   var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useDispatch"])();
+  var API_URL = '/user/paginate';
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    Object(_actions_table__WEBPACK_IMPORTED_MODULE_4__["tableGetAction"])(dispatch, '/user/paginate');
+    Object(_actions_table__WEBPACK_IMPORTED_MODULE_4__["tableGetAction"])(dispatch, API_URL);
   }, []);
   /**
-   * Abrir modal y llamar el formulario para registrar
+  * Abrir modal dependiendo la accion
+  */
+
+  var openModal = function openModal(e, dataRow, action) {
+    switch (action) {
+      case 'modify':
+        openModalModify(dataRow);
+        break;
+
+      case 'delete':
+        openModalDelete(dataRow);
+        break;
+    }
+  };
+  /**
+  * Cerrar cualquier modal que este activo
+  */
+
+
+  var closeModal = function closeModal() {
+    dispatch(Object(_redux_ducks_modalDucks__WEBPACK_IMPORTED_MODULE_7__["modalClean"])());
+  };
+  /**
+  * Funcion para registrar haciendo peticion Http
+  * @param datosFormulario
+  */
+
+
+  var register = function register(dataForm) {
+    console.log('register', dataForm); // const paginacion = '?page=' + this.props.paginacion.actual_pagina;
+    // this.props.dispatch(catalogoAcciones.modificar(datosFormulario.id, datosFormulario, this.state.url, paginacion))
+  };
+  /**
+  * Funcion para modificar los registros del catalogo
+  * @param datosFormulario
+  * @param url
+  */
+
+
+  var modify = function modify(dataForm, url) {
+    console.log('modify', dataForm); // const paginacion = '?page=' + this.props.paginacion.actual_pagina;
+    // this.props.dispatch(catalogoAcciones.modificar(datosFormulario.id, datosFormulario, this.state.url, paginacion))
+  };
+  /**
+   * Funcion para eliminar haciendo peticion Http
    */
 
-  var openModalModify = function openModalModify(e, dataRow) {
-    console.log(e, dataRow);
-    /**
-     * llamar el formulario a mostrar
-     */
 
-    /*
-    * mostrar el modal con los parametros del formulario
-    */
+  var del = function del(dataForm) {
+    console.log('delete', dataForm);
+  };
+  /**
+  * Abrir modal y llamar el formulario para registrar
+  */
+
+
+  var openModalRegister = function openModalRegister() {
+    var size = 'lg';
+    var title = 'Registrando usuario';
+    var form = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_UserForm__WEBPACK_IMPORTED_MODULE_8__["UserForm"], {
+      close: closeModal,
+      onSubmit: register
+    });
+    dispatch(Object(_redux_ducks_modalDucks__WEBPACK_IMPORTED_MODULE_7__["modalForm"])({
+      title: title,
+      campos: form,
+      size: size
+    }));
   };
   /**
    * Abrir modal y llamar el formulario para registrar
    */
 
 
-  var openModalDelete = function openModalDelete(e, dataRow) {
-    console.log(e, dataRow);
-    /**
-     * llamar el formulario a mostrar
-     */
+  var openModalModify = function openModalModify(dataRow) {
+    console.log('modificar', dataRow);
+    var size = 'lg';
+    var title = "Modificando usuario ".concat(dataRow.Usuario);
+    var form = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_UserForm__WEBPACK_IMPORTED_MODULE_8__["UserForm"], {
+      data: dataRow,
+      close: closeModal,
+      onSubmit: modify
+    });
+    dispatch(Object(_redux_ducks_modalDucks__WEBPACK_IMPORTED_MODULE_7__["modalForm"])({
+      title: title,
+      campos: form,
+      size: size
+    }));
+  };
+  /**
+   * Abrir modal y llamar el formulario para eliminar
+   */
 
-    /*
-    * mostrar el modal con los parametros del formulario
-    */
+
+  var openModalDelete = function openModalDelete(dataRow) {
+    var size = 'md';
+    var title = 'Eliminando usuario';
+    var form = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_DeleteForm__WEBPACK_IMPORTED_MODULE_6__["DeleteForm"], {
+      id: dataRow.idUsuario,
+      close: closeModal,
+      message: "\xBFSeguro que quieres eliminar el Registro \"".concat(dataRow.Usuario, "\"?"),
+      onSubmit: del,
+      data: dataRow
+    });
+    dispatch(Object(_redux_ducks_modalDucks__WEBPACK_IMPORTED_MODULE_7__["modalForm"])({
+      title: title,
+      campos: form,
+      size: size
+    }));
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "common-container dashboard-container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Usuarios"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TableDinamyc__WEBPACK_IMPORTED_MODULE_5__["TableDinamyc"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Usuarios"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Btn__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    label: 'Crear',
+    onClick: openModalRegister
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_TableDinamyc__WEBPACK_IMPORTED_MODULE_5__["TableDinamyc"], {
     theme: 'light',
     noDataLabel: 'No existen usuarios registrados',
-    fnModify: openModalModify,
-    fnDelete: openModalDelete
+    openModal: openModal
   }));
 }
 
@@ -107170,6 +107549,7 @@ var HttpService = /*#__PURE__*/function () {
         data,
         headers,
         options,
+        API_URL,
         _args = arguments;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
       while (1) {
@@ -107190,8 +107570,9 @@ var HttpService = /*#__PURE__*/function () {
             if (data) options.body = JSON.stringify(data); // verifica si data contiene headers
 
             if (headers) options.headers = headers;
-            _context.next = 8;
-            return fetch("".concat(_config_api_config__WEBPACK_IMPORTED_MODULE_1__["ConfigApi"].url).concat(endpoint), options).then(function (response) {
+            API_URL = endpoint.includes('://') ? endpoint : "".concat(_config_api_config__WEBPACK_IMPORTED_MODULE_1__["ConfigApi"].url).concat(endpoint);
+            _context.next = 9;
+            return fetch(API_URL, options).then(function (response) {
               return response.text().then(function (text) {
                 var data = text && JSON.parse(text);
 
@@ -107225,10 +107606,10 @@ var HttpService = /*#__PURE__*/function () {
               return response;
             });
 
-          case 8:
+          case 9:
             return _context.abrupt("return", _context.sent);
 
-          case 9:
+          case 10:
           case "end":
             return _context.stop();
         }

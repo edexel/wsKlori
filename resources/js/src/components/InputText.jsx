@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { FormGroup, FormControl } from "react-bootstrap";
+import { FormGroup, FormControl, Form } from "react-bootstrap";
 /**
  * Created by: Joel Valdivia
  * Date: 09 Junio 2020
@@ -13,7 +13,7 @@ function InputText({ register, label, name, errors, rules, ...rest }) {
         <FormGroup>
             {
                 // verifica si contiene label y lo muestra
-                label && <label>{label}</label>
+                label && <Form.Label>{label}</Form.Label>
             }
 
             {/* BEGIN Input de Texto */}

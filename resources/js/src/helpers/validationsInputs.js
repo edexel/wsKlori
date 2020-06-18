@@ -8,22 +8,36 @@
  */
 export const userRequired = {
     value: true,
-    message: 'El usuario es requerido'
+    message: 'es requerido'
+}
+
+export const required = (field)=> {
+    return {
+    value: true,
+    message: `${field} es requerido`
+    }
+}
+
+export const minLength = (min)=> {
+    return {
+    value: min,
+    message: `debe tener al menos ${min} caracteres`
+    }
 }
 
 export const passwordRequired = {
     value: true,
-    message: 'La contraseña es requerido'
+    message: 'es requerido'
 }
 
 export const emailRequired = {
     value: true,
-    message: 'Correo electrónico es requerido'
+    message: 'es requerido'
 }
 
 export const emailPattern = {
     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-    message: "El correo no es válido"
+    message: "no es válido"
 }
 export const passwordPattern = {
     value: /^(?=.*[\d])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&.*])[\w!@#$%^&.*]{8,}$/i,
