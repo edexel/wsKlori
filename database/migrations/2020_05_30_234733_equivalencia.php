@@ -14,8 +14,8 @@ class Equivalencia extends Migration
     public function up()
     {
         Schema::create('equivalencia', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('idGrupoAlimenticio')->constrained('grupo_alimenticio');
+            $table->id('idEquivalencia');
+            $table->foreignId('idGrupoAlimenticio')->references('idGrupoAlimenticio')->on('grupo_alimenticio');
             $table->string('nombre', 50);
             $table->string('porcion', 50);
             $table->decimal('kcal', 8, 2);

@@ -14,7 +14,7 @@ class Recetario extends Migration
     public function up()
     {
         Schema::create('recetario', function (Blueprint $table) {
-            $table->id();
+            $table->id('idRecetario');
             $table->string('nombre', 100);
             $table->string('descripcion', 500);
             $table->string('ingredientes', 500);
