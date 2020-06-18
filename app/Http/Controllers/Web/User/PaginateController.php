@@ -35,6 +35,7 @@ class PaginateController extends Controller
         // Quita las columnas que no se necesitan mostrar en la tabla
         $withoutColumns = ['idInfoUsuario', 'Género', 'Talla', 'Ocupación', 'Estatus Civil', 'Antecedente familiar', 'Antecedente personal',
                         'Medicamentos', 'Objetivos', 'Observaciones'];
+                        
         $columns = BaseTable::cleanColumns($tableColumns, $withoutColumns);
 
         // Agrega botones a la tabla en la sección Acciones

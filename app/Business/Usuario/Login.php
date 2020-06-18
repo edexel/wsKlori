@@ -47,7 +47,7 @@ class Login
         
         // Se actualiza la última vez que inició sesión el usuario
         $user->ultimaConexion = date("Y-m-d H:i:s");
-        $user->push();
+        $user->save();
 
         // El usuario es válido. se asigna a el resultado el token.
         $user['token'] = JwtToken::create($user);

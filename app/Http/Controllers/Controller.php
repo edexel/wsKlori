@@ -46,10 +46,7 @@ class Controller extends BaseController
     public function __construct()
     {
         $this->oResponse = new Response();
-        // obtiene token del header
-        // $this->oCurrentUser = app('request')->auth;
-        // $dep = UserDepartment::where('user_id',$this->oCurrentUser->id)->first();
-        // $this->idDepartament = $dep != null ? $dep->c_department_id : 0 ;
+
 
     }
 }

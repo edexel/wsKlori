@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Web\Auth;
 
 // extends
 use App\Http\Controllers\Controller;
-
 // responses
 use App\Http\Responses\Response as ResponseJson;
 use Symfony\Component\HttpFoundation\Response;
@@ -37,12 +36,12 @@ class LoginController extends Controller
      */
     public function __invoke(LoginRequest $request)
     {
-        // realiza toda la logica de validacion 
-        
-        // verifica si el usuario existe si no responde con error
-        
+     
+        // Valida usuario en la capa de negocios
         $ObjeClass = new \App\Business\Usuario\Login;
         $user = $ObjeClass($request->input('username'),$request->input('password'));
+
+        // verifica si el usuario existe si no responde con error
         if (!$user){
              // se define la respuesta de error
             $result = $this->result->build($this->STATUS_ERROR, $this->NO_RESULT, $this->NO_TOTAL, $this->message);
@@ -144,7 +143,6 @@ class LoginController extends Controller
      *   )
      * )
      */
-
     /**
      * @OA\Schema(
      *   schema="ErrorResponse",
