@@ -14,14 +14,9 @@ class ConfigApp extends Migration
     public function up()
     {
         Schema::create('config_app', function (Blueprint $table) {
-            $table->id();
-            $table->string('nombre', 50);
-            $table->string('logo', 255);
-            $table->mediumText('terminos');
-            $table->string('archivo', 255);
-            $table->string('correo', 30);
-            $table->integer('telefono');
-            $table->string('tokenApp', 100);
+            $table->id('idConfigApp');
+            $table->string('username', 30)->unique();
+            $table->string('password', 100);
             $table->dateTime('created_at', 0)->nullable();
             $table->dateTime('updated_at', 0)->nullable();
             $table->dateTime('deleted_at', 0)->nullable();

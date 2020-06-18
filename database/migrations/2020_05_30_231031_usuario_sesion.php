@@ -14,8 +14,8 @@ class UsuarioSesion extends Migration
     public function up()
     {
         Schema::create('usuario_sesion', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('idUsuario')->constrained('usuario');
+            $table->id('idSesion');
+            $table->foreignId('idUsuario')->references('idUsuario')->on('usuario');
             $table->decimal('kcal', 6, 2);
             $table->decimal('distribucion', 6, 2);
             $table->decimal('peso', 6, 2);

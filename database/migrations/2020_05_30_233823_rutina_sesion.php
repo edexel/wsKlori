@@ -14,9 +14,9 @@ class RutinaSesion extends Migration
     public function up()
     {
         Schema::create('rutina_sesion', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('idPlanSesion')->constrained('plan_sesion');
-            $table->foreignId('idRutinaActividad')->constrained('rutina_actividad');
+            $table->id('idRutinaSesion');
+            $table->foreignId('idPlanSesion')->references('idPlanSesion')->on('plan_sesion');
+            $table->foreignId('idRutinaActividad')->references('idRutinaActividad')->on('rutina_actividad');
         });
     }
 

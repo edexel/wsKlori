@@ -14,9 +14,9 @@ class RacionesDiariasPlan extends Migration
     public function up()
     {
         Schema::create('raciones_diarias_plan', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('idPlanSesion')->constrained('plan_sesion');
-            $table->foreignId('idGrupoAlimenticio')->constrained('grupo_alimenticio');
+            $table->id('idRacionesDiariasPlan');
+            $table->foreignId('idPlanSesion')->references('idPlanSesion')->on('plan_sesion');
+            $table->foreignId('idGrupoAlimenticio')->references('idGrupoAlimenticio')->on('grupo_alimenticio');
             $table->smallInteger('caloriasTotales');
             $table->smallInteger('racionDiaria');
             $table->decimal('racionDiariaKcal', 6, 2);

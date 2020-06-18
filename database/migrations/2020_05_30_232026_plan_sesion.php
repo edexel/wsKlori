@@ -14,8 +14,8 @@ class PlanSesion extends Migration
     public function up()
     {
         Schema::create('plan_sesion', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('idSesion')->constrained('usuario_sesion');
+            $table->id('idPlanSesion');
+            $table->foreignId('idSesion')->references('idSesion')->on('usuario_sesion');
             $table->string('nombre', 50);
             $table->time('horaDesayuno', 0);
             $table->string('desayuno', 1000);

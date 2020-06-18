@@ -14,7 +14,7 @@ class GrupoAlimenticio extends Migration
     public function up()
     {
         Schema::create('grupo_alimenticio', function (Blueprint $table) {
-            $table->id();
+            $table->id('idGrupoAlimenticio');
             $table->string('nombre', 50);
             $table->dateTime('created_at', 0)->nullable();
             $table->dateTime('updated_at', 0)->nullable();

@@ -14,9 +14,9 @@ class PlanRecetario extends Migration
     public function up()
     {
         Schema::create('plan_recetario', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('idPlanSesion')->constrained('plan_sesion');
-            $table->foreignId('idRecetario')->constrained('recetario');
+            $table->id('idPlanRecetario');
+            $table->foreignId('idPlanSesion')->references('idPlanSesion')->on('plan_sesion');
+            $table->foreignId('idRecetario')->references('idRecetario')->on('recetario');
         });
     }
 

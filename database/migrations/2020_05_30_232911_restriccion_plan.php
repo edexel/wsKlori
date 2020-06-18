@@ -14,9 +14,9 @@ class RestriccionPlan extends Migration
     public function up()
     {
         Schema::create('restriccion_plan', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('idPlanSesion')->constrained('plan_sesion');
-            $table->foreignId('idRestriccionAlimento')->constrained('alimento');
+            $table->id('idRestriccionPlan');
+            $table->foreignId('idPlanSesion')->references('idPlanSesion')->on('plan_sesion');
+            $table->foreignId('idRestriccionAlimento')->references('idAlimento')->on('alimento');
         });
     }
 

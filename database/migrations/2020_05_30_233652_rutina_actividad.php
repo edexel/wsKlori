@@ -14,7 +14,7 @@ class RutinaActividad extends Migration
     public function up()
     {
         Schema::create('rutina_actividad', function (Blueprint $table) {
-            $table->id();
+            $table->id('idRutinaActividad');
             $table->string('nombre', 100);
             $table->boolean('activo');
             $table->string('descripcion', 500);
