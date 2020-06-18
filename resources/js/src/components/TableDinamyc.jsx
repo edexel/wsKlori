@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table } from "./Table";
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Button, Col, Form } from "react-bootstrap";
@@ -9,14 +9,14 @@ import { Button, Col, Form } from "react-bootstrap";
  * Created by Joel Valdivia
  * Date 16 Jun 2020
  * Funcion para tabla dinámica en todos los cruds
- * @param {Function} fnModify Funcion para abrir el modal de modificar
- * @param {Function} fnDelete Funcion para abrir el modal de eliminar
+ * @param {Function} openModal Funcion para abrir el modal dependiendo la accion
  */
-function TableDinamyc({ fnModify, fnDelete, title = '', theme = '', noDataLabel }) {
+function TableDinamyc({ openModal, title = '', theme = '', noDataLabel }) {
 
     const { table } = useSelector(store => store);
-    const { paginate, columns } = table;
+    const { paginate, columns, buttons } = table;
     const { data, total, per_page } = paginate;
+    const dispatch = useDispatch();
 
     const [isColumns, setIsColumns] = useState(false)
 
@@ -77,7 +77,7 @@ function TableDinamyc({ fnModify, fnDelete, title = '', theme = '', noDataLabel 
      * Construye columna de una variable objeto
      * @param {Object} column Objeto de columna
      */
-    const createColumnActions = (mod, del) => {
+    const createColumnActions = (openModal) => {
         const center = true;
         const button = true;
         const ignoreRowClick = true;
@@ -91,34 +91,21 @@ function TableDinamyc({ fnModify, fnDelete, title = '', theme = '', noDataLabel 
                 <Form className='form-btn'>
                     <Form.Row>
                         {
-                            mod &&
-                            <>
-                                <Col className='cuadroboton'>
-                                    <Button
-                                        title='Modificar'
-                                        className='ml-auto bg-yellow'
-                                        onClick={(e) => mod(e, row)}
-                                        data-toggle='tooltip'
-                                        data-placement='top'>
-                                        <i className="fa fa-edit"> </i>
-                                    </Button>
-                                </Col>
-                            </>
-                        }
-                        {
-                            del &&
-                            <>
-                                <Col className='cuadroboton'>
-                                    <Button
-                                        title='Eliminar'
-                                        onClick={(e) => del(e, row)}
-                                        className='ml-auto btn-danger'
-                                        data-toggle='tooltip'
-                                        data-placement='top'>
-                                        <i className="fa fa-trash"> </i>
-                                    </Button>
-                                </Col>
-                            </>
+                            // Si vienen botones para agregar desde el bak  los recorremos y los pintamos en la vista
+                            buttons.map(function (button, index) {
+                                return (
+                                    <Col className='cuadroboton' key={index} >
+                                        <Button
+                                            title={button.name}
+                                            className={button.class}
+                                            onClick={(e) => openModal(e, row, button.action)}
+                                            data-toggle='tooltip'
+                                            data-placement='top'>
+                                            <i className={button.icon}> </i>
+                                        </Button>
+                                    </Col>
+                                );
+                            })
                         }
                     </Form.Row>
                 </Form>
@@ -131,13 +118,13 @@ function TableDinamyc({ fnModify, fnDelete, title = '', theme = '', noDataLabel 
      * @param eliminar
      * @returns {*[]}
      */
-    const generateColumns = (modified, deleted) => {
+    const generateColumns = (openModal) => {
 
         let columnsGenerated = [];
         // recorre las columnas
         columns.map((column, index) => {
             // verifica que no sea la columna id 
-            if (index !== 0) {
+            if (index !== 0 && column != 'Acciones') {
                 let columnCreate = null;
                 // verifica si es un objeto la columna
                 if (typeof columna === 'object') {
@@ -150,19 +137,22 @@ function TableDinamyc({ fnModify, fnDelete, title = '', theme = '', noDataLabel 
                 // agrega cada columna creada
                 columnsGenerated.push(columnCreate)
             }
+
+            if(column == 'Acciones'){
+                // crea columna con acciones
+                const columnActions = createColumnActions(openModal)
+                // agrega la columna de acciones a las columnas
+                columnsGenerated.push(columnActions)
+            }
         })
-        // crea columna con acciones
-        const columnActions = createColumnActions(modified, deleted)
-        // agrega la columna de acciones a las columnas
-        columnsGenerated.push(columnActions)
 
         return columnsGenerated;
     }
 
     /**
-    * Funcion que obtiene el numero de página al cambiar en la paginacion
-    * @param {Number} page Número de página
-    */
+     * Funcion que obtiene el numero de página al cambiar en la paginacion
+     * @param {Number} page Número de página
+     */
     const changePage = (page) => {
         // url de pagina
         const url = `${paginate.path}?page=${page}`;
@@ -175,7 +165,7 @@ function TableDinamyc({ fnModify, fnDelete, title = '', theme = '', noDataLabel 
             className={'table'}
             title={title}
             theme={theme}
-            columns={isColumns ? generateColumns(fnModify, fnDelete) : []}
+            columns={isColumns ? generateColumns(openModal) : []}
             data={data}
             noDataLabel={noDataLabel}
             onChangePage={changePage}

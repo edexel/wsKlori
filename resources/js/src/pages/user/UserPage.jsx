@@ -6,6 +6,10 @@ import { LoaderCustom } from '../../components/LoaderCustom';
 import { useEffect } from 'react';
 import { tableGetAction } from '../../actions/table';
 import { TableDinamyc } from '../../components/TableDinamyc';
+import { DeleteForm } from '../../components/DeleteForm';
+import { modalForm, modalClean } from '../../redux/ducks/modalDucks';
+import { UserForm } from './UserForm';
+import Btn from '../../components/Btn';
 
 /**
  * Created by Joel Valdivia
@@ -16,47 +20,118 @@ function UserPage() {
 
     // obtiene usuario del store
     const dispatch = useDispatch();
+    const API_URL = '/user/paginate';
+
 
     useEffect(() => {
-        tableGetAction(dispatch, '/user/paginate')
+        tableGetAction(dispatch, API_URL)
     }, [])
 
+    /**
+    * Abrir modal dependiendo la accion
+    */
+    const openModal = (e, dataRow, action) => {
+        switch (action) {
+            case 'modify':
+                openModalModify(dataRow)
+                break;
+            case 'delete':
+                openModalDelete(dataRow)
+                break;
+        }
+    }
 
     /**
-     * Abrir modal y llamar el formulario para registrar
+    * Cerrar cualquier modal que este activo
+    */
+    const closeModal = () => {
+        dispatch(modalClean())
+    }
+
+    /**
+   * Funcion para registrar haciendo peticion Http
+   * @param datosFormulario
+   */
+    const register = (dataForm) => {
+        console.log('register', dataForm)
+        // const paginacion = '?page=' + this.props.paginacion.actual_pagina;
+        // this.props.dispatch(catalogoAcciones.modificar(datosFormulario.id, datosFormulario, this.state.url, paginacion))
+    }
+    /**
+    * Funcion para modificar los registros del catalogo
+    * @param datosFormulario
+    * @param url
+    */
+    const modify = (dataForm, url) => {
+        console.log('modify', dataForm)
+        // const paginacion = '?page=' + this.props.paginacion.actual_pagina;
+        // this.props.dispatch(catalogoAcciones.modificar(datosFormulario.id, datosFormulario, this.state.url, paginacion))
+    }
+
+    /**
+     * Funcion para eliminar haciendo peticion Http
      */
-    const openModalModify = (e, dataRow) => {
-        console.log(e, dataRow)
-        /**
-         * llamar el formulario a mostrar
-         */
-        
-         /*
-         * mostrar el modal con los parametros del formulario
-         */
+    const del = (dataForm) => {
+        console.log('delete', dataForm)
+    }
+
+    /**
+   * Abrir modal y llamar el formulario para registrar
+   */
+    const openModalRegister = () => {
+        const size = 'lg';
+        const title = 'Registrando usuario';
+        const form = <UserForm
+            close={closeModal}
+            onSubmit={register}
+        />;
+
+        dispatch(modalForm({ title, campos: form, size }))
     }
 
     /**
      * Abrir modal y llamar el formulario para registrar
      */
-    const openModalDelete = (e, dataRow) => {
-        console.log(e, dataRow)
-        /**
-         * llamar el formulario a mostrar
-         */
-        
-         /*
-         * mostrar el modal con los parametros del formulario
-         */
+    const openModalModify = (dataRow) => {
+        console.log('modificar', dataRow)
+        const size = 'lg';
+        const title = `Modificando usuario ${dataRow.Usuario}`;
+        const form = <UserForm
+            data={dataRow}
+            close={closeModal}
+            onSubmit={modify}
+        />
+        dispatch(modalForm({ title, campos: form, size }))
+    }
+
+    /**
+     * Abrir modal y llamar el formulario para eliminar
+     */
+    const openModalDelete = (dataRow) => {
+        const size = 'md';
+        const title = 'Eliminando usuario';
+        const form = <DeleteForm
+            id={dataRow.idUsuario}
+            close={closeModal}
+            message={`¿Seguro que quieres eliminar el Registro "${dataRow.Usuario}"?`}
+            onSubmit={del}
+            data={dataRow}
+        />;
+        dispatch(modalForm({ title, campos: form, size }))
+
     }
     return (
         <div className="common-container dashboard-container">
             <h1>Usuarios</h1>
-            <TableDinamyc 
-            theme={'light'}
-            noDataLabel={'No existen usuarios registrados'}
-            fnModify={openModalModify}
-            fnDelete={openModalDelete}
+            <Btn
+                label={'Crear'}
+                onClick={openModalRegister}
+            />
+            <TableDinamyc
+                theme={'light'}
+                noDataLabel={'No existen usuarios registrados'}
+                openModal={openModal}
+
             />
         </div>
     );
