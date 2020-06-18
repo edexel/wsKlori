@@ -1,68 +1,80 @@
 <?php
 
+/**
+ * Created by Reliese Model.
+ */
+
 namespace App\Models;
 
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
+ * Class Usuario
+ * 
  * @property int $idUsuario
  * @property string $username
- * @property string $descripcion
- * @property string $password
  * @property string $email
- * @property boolean $admin
+ * @property string $password
+ * @property string $descripcion
+ * @property bool $admin
  * @property string $tokenRecover
- * @property integer $activo
- * @property string $ultima_conexion
- * @property string $created_at
- * @property string $updated_at
- * @property string $deleted_at
- * @property DipositivoUsuario[] $dipositivoUsuarios
- * @property InfoUsuario $infoUsuario
- * @property UsuarioSesion[] $usuarioSesions
+ * @property bool $activo
+ * @property Carbon $ultimaConexion
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property string|null $deleted_at
+ * 
+ * @property Collection|DispositivoUsuario[] $dispositivo_usuarios
+ * @property Collection|InfoUsuario[] $info_usuarios
+ * @property Collection|UsuarioSesion[] $usuario_sesions
+ *
+ * @package App\Models
  */
 class Usuario extends Model
 {
-    /**
-     * The table associated with the model.
-     * 
-     * @var string
-     */
-    protected $table = 'usuario';
+	use SoftDeletes;
+	protected $table = 'usuario';
+	protected $primaryKey = 'idUsuario';
 
-    /**
-     * The primary key for the model.
-     * 
-     * @var string
-     */
-    protected $primaryKey = 'id';
+	protected $casts = [
+		'admin' => 'bool',
+		'activo' => 'bool'
+	];
 
-    /**
-     * @var array
-     */
-    protected $fillable = ['username', 'descripcion', 'password', 'email', 'admin', 'tokenRecover', 'activo', 'ultima_conexion', 'created_at', 'updated_at', 'deleted_at'];
+	protected $dates = [
+		'ultimaConexion'
+	];
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function dipositivoUsuarios()
-    {
-        return $this->hasMany('App\DipositivoUsuario', 'idUsuario', 'idUsuario');
-    }
+	protected $hidden = [
+		'password'
+	];
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function infoUsuario()
-    {
-        return $this->hasOne('App\InfoUsuario', 'idUsuario', 'idUsuario');
-    }
+	protected $fillable = [
+		'username',
+		'email',
+		'password',
+		'descripcion',
+		'admin',
+		'tokenRecover',
+		'activo',
+		'ultimaConexion'
+	];
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function usuarioSesions()
-    {
-        return $this->hasMany('App\UsuarioSesion', 'idUsuario', 'idUsuario');
-    }
+	public function dispositivo_usuarios()
+	{
+		return $this->hasMany(DispositivoUsuario::class, 'idUsuario');
+	}
+
+	public function info_usuarios()
+	{
+		return $this->hasMany(InfoUsuario::class, 'idUsuario');
+	}
+
+	public function usuario_sesions()
+	{
+		return $this->hasMany(UsuarioSesion::class, 'idUsuario');
+	}
 }

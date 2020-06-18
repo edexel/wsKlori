@@ -25,7 +25,9 @@ export const HttpService = async (endpoint, method = 'GET', data = null, headers
     if (headers)
         options.headers = headers;
 
-    return await fetch(`${ConfigApi.url}${endpoint}`, options)
+    const API_URL = endpoint.includes('://') ? endpoint : `${ConfigApi.url}${endpoint}`;
+
+    return await fetch(API_URL, options)
         .then(response => {
             return response.text().then(text => {
                 const data = text && JSON.parse(text);
