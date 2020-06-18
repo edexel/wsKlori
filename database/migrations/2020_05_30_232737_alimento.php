@@ -14,7 +14,7 @@ class Alimento extends Migration
     public function up()
     {
         Schema::create('alimento', function (Blueprint $table) {
-            $table->id();
+            $table->id('idAlimento');
             $table->string('nombre', 100);
             $table->string('img', 100);
             $table->boolean('activo');

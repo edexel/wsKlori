@@ -14,8 +14,8 @@ class DispositivoUsuario extends Migration
     public function up()
     {
         Schema::create('dispositivo_usuario', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('idUsuario')->constrained('usuario');
+            $table->id('idDispositivoUsuario');
+            $table->foreignId('idUsuario')->references('idUsuario')->on('usuario');
             $table->string('modelo', 50);
             $table->string('plataforma', 15);
             $table->string('uuid', 100);

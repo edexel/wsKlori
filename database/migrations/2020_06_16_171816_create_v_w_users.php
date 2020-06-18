@@ -16,10 +16,10 @@ class CreateVWUsers extends Migration
     {
         DB::statement('
                 CREATE VIEW vw_table_usuario AS 
-                SELECT  u.id as "idUsuario",
+                SELECT  u.idUsuario as "idUsuario",
                         u.username as "Usuario", 
                         u.email as "Correo", 
-                        iu.id as "idInfoUsuario", 
+                        iu.idInfoUsuario as "idInfoUsuario", 
                         iu.nombre as "Nombre", 
                         iu.apellido as "Apellido",
                         iu.genero as "Género",
@@ -34,7 +34,7 @@ class CreateVWUsers extends Migration
                         iu.objetivos as "Objetivos", 
                         iu.observaciones as "Observaciones"
                 From klori.usuario as u INNER JOIN 
-                    klori.info_usuario as iu on u.id = iu.idUsuario
+                    klori.info_usuario as iu on u.idUsuario = iu.idUsuario
                 WHERE u.admin = 0 and u.activo = 1 and u.deleted_at is null and iu.deleted_at is null 
         ');
     }

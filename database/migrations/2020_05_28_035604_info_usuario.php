@@ -14,8 +14,8 @@ class InfoUsuario extends Migration
     public function up()
     {
         Schema::create('info_usuario', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('idUsuario')->constrained('usuario');
+            $table->id('idInfoUsuario');
+            $table->foreignId('idUsuario')->references('idUsuario')->on('usuario');
             $table->string('nombre', 100);
             $table->string('apellido', 100);
             $table->string('genero', 10);
