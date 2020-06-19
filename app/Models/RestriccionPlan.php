@@ -14,6 +14,9 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $idRestriccionPlan
  * @property int $idPlanSesion
  * @property int $idRestriccionAlimento
+ * 
+ * @property PlanSesion $plan_sesion
+ * @property Alimento $alimento
  *
  * @package App\Models
  */
@@ -32,4 +35,14 @@ class RestriccionPlan extends Model
 		'idPlanSesion',
 		'idRestriccionAlimento'
 	];
+
+	public function plan_sesion()
+	{
+		return $this->belongsTo(PlanSesion::class, 'idPlanSesion');
+	}
+
+	public function alimento()
+	{
+		return $this->belongsTo(Alimento::class, 'idRestriccionAlimento');
+	}
 }

@@ -22,15 +22,18 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property float $talla
  * @property int $ocupacion
  * @property float $estatura
- * @property int $estatusCivil
- * @property string $antecendenteFamiliar
- * @property string $antecendentePersonal
+ * @property string $antecedenteFamiliar
+ * @property string $antecedentePersonal
  * @property string $medicamentos
  * @property string $objetivos
  * @property string $observaciones
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property string|null $deleted_at
+ * @property int|null $idEstadoCivil
+ * 
+ * @property EstadoCivil $estado_civil
+ * @property Usuario $usuario
  *
  * @package App\Models
  */
@@ -45,7 +48,7 @@ class InfoUsuario extends Model
 		'talla' => 'float',
 		'ocupacion' => 'int',
 		'estatura' => 'float',
-		'estatusCivil' => 'int'
+		'idEstadoCivil' => 'int'
 	];
 
 	protected $dates = [
@@ -61,11 +64,21 @@ class InfoUsuario extends Model
 		'talla',
 		'ocupacion',
 		'estatura',
-		'estatusCivil',
-		'antecendenteFamiliar',
-		'antecendentePersonal',
+		'antecedenteFamiliar',
+		'antecedentePersonal',
 		'medicamentos',
 		'objetivos',
-		'observaciones'
+		'observaciones',
+		'idEstadoCivil'
 	];
+
+	public function estado_civil()
+	{
+		return $this->belongsTo(EstadoCivil::class, 'idEstadoCivil');
+	}
+
+	public function usuario()
+	{
+		return $this->belongsTo(Usuario::class, 'idUsuario');
+	}
 }
