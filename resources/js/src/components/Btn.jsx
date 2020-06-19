@@ -35,7 +35,7 @@ function Btn({ label, className, icon, iconLeft = false, iconRight = true, iconC
                     // verifica si contiene icono 
                     // y si es del lado derecho
                     icon ?
-                        iconRight && <span> <i className={iconClass}></i></span>
+                        iconRight && <span> <i className={iconClass}></i> </span>
                         : null
                 }
             </Button>

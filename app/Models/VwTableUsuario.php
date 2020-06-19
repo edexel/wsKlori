@@ -22,7 +22,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $Fecha Nacimiento
  * @property int $Ocupación
  * @property float $Estatura
- * @property int $Estatus Civil
+ * @property int $idEstadoCivil
+ * @property string $Estado Civil
  * @property string $Antecedente familiar
  * @property string $Antecedente personal
  * @property string $Medicamentos
@@ -43,7 +44,7 @@ class VwTableUsuario extends Model
 		'Talla' => 'float',
 		'Ocupación' => 'int',
 		'Estatura' => 'float',
-		'Estatus Civil' => 'int'
+		'idEstadoCivil' => 'int'
 	];
 
 	protected $fillable = [
@@ -58,7 +59,8 @@ class VwTableUsuario extends Model
 		'Fecha Nacimiento',
 		'Ocupación',
 		'Estatura',
-		'Estatus Civil',
+		'idEstadoCivil',
+		'Estado Civil',
 		'Antecedente familiar',
 		'Antecedente personal',
 		'Medicamentos',

@@ -12,38 +12,32 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class RutinaActividad
+ * Class EstadoCivil
  * 
- * @property int $idRutinaActividad
+ * @property int $idEstadoCivil
  * @property string $nombre
- * @property bool $activo
  * @property string $descripcion
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property string|null $deleted_at
  * 
- * @property Collection|RutinaSesion[] $rutina_sesions
+ * @property Collection|InfoUsuario[] $info_usuarios
  *
  * @package App\Models
  */
-class RutinaActividad extends Model
+class EstadoCivil extends Model
 {
 	use SoftDeletes;
-	protected $table = 'rutina_actividad';
-	protected $primaryKey = 'idRutinaActividad';
-
-	protected $casts = [
-		'activo' => 'bool'
-	];
+	protected $table = 'estado_civil';
+	protected $primaryKey = 'idEstadoCivil';
 
 	protected $fillable = [
 		'nombre',
-		'activo',
 		'descripcion'
 	];
 
-	public function rutina_sesions()
+	public function info_usuarios()
 	{
-		return $this->hasMany(RutinaSesion::class, 'idRutinaActividad');
+		return $this->hasMany(InfoUsuario::class, 'idEstadoCivil');
 	}
 }

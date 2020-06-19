@@ -25,6 +25,11 @@ class DatabaseSeeder extends Seeder
             EquivalenciaSeeder::class,
             RacionesDiariasPlanSeeder::class,
             DispositivoUsuarioSeeder::class,
+            ActionsSeeder::class,
+            TablesSeeder::class,
+            TablesActionsSeeder::class,
+            TablesColumnsSeeder::class,
+            EstadoCivilSeeder::class,
         ]);
     }
 }
