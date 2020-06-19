@@ -3,10 +3,9 @@
 namespace App\Http\Controllers\Web\User;
 // Codes Responses
 
-use App\Business\Usuario\GetPatients;
 use App\Http\Controllers\Controller;
 use App\Http\Responses\Response as ResponseJson;
-use App\Models\Usuario;
+use App\Models\VwUsuario;
 use Symfony\Component\HttpFoundation\Response;
 // Request
 use Illuminate\Http\Request;
@@ -26,7 +25,7 @@ class GetAllController extends Controller
     public function __invoke(Request $oRequest)
     {
         // Encuentra usuario de la base de datos
-        $users = GetPatients::all();
+        $users = VwUsuario::all();
 
         // return response()->json($this->oResponse->fnResult(true, $oUser, "Success"), 200);
 

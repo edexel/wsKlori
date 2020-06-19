@@ -104771,6 +104771,97 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/src/actions/table/tableDeleteAction.js":
+/*!*************************************************************!*\
+  !*** ./resources/js/src/actions/table/tableDeleteAction.js ***!
+  \*************************************************************/
+/*! exports provided: tableDeleteAction */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tableDeleteAction", function() { return tableDeleteAction; });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _services_HttpService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/HttpService */ "./resources/js/src/services/HttpService.js");
+/* harmony import */ var _redux_ducks_loadingDucks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../redux/ducks/loadingDucks */ "./resources/js/src/redux/ducks/loadingDucks.js");
+/* harmony import */ var _redux_ducks_modalDucks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../redux/ducks/modalDucks */ "./resources/js/src/redux/ducks/modalDucks.js");
+/* harmony import */ var _redux_ducks_tableDucks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../redux/ducks/tableDucks */ "./resources/js/src/redux/ducks/tableDucks.js");
+/* harmony import */ var _tableGetAction__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./tableGetAction */ "./resources/js/src/actions/table/tableGetAction.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+
+
+
+/**
+ * Created by Joel Valdivia
+ * Date 09 Jun 2020
+ * 
+ * Funcion para realizar una peticion http POST y obtener token
+ * @param {Object} dispatch funcion que dispara acciones de Redux
+ */
+
+var tableDeleteAction = /*#__PURE__*/function () {
+  var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(dispatch, url, data, page, titleSuccess, titleError) {
+    var tableResponseData;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            // dispara accion para saber que se realiza una peticion HTTP
+            dispatch(Object(_redux_ducks_loadingDucks__WEBPACK_IMPORTED_MODULE_2__["tableLoadingShow"])());
+            dispatch(Object(_redux_ducks_tableDucks__WEBPACK_IMPORTED_MODULE_4__["tableRequest"])(url));
+            _context.prev = 2;
+            _context.next = 5;
+            return Object(_services_HttpService__WEBPACK_IMPORTED_MODULE_1__["HttpService"])(url, 'DELETE', data);
+
+          case 5:
+            tableResponseData = _context.sent;
+            // obtiene los usuarios con los cambios
+            Object(_tableGetAction__WEBPACK_IMPORTED_MODULE_5__["tableGetAction"])(dispatch, "".concat(url, "/paginate?page=").concat(page)); // limpia el modal del fomulario
+
+            dispatch(Object(_redux_ducks_modalDucks__WEBPACK_IMPORTED_MODULE_3__["modalClean"])()); // muestra modal con exito
+
+            dispatch(Object(_redux_ducks_modalDucks__WEBPACK_IMPORTED_MODULE_3__["modalSuccess"])({
+              title: titleSuccess,
+              body: tableResponseData.message
+            }));
+            _context.next = 16;
+            break;
+
+          case 11:
+            _context.prev = 11;
+            _context.t0 = _context["catch"](2);
+            dispatch(Object(_redux_ducks_loadingDucks__WEBPACK_IMPORTED_MODULE_2__["tableLoadingHide"])()); // dispara el error
+
+            dispatch(Object(_redux_ducks_tableDucks__WEBPACK_IMPORTED_MODULE_4__["tableFailure"])(_context.t0)); // muestra modal con error
+
+            dispatch(Object(_redux_ducks_modalDucks__WEBPACK_IMPORTED_MODULE_3__["modalError"])({
+              title: titleError,
+              body: _context.t0
+            }));
+
+          case 16:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee, null, [[2, 11]]);
+  }));
+
+  return function tableDeleteAction(_x, _x2, _x3, _x4, _x5, _x6) {
+    return _ref.apply(this, arguments);
+  };
+}();
+
+/***/ }),
+
 /***/ "./resources/js/src/actions/table/tableGetAction.js":
 /*!**********************************************************!*\
   !*** ./resources/js/src/actions/table/tableGetAction.js ***!
@@ -104806,7 +104897,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
  */
 
 var tableGetAction = /*#__PURE__*/function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(dispatch, url) {
+  var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(dispatch, url, titleError) {
     var tableResponseData;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
       while (1) {
@@ -104821,8 +104912,6 @@ var tableGetAction = /*#__PURE__*/function () {
 
           case 5:
             tableResponseData = _context.sent;
-            // agrega la informacion a local storage
-            //   localStorage.setItem('user', JSON.stringify(loginResponseData.data));
             // dispara los datos al store de redux
             dispatch(Object(_redux_ducks_tableDucks__WEBPACK_IMPORTED_MODULE_4__["tableSuccess"])(tableResponseData.data));
             dispatch(Object(_redux_ducks_loadingDucks__WEBPACK_IMPORTED_MODULE_2__["tableLoadingHide"])());
@@ -104837,7 +104926,7 @@ var tableGetAction = /*#__PURE__*/function () {
             dispatch(Object(_redux_ducks_tableDucks__WEBPACK_IMPORTED_MODULE_4__["tableFailure"])(_context.t0)); // muestra modal con error
 
             dispatch(Object(_redux_ducks_modalDucks__WEBPACK_IMPORTED_MODULE_3__["modalError"])({
-              title: 'Error al obtener los usuarios',
+              title: titleError,
               body: _context.t0
             }));
 
@@ -104849,7 +104938,190 @@ var tableGetAction = /*#__PURE__*/function () {
     }, _callee, null, [[2, 10]]);
   }));
 
-  return function tableGetAction(_x, _x2) {
+  return function tableGetAction(_x, _x2, _x3) {
+    return _ref.apply(this, arguments);
+  };
+}();
+
+/***/ }),
+
+/***/ "./resources/js/src/actions/table/tablePostAction.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/src/actions/table/tablePostAction.js ***!
+  \***********************************************************/
+/*! exports provided: tablePostAction */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tablePostAction", function() { return tablePostAction; });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _services_HttpService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/HttpService */ "./resources/js/src/services/HttpService.js");
+/* harmony import */ var _redux_ducks_loadingDucks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../redux/ducks/loadingDucks */ "./resources/js/src/redux/ducks/loadingDucks.js");
+/* harmony import */ var _redux_ducks_modalDucks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../redux/ducks/modalDucks */ "./resources/js/src/redux/ducks/modalDucks.js");
+/* harmony import */ var _redux_ducks_tableDucks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../redux/ducks/tableDucks */ "./resources/js/src/redux/ducks/tableDucks.js");
+/* harmony import */ var _tableGetAction__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./tableGetAction */ "./resources/js/src/actions/table/tableGetAction.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+
+
+
+/**
+ * Created by Joel Valdivia
+ * Date 09 Jun 2020
+ * 
+ * Funcion para realizar una peticion http POST y obtener token
+ * @param {Object} dispatch funcion que dispara acciones de Redux
+ */
+
+var tablePostAction = /*#__PURE__*/function () {
+  var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(dispatch, url, data, page, titleSuccess, titleError) {
+    var tableResponseData;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            // dispara accion para saber que se realiza una peticion HTTP
+            dispatch(Object(_redux_ducks_loadingDucks__WEBPACK_IMPORTED_MODULE_2__["tableLoadingShow"])());
+            dispatch(Object(_redux_ducks_tableDucks__WEBPACK_IMPORTED_MODULE_4__["tableRequest"])(url));
+            _context.prev = 2;
+            _context.next = 5;
+            return Object(_services_HttpService__WEBPACK_IMPORTED_MODULE_1__["HttpService"])(url, 'POST', data);
+
+          case 5:
+            tableResponseData = _context.sent;
+            console.log(tableResponseData); // obtiene los usuarios con los cambios
+
+            Object(_tableGetAction__WEBPACK_IMPORTED_MODULE_5__["tableGetAction"])(dispatch, "".concat(url, "/paginate?page=").concat(page)); // limpia el modal del fomulario
+
+            dispatch(Object(_redux_ducks_modalDucks__WEBPACK_IMPORTED_MODULE_3__["modalClean"])()); // muestra modal con exito
+
+            dispatch(Object(_redux_ducks_modalDucks__WEBPACK_IMPORTED_MODULE_3__["modalSuccess"])({
+              title: titleSuccess,
+              body: tableResponseData.message
+            }));
+            _context.next = 17;
+            break;
+
+          case 12:
+            _context.prev = 12;
+            _context.t0 = _context["catch"](2);
+            dispatch(Object(_redux_ducks_loadingDucks__WEBPACK_IMPORTED_MODULE_2__["tableLoadingHide"])()); // dispara el error
+
+            dispatch(Object(_redux_ducks_tableDucks__WEBPACK_IMPORTED_MODULE_4__["tableFailure"])(_context.t0)); // muestra modal con error
+
+            dispatch(Object(_redux_ducks_modalDucks__WEBPACK_IMPORTED_MODULE_3__["modalError"])({
+              title: titleError,
+              body: _context.t0
+            }));
+
+          case 17:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee, null, [[2, 12]]);
+  }));
+
+  return function tablePostAction(_x, _x2, _x3, _x4, _x5, _x6) {
+    return _ref.apply(this, arguments);
+  };
+}();
+
+/***/ }),
+
+/***/ "./resources/js/src/actions/table/tablePutAction.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/src/actions/table/tablePutAction.js ***!
+  \**********************************************************/
+/*! exports provided: tablePutAction */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tablePutAction", function() { return tablePutAction; });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _services_HttpService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/HttpService */ "./resources/js/src/services/HttpService.js");
+/* harmony import */ var _redux_ducks_loadingDucks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../redux/ducks/loadingDucks */ "./resources/js/src/redux/ducks/loadingDucks.js");
+/* harmony import */ var _redux_ducks_modalDucks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../redux/ducks/modalDucks */ "./resources/js/src/redux/ducks/modalDucks.js");
+/* harmony import */ var _redux_ducks_tableDucks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../redux/ducks/tableDucks */ "./resources/js/src/redux/ducks/tableDucks.js");
+/* harmony import */ var _tableGetAction__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./tableGetAction */ "./resources/js/src/actions/table/tableGetAction.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+
+
+
+/**
+ * Created by Joel Valdivia
+ * Date 09 Jun 2020
+ * 
+ * Funcion para realizar una peticion http POST y obtener token
+ * @param {Object} dispatch funcion que dispara acciones de Redux
+ */
+
+var tablePutAction = /*#__PURE__*/function () {
+  var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(dispatch, url, data, page, titleSuccess, titleError) {
+    var tableResponseData;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            // dispara accion para saber que se realiza una peticion HTTP
+            dispatch(Object(_redux_ducks_loadingDucks__WEBPACK_IMPORTED_MODULE_2__["tableLoadingShow"])());
+            dispatch(Object(_redux_ducks_tableDucks__WEBPACK_IMPORTED_MODULE_4__["tableRequest"])(url));
+            _context.prev = 2;
+            _context.next = 5;
+            return Object(_services_HttpService__WEBPACK_IMPORTED_MODULE_1__["HttpService"])(url, 'PUT', data);
+
+          case 5:
+            tableResponseData = _context.sent;
+            // obtiene los usuarios con los cambios
+            Object(_tableGetAction__WEBPACK_IMPORTED_MODULE_5__["tableGetAction"])(dispatch, "".concat(url, "/paginate?page=").concat(page)); // limpia el modal del fomulario
+
+            dispatch(Object(_redux_ducks_modalDucks__WEBPACK_IMPORTED_MODULE_3__["modalClean"])()); // muestra modal con exito
+
+            dispatch(Object(_redux_ducks_modalDucks__WEBPACK_IMPORTED_MODULE_3__["modalSuccess"])({
+              title: titleSuccess,
+              body: tableResponseData.message
+            }));
+            _context.next = 16;
+            break;
+
+          case 11:
+            _context.prev = 11;
+            _context.t0 = _context["catch"](2);
+            dispatch(Object(_redux_ducks_loadingDucks__WEBPACK_IMPORTED_MODULE_2__["tableLoadingHide"])()); // dispara el error
+
+            dispatch(Object(_redux_ducks_tableDucks__WEBPACK_IMPORTED_MODULE_4__["tableFailure"])(_context.t0)); // muestra modal con error
+
+            dispatch(Object(_redux_ducks_modalDucks__WEBPACK_IMPORTED_MODULE_3__["modalError"])({
+              title: titleError,
+              body: _context.t0
+            }));
+
+          case 16:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee, null, [[2, 11]]);
+  }));
+
+  return function tablePutAction(_x, _x2, _x3, _x4, _x5, _x6) {
     return _ref.apply(this, arguments);
   };
 }();
@@ -104909,7 +105181,7 @@ function Btn(_ref) {
   // y si es del lado derecho
   icon ? iconRight && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: iconClass
-  })) : null));
+  }), " ") : null));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Btn);
@@ -105024,10 +105296,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
 /* harmony import */ var react_hook_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-hook-form */ "./node_modules/react-hook-form/dist/react-hook-form.es.js");
+/* harmony import */ var _Btn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Btn */ "./resources/js/src/components/Btn.jsx");
 
 
 
 
+
+/**
+ * Created by Joel Valdivia
+ * Date 18 Jun 2020
+ * Componente para mostrar eliminar de un registro
+ * @param {Object} props
+ */
 
 function DeleteForm(_ref) {
   var onSubmit = _ref.onSubmit,
@@ -105053,19 +105333,23 @@ function DeleteForm(_ref) {
     className: "form-horizontal modal-bottom"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "text-center"
-  }, message), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"].Footer, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+  }, message), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Modal"].Footer, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Btn__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    label: 'Cancelar',
+    className: 'gral-danger',
     variant: "secondary",
-    className: "gral-boton",
-    onClick: close
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "far fa-times-circle icon-btn"
-  }), "Cancelar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    onClick: close,
+    icon: true,
+    iconLeft: true,
+    iconClass: 'far fa-times-circle'
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Btn__WEBPACK_IMPORTED_MODULE_3__["default"], {
     type: "submit",
-    className: "gral-boton",
-    variant: "danger"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "far fa-check-circle icon-btn"
-  }), labelButton)));
+    label: labelButton,
+    variant: "danger",
+    className: 'btn-primary',
+    icon: true,
+    iconLeft: true,
+    iconClass: 'far fa-check-circle'
+  })));
 }
 
 
@@ -105206,7 +105490,8 @@ function ModalCustom() {
   }),
       modal = _useSelector.modal;
 
-  var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useDispatch"])(); // oculta el modal
+  var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useDispatch"])();
+  console.log(modal); // oculta el modal
 
   var hideModal = function hideModal() {
     // dispara la accion que limpia el modal
@@ -106473,14 +106758,38 @@ function UserForm(_ref) {
   // define caracteristicas de ReacHookForm
   var _useForm = Object(react_hook_form__WEBPACK_IMPORTED_MODULE_1__["useForm"])({
     defaultValues: data && {
+      id: data['idUsuario'],
       username: data['Usuario'],
-      email: data['Correo']
+      email: data['Correo'],
+      name: data['Nombre'],
+      birthDate: data['Fecha Nacimiento'].split("/").reverse().join("-"),
+      size: data['Talla'],
+      family_background: data['Antecedente familiar'],
+      medicines: data['Medicamentos'],
+      idStatusCivil: data['idEstadoCivil'],
+      genre: data['Género'],
+      lastname: data['Apellido'],
+      occupation: data['Ocupación'],
+      stature: data['Estatura'],
+      personal_background: data['Antecedente personal'],
+      objective: data['Objetivos'],
+      observation: data['Observaciones']
     }
   }),
       register = _useForm.register,
       handleSubmit = _useForm.handleSubmit,
-      errors = _useForm.errors;
+      errors = _useForm.errors,
+      setValue = _useForm.setValue; // Registra Id en caso de tener datos
 
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (data) {
+      register({
+        name: 'id'
+      });
+      setValue("id", data['idUsuario']);
+    }
+  }, [register]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["Form"], {
     name: "form-calls",
     onSubmit: handleSubmit(onSubmit)
@@ -106499,16 +106808,20 @@ function UserForm(_ref) {
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_InputText__WEBPACK_IMPORTED_MODULE_2__["default"], {
     register: register,
-    name: "lastname",
-    label: "Apellido",
-    placeholder: "ej. Padilla",
+    name: "username",
+    label: "Usuario con el que entrar\xE1 el paciente a la App",
+    placeholder: "ej. JoseFrank",
     errors: errors,
     rules: {
-      required: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["required"])('')
+      required: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["required"])(''),
+      minLength: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["minLength"])(6)
     }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_RadioGenre__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    label: 'Género',
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_InputText__WEBPACK_IMPORTED_MODULE_2__["default"], {
     register: register,
+    name: "birthDate",
+    type: "date",
+    label: "Fecha nacimiento",
+    placeholder: "ej. 1990-01-01",
     errors: errors,
     rules: {
       required: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["required"])('')
@@ -106524,18 +106837,57 @@ function UserForm(_ref) {
     rules: {
       required: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["required"])('')
     }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_InputText__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    register: register,
+    as: "textarea",
+    rows: "3",
+    name: "family_background",
+    label: "Antecedente familiar",
+    placeholder: "ej. madre con diabetes etc.",
+    errors: errors,
+    rules: {
+      required: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["required"])(''),
+      minLength: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["minLength"])(2)
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_InputText__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    register: register,
+    as: "textarea",
+    rows: "3",
+    name: "medicines",
+    label: "Medicamentos",
+    placeholder: "ej. paracetamol etc.",
+    errors: errors,
+    rules: {
+      required: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["required"])(''),
+      minLength: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["minLength"])(2)
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_RadioGenre__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    label: 'Género',
+    register: register,
+    errors: errors,
+    rules: {
+      required: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["required"])('')
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_InputText__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    register: register,
+    name: "idStatusCivil",
+    label: "Estado civil",
+    placeholder: "ej. Casado, divorciado, soltero etc.",
+    errors: errors,
+    rules: {
+      required: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["required"])('')
+    }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["Col"], {
     sm: "6",
     md: "6"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_InputText__WEBPACK_IMPORTED_MODULE_2__["default"], {
     register: register,
-    name: "username",
-    label: "Usuario con el que entrar\xE1 el paciente a la App",
-    placeholder: "ej. JoseFrank",
+    name: "lastname",
+    label: "Apellido",
+    placeholder: "ej. Padilla",
     errors: errors,
     rules: {
-      required: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["required"])(''),
-      minLength: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["minLength"])(6)
+      required: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["required"])('')
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_InputText__WEBPACK_IMPORTED_MODULE_2__["default"], {
     register: register,
@@ -106547,6 +106899,62 @@ function UserForm(_ref) {
       required: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["required"])(''),
       pattern: _helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["emailPattern"],
       minLength: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["minLength"])(5)
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_InputText__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    register: register,
+    name: "occupation",
+    label: "Ocupaci\xF3n",
+    placeholder: "ej. arquitecto",
+    errors: errors,
+    rules: {
+      required: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["required"])('')
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_InputText__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    register: register,
+    name: "stature",
+    label: "Estatura",
+    type: "number",
+    step: "any",
+    placeholder: "ej. 1.82",
+    errors: errors,
+    rules: {
+      required: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["required"])('')
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_InputText__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    register: register,
+    as: "textarea",
+    rows: "3",
+    name: "personal_background",
+    label: "Antecedente personal",
+    placeholder: "ej. presi\xF3n alta etc.",
+    errors: errors,
+    rules: {
+      required: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["required"])(''),
+      minLength: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["minLength"])(2)
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_InputText__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    register: register,
+    as: "textarea",
+    rows: "3",
+    name: "objective",
+    label: "Objetivos",
+    placeholder: "ej. ganar m\xFAsculo etc.",
+    errors: errors,
+    rules: {
+      required: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["required"])(''),
+      minLength: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["minLength"])(2)
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_InputText__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    register: register,
+    as: "textarea",
+    rows: "3",
+    name: "observation",
+    label: "Observaciones",
+    placeholder: "escribe algunas observaciones",
+    errors: errors,
+    rules: {
+      required: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["required"])(''),
+      minLength: Object(_helpers_validationsInputs__WEBPACK_IMPORTED_MODULE_5__["minLength"])(2)
     }
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["Modal"].Footer, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Btn__WEBPACK_IMPORTED_MODULE_3__["default"], {
     label: 'Cancelar',
@@ -106592,6 +107000,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _redux_ducks_modalDucks__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../redux/ducks/modalDucks */ "./resources/js/src/redux/ducks/modalDucks.js");
 /* harmony import */ var _UserForm__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./UserForm */ "./resources/js/src/pages/user/UserForm.jsx");
 /* harmony import */ var _components_Btn__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/Btn */ "./resources/js/src/components/Btn.jsx");
+/* harmony import */ var _actions_table_tablePutAction__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../actions/table/tablePutAction */ "./resources/js/src/actions/table/tablePutAction.js");
+/* harmony import */ var _actions_table_tablePostAction__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../actions/table/tablePostAction */ "./resources/js/src/actions/table/tablePostAction.js");
+/* harmony import */ var _actions_table_tableDeleteAction__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../actions/table/tableDeleteAction */ "./resources/js/src/actions/table/tableDeleteAction.js");
+
+
+
 
 
 
@@ -106612,9 +107026,18 @@ __webpack_require__.r(__webpack_exports__);
 function UserPage() {
   // obtiene usuario del store
   var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useDispatch"])();
-  var API_URL = '/user/paginate';
+  var API_URL_PAGINATE = '/user/paginate';
+  var API_URL = '/user';
+
+  var _useSelector = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["useSelector"])(function (store) {
+    return store;
+  }),
+      table = _useSelector.table;
+
+  var paginate = table.paginate;
+  var current_page = paginate.current_page;
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
-    Object(_actions_table__WEBPACK_IMPORTED_MODULE_4__["tableGetAction"])(dispatch, API_URL);
+    Object(_actions_table__WEBPACK_IMPORTED_MODULE_4__["tableGetAction"])(dispatch, API_URL_PAGINATE, 'Error al obtener los usuarios');
   }, []);
   /**
   * Abrir modal dependiendo la accion
@@ -106646,8 +107069,8 @@ function UserPage() {
 
 
   var register = function register(dataForm) {
-    console.log('register', dataForm); // const paginacion = '?page=' + this.props.paginacion.actual_pagina;
-    // this.props.dispatch(catalogoAcciones.modificar(datosFormulario.id, datosFormulario, this.state.url, paginacion))
+    console.log('register', dataForm);
+    Object(_actions_table_tablePostAction__WEBPACK_IMPORTED_MODULE_11__["tablePostAction"])(dispatch, API_URL, dataForm, current_page, 'Usuario registrado correctamente', "Error al registrar el usuario ".concat(dataForm.name));
   };
   /**
   * Funcion para modificar los registros del catalogo
@@ -106656,9 +107079,9 @@ function UserPage() {
   */
 
 
-  var modify = function modify(dataForm, url) {
-    console.log('modify', dataForm); // const paginacion = '?page=' + this.props.paginacion.actual_pagina;
-    // this.props.dispatch(catalogoAcciones.modificar(datosFormulario.id, datosFormulario, this.state.url, paginacion))
+  var modify = function modify(dataForm) {
+    console.log('modify', dataForm);
+    Object(_actions_table_tablePutAction__WEBPACK_IMPORTED_MODULE_10__["tablePutAction"])(dispatch, API_URL, dataForm, current_page, 'Usuario modificado correctamente', "Error al modificar el usuario ".concat(dataForm.name));
   };
   /**
    * Funcion para eliminar haciendo peticion Http
@@ -106667,6 +107090,7 @@ function UserPage() {
 
   var del = function del(dataForm) {
     console.log('delete', dataForm);
+    Object(_actions_table_tableDeleteAction__WEBPACK_IMPORTED_MODULE_12__["tableDeleteAction"])(dispatch, API_URL, dataForm, current_page, 'Usuario eliminado correctamente', "Error al eliminar el usuario ".concat(dataForm.name));
   };
   /**
   * Abrir modal y llamar el formulario para registrar
@@ -107642,8 +108066,8 @@ var HttpService = /*#__PURE__*/function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Bioxor\Documents\LaravelProject\wsKlori\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Bioxor\Documents\LaravelProject\wsKlori\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/joel/Projects/wsKlori/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/joel/Projects/wsKlori/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
