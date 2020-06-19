@@ -36,9 +36,7 @@ class LoginController extends Controller
      */
     public function __invoke(LoginRequest $request)
     {
-        $ObjeClass = new \App\Business\Cliente\Authenticate;
-        $Req= $ObjeClass();
-        dd($Req);
+        
         // Valida usuario en la capa de negocios
         $ObjeClass = new \App\Business\Usuario\Login;
         $user = $ObjeClass($request->input('username'),$request->input('password'));
