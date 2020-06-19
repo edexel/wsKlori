@@ -10,6 +10,9 @@ import { DeleteForm } from '../../components/DeleteForm';
 import { modalForm, modalClean } from '../../redux/ducks/modalDucks';
 import { UserForm } from './UserForm';
 import Btn from '../../components/Btn';
+import { tablePutAction } from '../../actions/table/tablePutAction';
+import { tablePostAction } from '../../actions/table/tablePostAction';
+import { tableDeleteAction } from '../../actions/table/tableDeleteAction';
 
 /**
  * Created by Joel Valdivia
@@ -20,11 +23,14 @@ function UserPage() {
 
     // obtiene usuario del store
     const dispatch = useDispatch();
-    const API_URL = '/user/paginate';
-
+    const API_URL_PAGINATE = '/user/paginate';
+    const API_URL = '/user';
+    const { table } = useSelector(store => store);
+    const { paginate } = table;
+    const { current_page } = paginate;
 
     useEffect(() => {
-        tableGetAction(dispatch, API_URL)
+        tableGetAction(dispatch, API_URL_PAGINATE, 'Error al obtener los usuarios')
     }, [])
 
     /**
@@ -54,18 +60,16 @@ function UserPage() {
    */
     const register = (dataForm) => {
         console.log('register', dataForm)
-        // const paginacion = '?page=' + this.props.paginacion.actual_pagina;
-        // this.props.dispatch(catalogoAcciones.modificar(datosFormulario.id, datosFormulario, this.state.url, paginacion))
+        tablePostAction(dispatch, API_URL, dataForm, current_page, 'Usuario registrado correctamente', `Error al registrar el usuario ${dataForm.name}`);
     }
     /**
     * Funcion para modificar los registros del catalogo
     * @param datosFormulario
     * @param url
     */
-    const modify = (dataForm, url) => {
+    const modify = (dataForm) => {
         console.log('modify', dataForm)
-        // const paginacion = '?page=' + this.props.paginacion.actual_pagina;
-        // this.props.dispatch(catalogoAcciones.modificar(datosFormulario.id, datosFormulario, this.state.url, paginacion))
+        tablePutAction(dispatch, API_URL, dataForm, current_page,  'Usuario modificado correctamente', `Error al modificar el usuario ${dataForm.name}`);
     }
 
     /**
@@ -73,6 +77,7 @@ function UserPage() {
      */
     const del = (dataForm) => {
         console.log('delete', dataForm)
+        tableDeleteAction(dispatch, API_URL, dataForm, current_page, 'Usuario eliminado correctamente', `Error al eliminar el usuario ${dataForm.name}`);
     }
 
     /**

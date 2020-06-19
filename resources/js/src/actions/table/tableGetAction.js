@@ -11,29 +11,26 @@ import { tableRequest, tableSuccess, tableFailure } from "../../redux/ducks/tabl
  * Funcion para realizar una peticion http POST y obtener token
  * @param {Object} dispatch funcion que dispara acciones de Redux
  */
-export const tableGetAction = async (dispatch, url) => {
+export const tableGetAction = async (dispatch, url, titleError) => {
 
-    // dispara accion para saber que se realiza una peticion HTTP
-    dispatch(tableLoadingShow());
-    dispatch(tableRequest(url));
-  
-    try {
-      // realiza petición Http
-      const tableResponseData = await HttpService(url, 'GET');
-  
-      // agrega la informacion a local storage
-    //   localStorage.setItem('user', JSON.stringify(loginResponseData.data));
-  
-      // dispara los datos al store de redux
-      dispatch(tableSuccess(tableResponseData.data));
-      dispatch(tableLoadingHide())
-  
-    } catch (error) {
-      dispatch(tableLoadingHide())
-      // dispara el error
-      dispatch(tableFailure(error));
-      // muestra modal con error
-      dispatch(modalError({ title: 'Error al obtener los usuarios', body: error }));
-  
-    }
+  // dispara accion para saber que se realiza una peticion HTTP
+  dispatch(tableLoadingShow());
+  dispatch(tableRequest(url));
+
+  try {
+    // realiza petición Http
+    const tableResponseData = await HttpService(url, 'GET');
+
+    // dispara los datos al store de redux
+    dispatch(tableSuccess(tableResponseData.data));
+    dispatch(tableLoadingHide())
+
+  } catch (error) {
+    dispatch(tableLoadingHide())
+    // dispara el error
+    dispatch(tableFailure(error));
+    // muestra modal con error
+    dispatch(modalError({ title: titleError, body: error }));
+
   }
+}

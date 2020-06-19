@@ -14,6 +14,7 @@ function ModalCustom() {
     const { modal } = useSelector(store => store);
     const dispatch = useDispatch();
     
+    console.log(modal)
     // oculta el modal
     const hideModal = () => {
         // dispara la accion que limpia el modal
