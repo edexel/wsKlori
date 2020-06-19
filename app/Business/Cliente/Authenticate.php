@@ -37,7 +37,7 @@ class Authenticate
         ]);
     
         // Forma url de la peticion
-        $apiUrl = $Config->urlApi."auth/loginClient";
+        $apiUrl = $Config->urlApi."auth/loginclient";
 
         // realiza peticion que inicia secion en quetzal
         $request = new  \App\Comunication\ClientHttp($apiUrl,'post',null,'body');
