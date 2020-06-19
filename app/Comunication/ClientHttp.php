@@ -61,9 +61,9 @@ class ClientHttp
                 $data['body'] = $dataBody;
                 break;
         }
-
+        
         // realiza la peticion dependiento el verbo http
-        switch ($this->TIPO_PETICION) {
+        switch ($this->TYPE_REQUEST) {
             case self::$GET:
                 // realiza la peticion GET
                 $request = $this->client->get($this->URL, $data);

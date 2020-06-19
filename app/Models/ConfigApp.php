@@ -19,6 +19,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property string|null $deleted_at
+ * @property string $urlApi
  *
  * @package App\Models
  */
@@ -34,6 +35,7 @@ class ConfigApp extends Model
 
 	protected $fillable = [
 		'username',
-		'password'
+		'password',
+		'urlApi'
 	];
 }

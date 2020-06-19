@@ -17,9 +17,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property int $idUsuario
  * @property string $nombre
  * @property string $apellido
+ * @property Carbon|null $fecha_nacimiento
  * @property string $genero
  * @property float $talla
- * @property int $edad
  * @property int $ocupacion
  * @property float $estatura
  * @property int $estatusCivil
@@ -31,8 +31,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property string|null $deleted_at
- * 
- * @property Usuario $usuario
  *
  * @package App\Models
  */
@@ -45,19 +43,22 @@ class InfoUsuario extends Model
 	protected $casts = [
 		'idUsuario' => 'int',
 		'talla' => 'float',
-		'edad' => 'int',
 		'ocupacion' => 'int',
 		'estatura' => 'float',
 		'estatusCivil' => 'int'
+	];
+
+	protected $dates = [
+		'fecha_nacimiento'
 	];
 
 	protected $fillable = [
 		'idUsuario',
 		'nombre',
 		'apellido',
+		'fecha_nacimiento',
 		'genero',
 		'talla',
-		'edad',
 		'ocupacion',
 		'estatura',
 		'estatusCivil',
@@ -67,9 +68,4 @@ class InfoUsuario extends Model
 		'objetivos',
 		'observaciones'
 	];
-
-	public function usuario()
-	{
-		return $this->belongsTo(Usuario::class, 'idUsuario');
-	}
 }

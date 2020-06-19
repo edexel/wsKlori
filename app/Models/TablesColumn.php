@@ -20,8 +20,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property string|null $deleted_at
- * 
- * @property Table $table
  *
  * @package App\Models
  */
@@ -41,9 +39,4 @@ class TablesColumn extends Model
 		'column',
 		'visible'
 	];
-
-	public function table()
-	{
-		return $this->belongsTo(Table::class, 'idTable');
-	}
 }

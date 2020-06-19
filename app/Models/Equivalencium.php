@@ -23,8 +23,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property string|null $deleted_at
- * 
- * @property GrupoAlimenticio $grupo_alimenticio
  *
  * @package App\Models
  */
@@ -48,9 +46,4 @@ class Equivalencium extends Model
 		'descripcion',
 		'activo'
 	];
-
-	public function grupo_alimenticio()
-	{
-		return $this->belongsTo(GrupoAlimenticio::class, 'idGrupoAlimenticio');
-	}
 }
