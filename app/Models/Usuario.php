@@ -7,7 +7,6 @@
 namespace App\Models;
 
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -26,10 +25,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property string|null $deleted_at
- * 
- * @property Collection|DispositivoUsuario[] $dispositivo_usuarios
- * @property Collection|InfoUsuario[] $info_usuarios
- * @property Collection|UsuarioSesion[] $usuario_sesions
  *
  * @package App\Models
  */
@@ -62,19 +57,4 @@ class Usuario extends Model
 		'activo',
 		'ultimaConexion'
 	];
-
-	public function dispositivo_usuarios()
-	{
-		return $this->hasMany(DispositivoUsuario::class, 'idUsuario');
-	}
-
-	public function info_usuarios()
-	{
-		return $this->hasMany(InfoUsuario::class, 'idUsuario');
-	}
-
-	public function usuario_sesions()
-	{
-		return $this->hasMany(UsuarioSesion::class, 'idUsuario');
-	}
 }

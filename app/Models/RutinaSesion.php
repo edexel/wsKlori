@@ -14,9 +14,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $idRutinaSesion
  * @property int $idPlanSesion
  * @property int $idRutinaActividad
- * 
- * @property PlanSesion $plan_sesion
- * @property RutinaActividad $rutina_actividad
  *
  * @package App\Models
  */
@@ -35,14 +32,4 @@ class RutinaSesion extends Model
 		'idPlanSesion',
 		'idRutinaActividad'
 	];
-
-	public function plan_sesion()
-	{
-		return $this->belongsTo(PlanSesion::class, 'idPlanSesion');
-	}
-
-	public function rutina_actividad()
-	{
-		return $this->belongsTo(RutinaActividad::class, 'idRutinaActividad');
-	}
 }

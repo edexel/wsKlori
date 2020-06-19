@@ -23,8 +23,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property string|null $deleted_at
- * 
- * @property Usuario $usuario
  *
  * @package App\Models
  */
@@ -50,9 +48,4 @@ class DispositivoUsuario extends Model
 		'codigo',
 		'fechaAlta'
 	];
-
-	public function usuario()
-	{
-		return $this->belongsTo(Usuario::class, 'idUsuario');
-	}
 }

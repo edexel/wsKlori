@@ -19,9 +19,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property string|null $deleted_at
- * 
- * @property Action $action
- * @property Table $table
  *
  * @package App\Models
  */
@@ -40,14 +37,4 @@ class TablesAction extends Model
 		'idTable',
 		'idAction'
 	];
-
-	public function action()
-	{
-		return $this->belongsTo(Action::class, 'idAction');
-	}
-
-	public function table()
-	{
-		return $this->belongsTo(Table::class, 'idTable');
-	}
 }

@@ -14,9 +14,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $idPlanRecetario
  * @property int $idPlanSesion
  * @property int $idRecetario
- * 
- * @property PlanSesion $plan_sesion
- * @property Recetario $recetario
  *
  * @package App\Models
  */
@@ -35,14 +32,4 @@ class PlanRecetario extends Model
 		'idPlanSesion',
 		'idRecetario'
 	];
-
-	public function plan_sesion()
-	{
-		return $this->belongsTo(PlanSesion::class, 'idPlanSesion');
-	}
-
-	public function recetario()
-	{
-		return $this->belongsTo(Recetario::class, 'idRecetario');
-	}
 }

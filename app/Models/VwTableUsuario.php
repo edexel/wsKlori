@@ -19,7 +19,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $Apellido
  * @property string $Género
  * @property float $Talla
- * @property int $Edad
+ * @property string|null $Fecha Nacimiento
  * @property int $Ocupación
  * @property float $Estatura
  * @property int $Estatus Civil
@@ -41,7 +41,6 @@ class VwTableUsuario extends Model
 		'idUsuario' => 'int',
 		'idInfoUsuario' => 'int',
 		'Talla' => 'float',
-		'Edad' => 'int',
 		'Ocupación' => 'int',
 		'Estatura' => 'float',
 		'Estatus Civil' => 'int'
@@ -56,7 +55,7 @@ class VwTableUsuario extends Model
 		'Apellido',
 		'Género',
 		'Talla',
-		'Edad',
+		'Fecha Nacimiento',
 		'Ocupación',
 		'Estatura',
 		'Estatus Civil',

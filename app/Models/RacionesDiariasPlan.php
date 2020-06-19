@@ -22,9 +22,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property string|null $deleted_at
- * 
- * @property GrupoAlimenticio $grupo_alimenticio
- * @property PlanSesion $plan_sesion
  *
  * @package App\Models
  */
@@ -49,14 +46,4 @@ class RacionesDiariasPlan extends Model
 		'racionDiaria',
 		'racionDiariaKcal'
 	];
-
-	public function grupo_alimenticio()
-	{
-		return $this->belongsTo(GrupoAlimenticio::class, 'idGrupoAlimenticio');
-	}
-
-	public function plan_sesion()
-	{
-		return $this->belongsTo(PlanSesion::class, 'idPlanSesion');
-	}
 }
