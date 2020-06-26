@@ -28,7 +28,7 @@ class ChangeViewUsers1 extends Migration
                 iu.estatura as "Estatura", 
                 ec.idEstadoCivil as "idEstadoCivil", 
                 ec.nombre as "Estado Civil", 
-                iu.antecedenteFamiliar as "Antecedente familiar",
+                iu.antecedenteFamiliar as "Antecedente familiar",adwretiyu
                 iu.antecedentePersonal as "Antecedente personal",
                 iu.medicamentos as "Medicamentos",
                 iu.objetivos as "Objetivos", 

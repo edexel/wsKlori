@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
             TablesSeeder::class,
             TablesActionsSeeder::class,
             TablesColumnsSeeder::class,
-            EstadoCivilSeeder::class,
+            EstadoCivil1Seeder::class,
         ]);
     }
 }
